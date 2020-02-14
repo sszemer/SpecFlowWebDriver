@@ -81,6 +81,7 @@ namespace SpecFlowWebDriver.Features
         [NUnit.Framework.DescriptionAttribute("Lookup a currency rate")]
         [NUnit.Framework.CategoryAttribute("currencyLookup")]
         [NUnit.Framework.TestCaseAttribute("THB", "0.1300", null)]
+        [NUnit.Framework.TestCaseAttribute("USD", "1", null)]
         public virtual void LookupACurrencyRate(string currencyCode, string expectedRate, string[] exampleTags)
         {
             string[] @__tags = new string[] {

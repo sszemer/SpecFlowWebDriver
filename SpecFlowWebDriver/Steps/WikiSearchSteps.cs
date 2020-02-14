@@ -1,7 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using NUnit.Framework;
 using SpecFlowWebDriver.Pages;
-using OpenQA.Selenium.Chrome;
 using SpecFlowWebDriver.Utils;
 
 namespace SpecFlowWebDriver
@@ -10,6 +9,7 @@ namespace SpecFlowWebDriver
     public class WikiSearchSteps
     {
         WikiPage wikiPage = new WikiPage(DriverProvider.GetDriver());
+        
 
         [Given(@"Wiki page is open")]
         public void GivenWikiPageIsOpen()
