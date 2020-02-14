@@ -1,4 +1,5 @@
-﻿Feature: wikiSearch
+﻿@wikiSearch
+Feature: wikiSearch
 	In order to know what things are
 	As an idiot
 	I want to search for the definitions

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace SpecFlowWebDriver
+namespace SpecFlowWebDriver.Features
 {
     using TechTalk.SpecFlow;
     using System;
@@ -21,12 +21,14 @@ namespace SpecFlowWebDriver
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("wikiSearch")]
+    [NUnit.Framework.CategoryAttribute("wikiSearch")]
     public partial class WikiSearchFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = ((string[])(null));
+        private string[] _featureTags = new string[] {
+                "wikiSearch"};
         
 #line 1 "wikiSearch.feature"
 #line hidden
@@ -36,7 +38,8 @@ namespace SpecFlowWebDriver
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "wikiSearch", "\tIn order to know what things are\r\n\tAs an idiot\r\n\tI want to search for the defini" +
-                    "tions", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "tions", ProgrammingLanguage.CSharp, new string[] {
+                        "wikiSearch"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -89,7 +92,7 @@ namespace SpecFlowWebDriver
             }
             string[] tagsOfScenario = @__tags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find definitions", null, @__tags);
-#line 7
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -109,13 +112,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 8
+#line 9
  testRunner.Given("Wiki page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 9
+#line 10
  testRunner.When(string.Format("I search for a {0}", definition), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then(string.Format("The definition of {0} is displayed", definition), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
