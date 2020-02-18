@@ -10,6 +10,7 @@ namespace SpecFlowWebDriver.Utils
         public static ExtentHtmlReporter htmlReporter;
         public static ExtentTest feature;
         public static ExtentTest scenario;
+        public static ExtentTest step;
 
         public static void SetupExtentHtmlReporter()
         {
@@ -19,7 +20,7 @@ namespace SpecFlowWebDriver.Utils
             htmlReporter.Config.ReportName = "SpecFlow Tests";
             report = new AventStack.ExtentReports.ExtentReports();
             report.AttachReporter(htmlReporter);
-            report.AddSystemInfo("OS", "Windows 10");
+            report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
         }
     }
 }
