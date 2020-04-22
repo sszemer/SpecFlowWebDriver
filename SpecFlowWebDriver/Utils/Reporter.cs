@@ -21,6 +21,22 @@ namespace SpecFlowWebDriver.Utils
             report = new AventStack.ExtentReports.ExtentReports();
             report.AttachReporter(htmlReporter);
             report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
+
+            ExtentKlovReporter klov = new ExtentKlovReporter();
+            // specify mongoDb connection
+            klov.InitMongoDbConnection("localhost", 27017);
+
+            // specify project
+            // ! you must specify a project, other a "Default project will be used"
+            klov.ProjectName="projectname";
+            // you must specify a reportName otherwise a default timestamp will be used
+            klov.ReportName= "AppBuild";
+            // URL of the KLOV server
+            // you must specify the server URL to ensure all your runtime media is uploaded
+            // to the server
+            klov.InitKlovServerConnection("http://localhost");
+            // finally, attach the reporter
+            report.AttachReporter(klov);
         }
     }
 }
