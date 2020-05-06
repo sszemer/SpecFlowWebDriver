@@ -21,6 +21,7 @@ namespace SpecFlowWebDriver.Utils
             report = new AventStack.ExtentReports.ExtentReports();
             report.AttachReporter(htmlReporter);
             report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
+            report.AnalysisStrategy = AnalysisStrategy.BDD;
 
             ExtentKlovReporter klov = new ExtentKlovReporter();
             // specify mongoDb connection

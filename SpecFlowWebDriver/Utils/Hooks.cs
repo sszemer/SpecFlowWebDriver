@@ -1,6 +1,8 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using NUnit.Framework;
+using System;
+using System.IO;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Bindings;
 
@@ -48,10 +50,14 @@ namespace SpecFlowWebDriver.Utils
         
         [AfterStep]
         public void AfterStep()
-        {            
+        {
+            var pageSource = DriverProvider.GetDriver().PageSource;
+            var path = "c:\\temp\\a.html";
+            File.WriteAllText(path, pageSource);
             if (ScenarioContext.Current.TestError != null)
             {
-                Reporter.step.Fail(ScenarioContext.Current.TestError.Message);
+                Reporter.step.Fail(ScenarioContext.Current.TestError.Message + "<br/><a href=\"" + path + "\">Page source</a>");
+                //Reporter.step.Log(Status.Info, "<br/><a href=\""+path+"\">Page source</a>");
             }
             Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(ScreenShotHelpers.CaptureScreen()).Build());
         }
