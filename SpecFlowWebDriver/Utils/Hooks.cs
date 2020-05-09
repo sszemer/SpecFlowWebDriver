@@ -1,7 +1,5 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
-using NUnit.Framework;
-using System;
 using System.IO;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Bindings;

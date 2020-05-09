@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,13 +9,15 @@ namespace SpecFlowWebDriver.Utils
 {
     static class DriverProvider
     {
-        private static IWebDriver driver;
+        private static RemoteWebDriver driver;
+        private static DriverOptions options;
 
-        public static IWebDriver GetDriver()
+        public static RemoteWebDriver GetDriver()
         {
             if (driver == null)
             {
-                driver = new ChromeDriver();
+                options = new ChromeOptions();
+                driver = new ChromeDriver((ChromeOptions)options);
                 driver.Manage().Window.Maximize();
             }
             return driver;
