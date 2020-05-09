@@ -1,6 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Support.PageObjects;
-using System;
 
 namespace SpecFlowWebDriver.Pages
 {
