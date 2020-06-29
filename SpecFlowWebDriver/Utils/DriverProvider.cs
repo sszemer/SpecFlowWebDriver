@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
 using System;
 
@@ -10,15 +11,23 @@ namespace SpecFlowWebDriver.Utils
         private static RemoteWebDriver driver;
         private static DriverOptions options;
         private static string hubURL = "http://localhost:4444/wd/hub";
+        private static string appiumUrl = "http://localhost:4723/wd/hub";
 
         public static RemoteWebDriver GetDriver()
         {
             if (driver == null)
             {
-                options = new ChromeOptions();
-                options.PlatformName = "windows";
-                driver = new RemoteWebDriver(new Uri(hubURL), options.ToCapabilities(), TimeSpan.FromSeconds(600));
-                driver.Manage().Window.Maximize();
+                //webdriver
+                //options = new ChromeOptions();
+                //options.PlatformName = "windows";
+                //driver = new RemoteWebDriver(new Uri(hubURL), options.ToCapabilities(), TimeSpan.FromSeconds(600));
+                //driver.Manage().Window.Maximize();
+                //appium
+                options = new AppiumOptions();
+                options.PlatformName = "Android";
+                options.AddAdditionalCapability("appPackage", "com.android.chrome");
+                options.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
+                driver = new AndroidDriver<AppiumWebElement>(new Uri(appiumUrl), options, TimeSpan.FromSeconds(600));
             }
             return driver;
         }

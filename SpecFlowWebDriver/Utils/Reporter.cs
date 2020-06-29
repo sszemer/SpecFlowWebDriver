@@ -35,7 +35,7 @@ namespace SpecFlowWebDriver.Utils
             report.AttachReporter(htmlReporter);
             report.AttachReporter(klov);
             report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
-            report.AddSystemInfo("Browser", String.Format("{0} {1}", DriverProvider.GetDriver().Capabilities["browserName"], DriverProvider.GetDriver().Capabilities["browserVersion"]));
+            //report.AddSystemInfo("Browser", String.Format("{0} {1}", DriverProvider.GetDriver().Capabilities["browserName"], DriverProvider.GetDriver().Capabilities["browserVersion"].ToString()));
             report.AnalysisStrategy = AnalysisStrategy.BDD;
         }
     }
