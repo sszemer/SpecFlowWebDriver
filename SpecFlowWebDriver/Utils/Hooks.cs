@@ -54,7 +54,7 @@ namespace SpecFlowWebDriver.Utils
             File.WriteAllText(path, pageSource);
             if (scenarioContext.TestError != null)
             {
-                Reporter.step.Fail(scenarioContext.TestError.Message + "<br/><a href=\"" + path + "\">Page source</a>");
+                Reporter.step.Fail($"{scenarioContext.TestError.Message}<br/><a href=\"{path}\">Page source</a>");
                 //Reporter.step.Log(Status.Info, "<br/><a href=\""+path+"\">Page source</a>");
             }
             Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(ScreenShotHelpers.CaptureScreen()).Build());

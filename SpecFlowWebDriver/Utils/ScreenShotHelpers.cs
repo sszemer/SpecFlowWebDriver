@@ -10,8 +10,8 @@ namespace SpecFlowWebDriver.Utils
         {
             Screenshot screenshot = ((ITakesScreenshot)DriverProvider.GetDriver()).GetScreenshot();
             string title = ScenarioStepContext.Current.StepInfo.Text.Replace(" ", "");
-            string Runname = title + "_" + DateTime.Now.ToString("yyyy-MM-dd-HH_mm_ss");
-            string screenshotfilename = Runname + ".jpg";
+            string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
+            string screenshotfilename = $"{Runname}.jpg";
             screenshot.SaveAsFile(screenshotfilename);
             return screenshotfilename;
         }
