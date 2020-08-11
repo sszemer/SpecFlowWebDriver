@@ -18,21 +18,21 @@ namespace SpecFlowWebDriver.Utils
         }
 
         [BeforeFeature]
-        public static void BeforeFeature()
+        public static void BeforeFeature(FeatureContext featureContext)
         {
-            Reporter.feature = Reporter.report.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title, FeatureContext.Current.FeatureInfo.Description);
+            Reporter.feature = Reporter.report.CreateTest<Feature>(featureContext.FeatureInfo.Title, featureContext.FeatureInfo.Description);
         }
 
         [BeforeScenario]
-        public void BeforeScenario()
+        public void BeforeScenario(ScenarioContext scenarioContext)
         {
-            Reporter.scenario = Reporter.feature.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+            Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
         }
 
         [BeforeStep]
-        public void BeforeStep()
+        public void BeforeStep(ScenarioContext scenarioContext)
         {
-            switch(ScenarioContext.Current.StepContext.StepInfo.StepDefinitionType)
+            switch(scenarioContext.StepContext.StepInfo.StepDefinitionType)
             {
                 case StepDefinitionType.Given:
                     Reporter.step = Reporter.scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
@@ -47,14 +47,14 @@ namespace SpecFlowWebDriver.Utils
         }
         
         [AfterStep]
-        public void AfterStep()
+        public void AfterStep(ScenarioContext scenarioContext)
         {
             var pageSource = DriverProvider.GetDriver().PageSource;
             var path = "c:\\temp\\a.html";
             File.WriteAllText(path, pageSource);
-            if (ScenarioContext.Current.TestError != null)
+            if (scenarioContext.TestError != null)
             {
-                Reporter.step.Fail(ScenarioContext.Current.TestError.Message + "<br/><a href=\"" + path + "\">Page source</a>");
+                Reporter.step.Fail(scenarioContext.TestError.Message + "<br/><a href=\"" + path + "\">Page source</a>");
                 //Reporter.step.Log(Status.Info, "<br/><a href=\""+path+"\">Page source</a>");
             }
             Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(ScreenShotHelpers.CaptureScreen()).Build());
