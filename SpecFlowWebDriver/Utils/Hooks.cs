@@ -1,6 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
-using System.IO;
+using AventStack.ExtentReports.MarkupUtils;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Bindings;
 
@@ -13,8 +13,7 @@ namespace SpecFlowWebDriver.Utils
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            DriverProvider.GetDriver();
-            Reporter.SetupExtentHtmlReporter();
+            Reporter.SetupExtentReports();
         }
 
         [BeforeFeature]
@@ -49,15 +48,18 @@ namespace SpecFlowWebDriver.Utils
         [AfterStep]
         public void AfterStep(ScenarioContext scenarioContext)
         {
-            var pageSource = DriverProvider.GetDriver().PageSource;
-            var path = "c:\\temp\\a.html";
-            File.WriteAllText(path, pageSource);
             if (scenarioContext.TestError != null)
             {
-                Reporter.step.Fail($"{scenarioContext.TestError.Message}<br/><a href=\"{path}\">Page source</a>");
-                //Reporter.step.Log(Status.Info, "<br/><a href=\""+path+"\">Page source</a>");
+                string[,] data = new string[,]
+                {
+                    { "Exception", $"{scenarioContext.TestError.Message}"},
+                    { "StackTrace", $"{scenarioContext.TestError.StackTrace}"},
+                    { "URL", $"<a href=\"{DriverProvider.GetDriver().Url}\">{DriverProvider.GetDriver().Url}</a>"},
+                    { "PageSource", PageSourceHelper.GetPageSource()}
+                };
+                Reporter.step.Fail(MarkupHelper.CreateTable(data));
             }
-            Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(ScreenShotHelpers.CaptureScreen()).Build());
+            Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(ScreenShotHelper.CaptureScreen()).Build());
         }
 
         [AfterScenario]

@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using System;
+using System.IO;
 
 namespace SpecFlowWebDriver.Utils
 {
@@ -12,6 +13,7 @@ namespace SpecFlowWebDriver.Utils
         private const string MongoURL = "localhost";
         private const int mongoPort = 27017;
         private static string configFileName = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Config\\extentReportConfig.xml";
+        private static string reportDir = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report";
         private static ExtentHtmlReporter htmlReporter;
         private static ExtentKlovReporter klov;
         public static AventStack.ExtentReports.ExtentReports report;
@@ -19,23 +21,41 @@ namespace SpecFlowWebDriver.Utils
         public static ExtentTest scenario;
         public static ExtentTest step;
 
-        public static void SetupExtentHtmlReporter()
+        public static void SetupExtentReports()
         {
-            htmlReporter = new ExtentHtmlReporter("testReport.html");
-            htmlReporter.LoadConfig(configFileName);
+            CleanReportDir();
+            InitHtmlReporter();
+            InitKlovReporter();
+            InitExtentReport();
+        }
 
+        private static void CleanReportDir()
+        {
+            System.IO.DirectoryInfo di = new DirectoryInfo(reportDir);
+            foreach (FileInfo file in di.GetFiles()) file.Delete();
+        }
+
+        private static void InitHtmlReporter()
+        {
+            htmlReporter = new ExtentHtmlReporter($"{reportDir}\\index.html");
+            htmlReporter.LoadConfig(configFileName);
+        }
+        private static void InitKlovReporter()
+        {
             klov = new ExtentKlovReporter();
             klov.InitMongoDbConnection(MongoURL, mongoPort);
             klov.InitKlovServerConnection(KlovURL);
+            klov.ProjectName = ReportTitle;
+            klov.ReportName = ReportName;
+        }
 
-            klov.ProjectName= ReportTitle;
-            klov.ReportName= ReportName;
-
+        private static void InitExtentReport()
+        {
             report = new AventStack.ExtentReports.ExtentReports();
             report.AttachReporter(htmlReporter);
             report.AttachReporter(klov);
             report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
-            //report.AddSystemInfo("Browser", String.Format("{0} {1}", DriverProvider.GetDriver().Capabilities["browserName"], DriverProvider.GetDriver().Capabilities["browserVersion"].ToString()));
+            report.AddSystemInfo("Browser", $"{DriverProvider.GetDriver().Capabilities["browserName"]} {DriverProvider.GetDriver().Capabilities["browserVersion"].ToString()}");
             report.AnalysisStrategy = AnalysisStrategy.BDD;
         }
     }
