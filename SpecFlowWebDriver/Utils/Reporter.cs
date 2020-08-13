@@ -23,10 +23,10 @@ namespace SpecFlowWebDriver.Utils
 
         public static void SetupExtentReports()
         {
-            CleanReportDir();
             InitHtmlReporter();
             InitKlovReporter();
             InitExtentReport();
+            CleanReportDir();
         }
 
         private static void CleanReportDir()
