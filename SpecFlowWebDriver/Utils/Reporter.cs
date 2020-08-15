@@ -23,39 +23,38 @@ namespace SpecFlowWebDriver.Utils
 
         public static void SetupExtentReports()
         {
-            InitHtmlReporter();
-            InitKlovReporter();
-            InitExtentReport();
-            CleanReportDir();
+            InitHtmlReporter(new ExtentHtmlReporter($"{reportDir}\\index.html"));
+            InitKlovReporter(new ExtentKlovReporter());
+            InitExtentReport(new AventStack.ExtentReports.ExtentReports());
+            CleanReportDir(new DirectoryInfo(reportDir));
         }
 
-        private static void CleanReportDir()
+        private static void CleanReportDir(DirectoryInfo directoryInfo)
         {
-            System.IO.DirectoryInfo di = new DirectoryInfo(reportDir);
-            foreach (FileInfo file in di.GetFiles()) file.Delete();
+            foreach (FileInfo file in directoryInfo.GetFiles()) file.Delete();
         }
 
-        private static void InitHtmlReporter()
+        private static void InitHtmlReporter(ExtentHtmlReporter extentHtmlReporter)
         {
-            htmlReporter = new ExtentHtmlReporter($"{reportDir}\\index.html");
+            htmlReporter = extentHtmlReporter;
             htmlReporter.LoadConfig(configFileName);
         }
-        private static void InitKlovReporter()
+        private static void InitKlovReporter(ExtentKlovReporter extentKlovReporter)
         {
-            klov = new ExtentKlovReporter();
+            klov = extentKlovReporter;
             klov.InitMongoDbConnection(MongoURL, mongoPort);
             klov.InitKlovServerConnection(KlovURL);
             klov.ProjectName = ReportTitle;
             klov.ReportName = ReportName;
         }
 
-        private static void InitExtentReport()
+        private static void InitExtentReport(AventStack.ExtentReports.ExtentReports extentReports)
         {
-            report = new AventStack.ExtentReports.ExtentReports();
+            report = extentReports;
             report.AttachReporter(htmlReporter);
             report.AttachReporter(klov);
             report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
-            report.AddSystemInfo("Browser", $"{DriverProvider.GetDriver().Capabilities["browserName"]} {DriverProvider.GetDriver().Capabilities["browserVersion"].ToString()}");
+            report.AddSystemInfo("Browser", $"{DriverProvider.GetDriver().Capabilities["browserName"]} {DriverProvider.GetDriver().Capabilities["browserVersion"]}");
             report.AnalysisStrategy = AnalysisStrategy.BDD;
         }
     }

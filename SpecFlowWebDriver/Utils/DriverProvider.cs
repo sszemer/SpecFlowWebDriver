@@ -18,17 +18,7 @@ namespace SpecFlowWebDriver.Utils
         {
             if (driver == null)
             {
-                //webdriver
-                options = new ChromeOptions();
-                options.PlatformName = "windows";
-                driver = new RemoteWebDriver(new Uri(hubURL), options.ToCapabilities(), TimeSpan.FromSeconds(600));
-                driver.Manage().Window.Maximize();
-                ////appium
-                //options = new AppiumOptions();
-                //options.PlatformName = "Android";
-                //options.AddAdditionalCapability("appPackage", "com.android.chrome");
-                //options.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
-                //driver = new AndroidDriver<AppiumWebElement>(new Uri(appiumUrl), options, TimeSpan.FromSeconds(600));
+                InitWebDriver();
             }
             return driver;
         }
@@ -37,6 +27,29 @@ namespace SpecFlowWebDriver.Utils
         {
             driver.Quit();
             driver = null;
+        }
+
+        public static void InitWebDriver()
+        {
+            var driverType = "chrome";
+            switch (driverType)
+            {
+                case "chrome":
+                    options = new ChromeOptions();
+                    options.PlatformName = "windows";
+                    driver = new RemoteWebDriver(new Uri(hubURL), options.ToCapabilities(), TimeSpan.FromSeconds(600));
+                    driver.Manage().Window.Maximize();
+                    break;
+                case "appium":
+                    options = new AppiumOptions();
+                    options.PlatformName = "Android";
+                    options.AddAdditionalCapability("appPackage", "com.android.chrome");
+                    options.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
+                    driver = new AndroidDriver<AppiumWebElement>(new Uri(appiumUrl), options, TimeSpan.FromSeconds(600));
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
