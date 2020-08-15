@@ -13,6 +13,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Report\**" />
+    <EmbeddedResource Remove="Report\**" />
+    <None Remove="Report\**" />
+    <SpecFlowFeatureFiles Remove="Report\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Report\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="4.1.1" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />

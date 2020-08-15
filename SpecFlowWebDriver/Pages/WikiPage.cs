@@ -1,14 +1,13 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Remote;
 
 namespace SpecFlowWebDriver.Pages
 {
-    class WikiPage
+    public class WikiPage : CommonPage
     {
-        IWebDriver driver;
 
-        public WikiPage(IWebDriver driver)
+        public WikiPage(RemoteWebDriver driver) : base(driver)
         {
-            this.driver = driver;
         }
 
         public IWebElement SearchInput => driver.FindElement(By.Id("searchInput"));

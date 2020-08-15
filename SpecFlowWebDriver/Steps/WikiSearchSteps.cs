@@ -8,8 +8,12 @@ namespace SpecFlowWebDriver
     [Binding, Parallelizable]
     public class WikiSearchSteps
     {
-        WikiPage wikiPage = new WikiPage(DriverProvider.GetDriver());
+        private readonly WikiPage wikiPage;
         
+        public WikiSearchSteps()
+        {
+            wikiPage = PageFactory.GetWikiPage();
+        }
 
         [Given(@"Wiki page is open")]
         public void GivenWikiPageIsOpen()

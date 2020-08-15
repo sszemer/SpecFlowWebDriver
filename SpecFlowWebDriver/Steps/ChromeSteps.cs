@@ -8,7 +8,13 @@ namespace SpecFlowWebDriver.Steps
     [Binding, Parallelizable]
     public class ChromeSteps
     {
-        ChromePage chromePage = new ChromePage(DriverProvider.GetDriver());
+        private readonly ChromePage chromePage;
+
+        public ChromeSteps()
+        {
+            chromePage = PageFactory.GetChromePage();
+        }
+
         [When(@"I google for a (.*)")]
         public void WhenISearchForA(string definition)
         {

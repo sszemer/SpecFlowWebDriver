@@ -5,12 +5,10 @@ using OpenQA.Selenium.Remote;
 
 namespace SpecFlowWebDriver.Pages
 {
-    class ChromePage
+    public class ChromePage : CommonPage
     {
-        RemoteWebDriver driver;
-        public ChromePage(RemoteWebDriver driver)
+        public ChromePage(RemoteWebDriver driver) : base(driver)
         {
-            this.driver = driver;
         }
         public IWebElement SearchInput => driver.FindElement(By.Id("com.android.chrome:id/search_box_text"));
         public IWebElement AcceptTerms => driver.FindElement(By.Id("com.android.chrome:id/terms_accept"));

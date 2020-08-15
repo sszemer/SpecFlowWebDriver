@@ -10,10 +10,8 @@ namespace SpecFlowWebDriver
     [Binding, Parallelizable]
     public class NBPlookupSteps
     {
-        
-        HttpClient client = new HttpClient();
-        POCO.Table respBody;
-
+        private readonly HttpClient client = new HttpClient();
+        private Models.Table respBody;
 
         [Given(@"NBP rest api is online")]
         public async Task GivenNBPRestApiIsOnlineAsync()
@@ -26,7 +24,7 @@ namespace SpecFlowWebDriver
         public async Task WhenILookupTheCurrencyForAsync(string p0)
         {
             HttpResponseMessage response = await client.GetAsync(String.Format("http://api.nbp.pl/api/exchangerates/rates/a/{0}/last/1/?format=json", p0));
-            respBody = JsonSerializer.Deserialize<POCO.Table>(await response.Content.ReadAsStringAsync());
+            respBody = JsonSerializer.Deserialize<Models.Table>(await response.Content.ReadAsStringAsync());
             Assert.IsNotNull(respBody.rates[0].mid);
         }
         
