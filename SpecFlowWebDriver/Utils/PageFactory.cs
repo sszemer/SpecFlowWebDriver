@@ -1,4 +1,5 @@
-﻿using SpecFlowWebDriver.Pages;
+﻿using OpenQA.Selenium.Remote;
+using SpecFlowWebDriver.Pages;
 
 namespace SpecFlowWebDriver.Utils
 {
@@ -6,12 +7,13 @@ namespace SpecFlowWebDriver.Utils
     {
         private static ChromePage chromePage;
         private static WikiPage wikiPage;
+        private static readonly RemoteWebDriver remoteWebDriver = DriverProvider.GetDriver();
 
         public static ChromePage GetChromePage()
         {
             if (chromePage == null)
             {
-                chromePage = new ChromePage(DriverProvider.GetDriver());
+                chromePage = new ChromePage(remoteWebDriver);
             }
             return chromePage;
         }
@@ -20,7 +22,7 @@ namespace SpecFlowWebDriver.Utils
         {
             if (wikiPage == null)
             {
-                wikiPage = new WikiPage(DriverProvider.GetDriver());
+                wikiPage = new WikiPage(remoteWebDriver);
             }
             return wikiPage;
         }
