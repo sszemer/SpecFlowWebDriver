@@ -31,15 +31,15 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="Refit" Version="5.1.67" />
     <PackageReference Include="ReportUnit" Version="1.2.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
-    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="84.0.4147.3001" />
-    <PackageReference Include="SpecFlow" Version="3.3.74" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.3.74" />
-    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.3.74" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="85.0.4183.8300" />
+    <PackageReference Include="SpecFlow" Version="3.4.3" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.4.3" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.4.3" />
   </ItemGroup>
 
 </Project>
