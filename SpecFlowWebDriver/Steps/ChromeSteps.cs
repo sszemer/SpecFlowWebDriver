@@ -12,7 +12,7 @@ namespace SpecFlowWebDriver.Steps
 
         public ChromeSteps()
         {
-            chromePage = PageFactory.GetChromePage();
+            chromePage = PageFactory.ChromePage;
         }
 
         [When(@"I google for a (.*)")]

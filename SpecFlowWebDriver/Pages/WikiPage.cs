@@ -14,10 +14,7 @@ namespace SpecFlowWebDriver.Pages
 
         public IWebElement ArticleName => driver.FindElement(By.Id("firstHeading"));
 
-        public void Go()
-        {
-            driver.Navigate().GoToUrl("https://pl.wikipedia.org/");
-        }
+        public void Go() => driver.Navigate().GoToUrl("https://pl.wikipedia.org/");
 
     }
 }

@@ -25,13 +25,13 @@ namespace SpecFlowWebDriver
         {
             HttpResponseMessage response = await client.GetAsync(String.Format("http://api.nbp.pl/api/exchangerates/rates/a/{0}/last/1/?format=json", p0));
             respBody = JsonSerializer.Deserialize<Models.Table>(await response.Content.ReadAsStringAsync());
-            Assert.IsNotNull(respBody.rates[0].mid);
+            Assert.IsNotNull(respBody.Rates[0].Mid);
         }
         
         [Then(@"I want to know if the rate is below (.*)")]
         public void ThenIWantToKnowIfTheRateIsBelow(Double p0)
         {
-            Assert.Less(respBody.rates[0].mid, p0);
+            Assert.Less(respBody.Rates[0].Mid, p0);
         }
     }
 }

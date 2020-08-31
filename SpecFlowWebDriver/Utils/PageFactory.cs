@@ -9,22 +9,7 @@ namespace SpecFlowWebDriver.Utils
         private static WikiPage wikiPage;
         private static readonly RemoteWebDriver remoteWebDriver = DriverProvider.GetDriver();
 
-        public static ChromePage GetChromePage()
-        {
-            if (chromePage == null)
-            {
-                chromePage = new ChromePage(remoteWebDriver);
-            }
-            return chromePage;
-        }
-
-        public static WikiPage GetWikiPage()
-        {
-            if (wikiPage == null)
-            {
-                wikiPage = new WikiPage(remoteWebDriver);
-            }
-            return wikiPage;
-        }
+        public static ChromePage ChromePage => chromePage ??= new ChromePage(remoteWebDriver);
+        public static WikiPage WikiPage => wikiPage ??= new WikiPage(remoteWebDriver);
     }
 }
