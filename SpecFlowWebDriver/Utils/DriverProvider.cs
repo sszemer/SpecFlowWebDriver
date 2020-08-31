@@ -7,21 +7,14 @@ using System;
 
 namespace SpecFlowWebDriver.Utils
 {
-    static class DriverProvider
+    public static class DriverProvider
     {
         private static RemoteWebDriver driver;
         private static DriverOptions options;
-        private static string hubURL = "http://localhost:4444/wd/hub";
-        private static string appiumUrl = "http://localhost:4723/wd/hub";
+        private static readonly string hubURL = "http://localhost:4444/wd/hub";
+        private static readonly string appiumUrl = "http://localhost:4723/wd/hub";
 
-        public static RemoteWebDriver GetDriver()
-        {
-            if (driver == null)
-            {
-                InitWebDriver();
-            }
-            return driver;
-        }
+        public static RemoteWebDriver GetDriver() => driver ?? InitWebDriver();
 
         public static void CloseDriver()
         {
@@ -29,7 +22,7 @@ namespace SpecFlowWebDriver.Utils
             driver = null;
         }
 
-        public static void InitWebDriver()
+        public static RemoteWebDriver InitWebDriver()
         {
             var driverType = "chrome";
             switch (driverType)
@@ -50,6 +43,7 @@ namespace SpecFlowWebDriver.Utils
                 default:
                     break;
             }
+            return driver;
         }
     }
 }

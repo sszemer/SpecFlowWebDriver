@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 
 namespace SpecFlowWebDriver.Utils
 {
-    static class ScreenShotHelper
+    public static class ScreenShotHelper
     {
         public static string CaptureScreen()
         {

@@ -4,7 +4,7 @@ using TechTalk.SpecFlow;
 
 namespace SpecFlowWebDriver.Utils
 {
-    static class PageSourceHelper
+    public static class PageSourceHelper
     {
         public static string GetPageSource()
         {

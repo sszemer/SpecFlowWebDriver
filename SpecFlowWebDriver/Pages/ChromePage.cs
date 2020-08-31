@@ -7,9 +7,7 @@ namespace SpecFlowWebDriver.Pages
 {
     public class ChromePage : CommonPage
     {
-        public ChromePage(RemoteWebDriver driver) : base(driver)
-        {
-        }
+        public ChromePage(RemoteWebDriver driver) : base(driver) { }
         public IWebElement SearchInput => driver.FindElement(By.Id("com.android.chrome:id/search_box_text"));
         public IWebElement AcceptTerms => driver.FindElement(By.Id("com.android.chrome:id/terms_accept"));
         public IWebElement NoThanks => driver.FindElement(By.Id("com.android.chrome:id/negative_button"));

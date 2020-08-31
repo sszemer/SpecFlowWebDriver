@@ -12,7 +12,7 @@ namespace SpecFlowWebDriver
         
         public WikiSearchSteps()
         {
-            wikiPage = PageFactory.WikiPage;
+            wikiPage = new WikiPage(DriverProvider.GetDriver());
         }
 
         [Given(@"Wiki page is open")]

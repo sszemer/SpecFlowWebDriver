@@ -65,6 +65,7 @@ namespace SpecFlowWebDriver.Utils
         [AfterScenario]
         public void AfterScenario()
         {
+            DriverProvider.CloseDriver();
         }
 
         [AfterFeature]
@@ -75,7 +76,6 @@ namespace SpecFlowWebDriver.Utils
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            DriverProvider.CloseDriver();
             Reporter.report.Flush();
         }
     }

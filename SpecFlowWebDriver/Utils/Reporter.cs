@@ -5,15 +5,15 @@ using System.IO;
 
 namespace SpecFlowWebDriver.Utils
 {
-    static class Reporter
+    public static class Reporter
     {
         private const string ReportTitle = "Test Report";
         private const string ReportName = "SpecFlow Tests";
         private const string KlovURL = "http://localhost";
         private const string MongoURL = "localhost";
         private const int mongoPort = 27017;
-        private static string configFileName = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Config\\extentReportConfig.xml";
-        private static string reportDir = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report";
+        private static readonly string configFileName = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Config\\extentReportConfig.xml";
+        private static readonly string reportDir = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report";
         private static ExtentHtmlReporter htmlReporter;
         private static ExtentKlovReporter klov;
         public static AventStack.ExtentReports.ExtentReports report;
