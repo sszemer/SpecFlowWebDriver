@@ -80,12 +80,14 @@ namespace SpecFlowWebDriver.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Lookup a currency rate")]
         [NUnit.Framework.CategoryAttribute("currencyLookup")]
+        [NUnit.Framework.CategoryAttribute("nodriver")]
         [NUnit.Framework.TestCaseAttribute("THB", "0.1300", null)]
         [NUnit.Framework.TestCaseAttribute("USD", "1", null)]
         public virtual void LookupACurrencyRate(string currencyCode, string expectedRate, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "currencyLookup"};
+                    "currencyLookup",
+                    "nodriver"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -95,7 +97,7 @@ namespace SpecFlowWebDriver.Features
             argumentsOfScenario.Add("currencyCode", currencyCode);
             argumentsOfScenario.Add("expectedRate", expectedRate);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lookup a currency rate", null, tagsOfScenario, argumentsOfScenario);
-#line 8
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -115,13 +117,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
+#line 10
  testRunner.Given("NBP rest api is online", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 10
+#line 11
  testRunner.When(string.Format("I lookup the currency for {0}", currencyCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 12
  testRunner.Then(string.Format("I want to know if the rate is below {0}", expectedRate), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

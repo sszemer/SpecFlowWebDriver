@@ -23,7 +23,7 @@ namespace SpecFlowWebDriver.Steps
         [Then(@"The google of (.*) is displayed")]
         public void ThenTheDefinitionOfIsDisplayed(string definition)
         {
-            Assert.AreEqual(chromePage.GoogleInput.Text, definition);
+            Assert.AreEqual(definition, chromePage.GoogleInput.Text);
         }
     }
 }

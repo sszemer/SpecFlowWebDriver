@@ -76,14 +76,16 @@ namespace SpecFlowWebDriver.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("google things")]
-        [NUnit.Framework.CategoryAttribute("Android")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
+        [NUnit.Framework.CategoryAttribute("android")]
+        [NUnit.Framework.CategoryAttribute("chrome")]
+        [NUnit.Framework.CategoryAttribute("mobile")]
         [NUnit.Framework.TestCaseAttribute("thing", null)]
         public virtual void GoogleThings(string val, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "Android",
-                    "Chrome"};
+                    "android",
+                    "chrome",
+                    "mobile"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -92,7 +94,7 @@ namespace SpecFlowWebDriver.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("val", val);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("google things", null, tagsOfScenario, argumentsOfScenario);
-#line 8
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -112,10 +114,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
+#line 10
  testRunner.When(string.Format("I google for a {0}", val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 10
+#line 11
  testRunner.Then(string.Format("The google of {0} is displayed", val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

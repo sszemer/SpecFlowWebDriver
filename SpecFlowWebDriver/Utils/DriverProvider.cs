@@ -14,26 +14,29 @@ namespace SpecFlowWebDriver.Utils
         private static readonly string hubURL = "http://localhost:4444/wd/hub";
         private static readonly string appiumUrl = "http://localhost:4723/wd/hub";
 
-        public static RemoteWebDriver GetDriver() => driver ?? InitWebDriver();
+        public static DriverType DriverType { get; set; }
+
+        public static RemoteWebDriver GetDriver() => driver ?? InitDriver();
 
         public static void CloseDriver()
         {
-            driver.Quit();
-            driver = null;
+            if (driver != null) { 
+                driver.Quit();
+                driver = null;
+            }
         }
 
-        public static RemoteWebDriver InitWebDriver()
+        public static RemoteWebDriver InitDriver()
         {
-            var driverType = "chrome";
-            switch (driverType)
+            switch (DriverType)
             {
-                case "chrome":
+                case DriverType.Web:
                     options = new ChromeOptions();
                     options.PlatformName = "windows";
                     driver = new RemoteWebDriver(new Uri(hubURL), options.ToCapabilities(), TimeSpan.FromSeconds(600));
                     driver.Manage().Window.Maximize();
                     break;
-                case "appium":
+                case DriverType.Mobile:
                     options = new AppiumOptions();
                     options.PlatformName = "Android";
                     options.AddAdditionalCapability("appPackage", "com.android.chrome");

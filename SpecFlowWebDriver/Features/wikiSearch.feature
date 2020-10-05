@@ -5,6 +5,7 @@ Feature: wikiSearch
 	I want to search for the definitions
 
 @searchDefinitions
+@web
 Scenario: Find definitions
 	Given Wiki page is open
 	When I search for a <definition>

@@ -10,8 +10,13 @@ namespace SpecFlowWebDriver
     [Binding, Parallelizable]
     public class NBPlookupSteps
     {
-        private readonly HttpClient client = new HttpClient();
+        private readonly HttpClient client;
         private Models.Table respBody;
+
+        public NBPlookupSteps()
+        {
+            client = new HttpClient();
+        }
 
         [Given(@"NBP rest api is online")]
         public async Task GivenNBPRestApiIsOnlineAsync()
@@ -25,13 +30,13 @@ namespace SpecFlowWebDriver
         {
             HttpResponseMessage response = await client.GetAsync(String.Format("http://api.nbp.pl/api/exchangerates/rates/a/{0}/last/1/?format=json", p0));
             respBody = JsonSerializer.Deserialize<Models.Table>(await response.Content.ReadAsStringAsync());
-            Assert.IsNotNull(respBody.Rates[0].Mid);
+            Assert.IsNotNull(respBody.rates[0].mid);
         }
         
         [Then(@"I want to know if the rate is below (.*)")]
         public void ThenIWantToKnowIfTheRateIsBelow(Double p0)
         {
-            Assert.Less(respBody.Rates[0].Mid, p0);
+            Assert.Less(respBody.rates[0].mid, p0);
         }
     }
 }

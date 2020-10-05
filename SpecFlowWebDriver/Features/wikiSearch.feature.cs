@@ -80,12 +80,14 @@ namespace SpecFlowWebDriver.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Find definitions")]
         [NUnit.Framework.CategoryAttribute("searchDefinitions")]
+        [NUnit.Framework.CategoryAttribute("web")]
         [NUnit.Framework.TestCaseAttribute("apple", null)]
         [NUnit.Framework.TestCaseAttribute("pear", null)]
         public virtual void FindDefinitions(string definition, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "searchDefinitions"};
+                    "searchDefinitions",
+                    "web"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -94,7 +96,7 @@ namespace SpecFlowWebDriver.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("definition", definition);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Find definitions", null, tagsOfScenario, argumentsOfScenario);
-#line 8
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -114,13 +116,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
+#line 10
  testRunner.Given("Wiki page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 10
+#line 11
  testRunner.When(string.Format("I search for a {0}", definition), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 11
+#line 12
  testRunner.Then(string.Format("The definition of {0} is displayed", definition), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

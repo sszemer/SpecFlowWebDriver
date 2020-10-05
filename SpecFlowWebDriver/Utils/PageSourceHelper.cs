@@ -8,7 +8,7 @@ namespace SpecFlowWebDriver.Utils
     {
         public static string GetPageSource()
         {
-            var pageSource = DriverProvider.GetDriver().PageSource;
+            var pageSource = DriverProvider.GetDriver()?.PageSource;
             var pageSourceFileName = $"{ScenarioStepContext.Current.StepInfo.Text}.html";
             var path = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{pageSourceFileName}";
             File.WriteAllText(path, pageSource);

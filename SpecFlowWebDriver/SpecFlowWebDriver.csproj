@@ -10,6 +10,8 @@
     <OutputType>Exe</OutputType>
 
     <StartupObject />
+
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Appium.WebDriver" Version="4.1.1" />
+    <PackageReference Include="Appium.WebDriver" Version="4.2.1" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
     <PackageReference Include="ExtentReports.Core" Version="1.0.3" />
     <PackageReference Include="nunit" Version="3.12.0" />
@@ -32,14 +34,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
-    <PackageReference Include="Refit" Version="5.1.67" />
+    <PackageReference Include="Refit" Version="5.2.1" />
     <PackageReference Include="ReportUnit" Version="1.2.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="85.0.4183.8700" />
-    <PackageReference Include="SpecFlow" Version="3.4.3" />
-    <PackageReference Include="SpecFlow.NUnit" Version="3.4.3" />
-    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.4.3" />
+    <PackageReference Include="SpecFlow" Version="3.4.14" />
+    <PackageReference Include="SpecFlow.NUnit" Version="3.4.14" />
+    <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.4.14" />
   </ItemGroup>
 
 </Project>
