@@ -63,7 +63,11 @@ namespace SpecFlowWebDriver.Utils
                     url = DriverProvider.GetDriver()?.Url;
                     pageSource = PageSourceHelper.GetPageSource();
                 }
-                catch (Exception) { }
+                catch (Exception)
+                {
+                    url = "Unable to get URL";
+                    pageSource = "Unable to get page source";
+                }
                 string[,] data = new string[,]
                 {
                     { "Exception", $"{scenarioContext.TestError.Message}"},
