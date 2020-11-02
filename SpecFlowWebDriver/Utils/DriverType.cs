@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace SpecFlowWebDriver.Utils
+﻿namespace SpecFlowWebDriver.Utils
 {
     public enum DriverType
     {
