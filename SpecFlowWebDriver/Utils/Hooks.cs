@@ -25,7 +25,7 @@ namespace SpecFlowWebDriver.Utils
         }
 
         [BeforeScenario]
-        public void BeforeScenario(ScenarioContext scenarioContext)
+        public static void BeforeScenario(ScenarioContext scenarioContext)
         {
             if (scenarioContext.ScenarioInfo.Tags.Contains("web")) DriverProvider.DriverType = DriverType.Web;
             if (scenarioContext.ScenarioInfo.Tags.Contains("mobile")) DriverProvider.DriverType = DriverType.Mobile;
@@ -35,7 +35,7 @@ namespace SpecFlowWebDriver.Utils
         }
 
         [BeforeStep]
-        public void BeforeStep(ScenarioContext scenarioContext)
+        public static void BeforeStep(ScenarioContext scenarioContext)
         {
             switch (scenarioContext.StepContext.StepInfo.StepDefinitionType)
             {
@@ -52,12 +52,12 @@ namespace SpecFlowWebDriver.Utils
         }
 
         [AfterStep]
-        public void AfterStep(ScenarioContext scenarioContext)
+        public static void AfterStep(ScenarioContext scenarioContext)
         {
             if (scenarioContext.TestError != null)
             {
-                string url = string.Empty;
-                string pageSource = string.Empty;
+                string url;
+                string pageSource;
                 try
                 {
                     url = DriverProvider.GetDriver()?.Url;
@@ -82,7 +82,7 @@ namespace SpecFlowWebDriver.Utils
         }
 
         [AfterScenario]
-        public void AfterScenario()
+        public static void AfterScenario()
         {
             DriverProvider.CloseDriver();
         }
