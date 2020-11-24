@@ -20,7 +20,8 @@ namespace SpecFlowWebDriver.Utils
 
         public static void CloseDriver()
         {
-            if (driver != null) { 
+            if (driver != null)
+            {
                 driver.Quit();
                 driver = null;
             }
@@ -42,6 +43,10 @@ namespace SpecFlowWebDriver.Utils
                     options.AddAdditionalCapability("appPackage", "com.android.chrome");
                     options.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
                     driver = new AndroidDriver<AppiumWebElement>(new Uri(appiumUrl), options, TimeSpan.FromSeconds(600));
+                    break;
+                case DriverType.Desktop:
+                    break;
+                case DriverType.None:
                     break;
                 default:
                     break;
