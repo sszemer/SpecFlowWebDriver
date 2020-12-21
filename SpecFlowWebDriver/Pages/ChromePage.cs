@@ -2,6 +2,8 @@
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace SpecFlowWebDriver.Pages
 {
@@ -18,6 +20,8 @@ namespace SpecFlowWebDriver.Pages
         {
             AcceptTerms.Click();
             NoThanks.Click();
+            var wait = new WebDriverWait(driver,TimeSpan.FromSeconds(30));
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("com.android.chrome:id/search_box_text")));
             SearchInput.Click();
             UrlBar.Clear();
             UrlBar.SendKeys(thing);

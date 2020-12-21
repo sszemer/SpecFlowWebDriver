@@ -9,8 +9,8 @@ namespace SpecFlowWebDriver.Utils
     {
         private const string ReportTitle = "Test Report";
         private const string ReportName = "SpecFlow Tests";
-        private const string KlovURL = "http://localhost";
-        private const string MongoURL = "localhost";
+        private const string KlovURL = "http://127.0.0.1";
+        private const string MongoURL = "127.0.0.1";
         private const int mongoPort = 27017;
         private static readonly string configFileName = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Config\\extentReportConfig.xml";
         private static readonly string reportDir = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report";

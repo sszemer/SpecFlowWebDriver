@@ -9,10 +9,11 @@ namespace SpecFlowWebDriver.Utils
 {
     public static class DriverProvider
     {
+        private static readonly string testHost = "127.0.0.1";
         private static RemoteWebDriver driver;
         private static DriverOptions options;
-        private static readonly string hubURL = "http://localhost:4444/wd/hub";
-        private static readonly string appiumUrl = "http://localhost:4723/wd/hub";
+        private static readonly string hubURL = $"http://{testHost}:4444/wd/hub";
+        private static readonly string appiumUrl = $"http://{testHost}:4723/wd/hub";
 
         public static DriverType DriverType { get; set; }
 
