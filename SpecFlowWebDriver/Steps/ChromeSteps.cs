@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium.Remote;
 using SpecFlowWebDriver.Pages;
-using SpecFlowWebDriver.Utils;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowWebDriver.Steps
@@ -9,10 +9,12 @@ namespace SpecFlowWebDriver.Steps
     public class ChromeSteps
     {
         private readonly ChromePage chromePage;
+        private readonly ScenarioContext scenarioContext;
 
-        public ChromeSteps()
+        public ChromeSteps(ScenarioContext scenarioContext)
         {
-            chromePage = new ChromePage(DriverProvider.GetDriver());
+            chromePage = new ChromePage(scenarioContext.Get<RemoteWebDriver>("driver"));
+            this.scenarioContext = scenarioContext;
         }
 
         [When(@"I google for a (.*)")]

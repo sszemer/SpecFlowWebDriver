@@ -1,7 +1,7 @@
 ﻿using TechTalk.SpecFlow;
 using NUnit.Framework;
 using SpecFlowWebDriver.Pages;
-using SpecFlowWebDriver.Utils;
+using OpenQA.Selenium.Remote;
 
 namespace SpecFlowWebDriver
 {
@@ -9,10 +9,12 @@ namespace SpecFlowWebDriver
     public class WikiSearchSteps
     {
         private readonly WikiPage wikiPage;
-        
-        public WikiSearchSteps()
+        private readonly ScenarioContext scenarioContext;
+
+        public WikiSearchSteps(ScenarioContext scenarioContext)
         {
-            wikiPage = new WikiPage(DriverProvider.GetDriver());
+            wikiPage = new WikiPage(scenarioContext.Get<RemoteWebDriver>("driver"));
+            this.scenarioContext = scenarioContext;
         }
 
         [Given(@"Wiki page is open")]

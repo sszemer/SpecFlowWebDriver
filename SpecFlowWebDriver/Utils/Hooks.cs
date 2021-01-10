@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.MarkupUtils;
+using OpenQA.Selenium.Remote;
 using System;
 using System.Linq;
 using TechTalk.SpecFlow;
@@ -32,6 +33,7 @@ namespace SpecFlowWebDriver.Utils
             if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) DriverProvider.DriverType = DriverType.Desktop;
             if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) DriverProvider.DriverType = DriverType.None;
             Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
+            scenarioContext.Set<RemoteWebDriver>(DriverProvider.InitDriver(), "driver");
         }
 
         [BeforeStep]
@@ -40,13 +42,13 @@ namespace SpecFlowWebDriver.Utils
             switch (scenarioContext.StepContext.StepInfo.StepDefinitionType)
             {
                 case StepDefinitionType.Given:
-                    Reporter.step = Reporter.scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
+                    Reporter.step = Reporter.scenario.CreateNode<Given>(scenarioContext.StepContext.StepInfo.Text);
                     break;
                 case StepDefinitionType.When:
-                    Reporter.step = Reporter.scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
+                    Reporter.step = Reporter.scenario.CreateNode<When>(scenarioContext.StepContext.StepInfo.Text);
                     break;
                 case StepDefinitionType.Then:
-                    Reporter.step = Reporter.scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
+                    Reporter.step = Reporter.scenario.CreateNode<Then>(scenarioContext.StepContext.StepInfo.Text);
                     break;
             }
         }
@@ -56,18 +58,8 @@ namespace SpecFlowWebDriver.Utils
         {
             if (scenarioContext.TestError != null)
             {
-                string url;
-                string pageSource;
-                try
-                {
-                    url = DriverProvider.GetDriver()?.Url;
-                    pageSource = PageSourceHelper.GetPageSource();
-                }
-                catch (Exception)
-                {
-                    url = "Unable to get URL";
-                    pageSource = "Unable to get page source";
-                }
+                string url = DriverProvider.GetUrl(scenarioContext);
+                string pageSource = DriverProvider.GetPageSource(scenarioContext);
                 string[,] data = new string[,]
                 {
                     { "Exception", $"{scenarioContext.TestError.Message}"},
@@ -78,13 +70,13 @@ namespace SpecFlowWebDriver.Utils
                 Reporter.step.Fail(MarkupHelper.CreateTable(data));
             }
             if(DriverProvider.DriverType is not DriverType.None)
-                Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(ScreenShotHelper.CaptureScreen()).Build());
+            Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(DriverProvider.GetScreenshot(scenarioContext)).Build());
         }
 
         [AfterScenario]
-        public static void AfterScenario()
+        public static void AfterScenario(ScenarioContext scenarioContext)
         {
-            DriverProvider.CloseDriver();
+            DriverProvider.CloseDriver(scenarioContext);
         }
 
         [AfterFeature]

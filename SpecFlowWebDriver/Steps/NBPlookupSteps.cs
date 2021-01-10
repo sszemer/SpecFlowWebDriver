@@ -12,9 +12,11 @@ namespace SpecFlowWebDriver
     {
         private readonly HttpClient client;
         private Models.Table respBody;
+        private readonly ScenarioContext scenarioContext;
 
-        public NBPlookupSteps()
+        public NBPlookupSteps(ScenarioContext scenarioContext)
         {
+            this.scenarioContext = scenarioContext;
             client = new HttpClient();
         }
 
