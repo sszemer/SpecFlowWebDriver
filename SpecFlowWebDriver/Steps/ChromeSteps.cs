@@ -25,7 +25,7 @@ namespace SpecFlowWebDriver.Steps
         [Then(@"The google of (.*) is displayed")]
         public void ThenTheDefinitionOfIsDisplayed(string definition)
         {
-            Assert.AreEqual(definition, chromePage.GoogleInput.Text);
+            Assert.IsTrue(chromePage.GoogleInput.Text.StartsWith($"google.com/search?q={definition}"));
         }
     }
 }

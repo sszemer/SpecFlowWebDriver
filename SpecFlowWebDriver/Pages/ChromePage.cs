@@ -21,7 +21,7 @@ namespace SpecFlowWebDriver.Pages
             AcceptTerms.Click();
             NoThanks.Click();
             var wait = new WebDriverWait(driver,TimeSpan.FromSeconds(30));
-            wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("com.android.chrome:id/search_box_text")));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("com.android.chrome:id/search_box_text")));
             SearchInput.Click();
             UrlBar.Clear();
             UrlBar.SendKeys(thing);
