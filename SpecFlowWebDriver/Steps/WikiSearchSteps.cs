@@ -35,5 +35,18 @@ namespace SpecFlowWebDriver
         {
             Assert.True(wikiPage.ArticleName.Text.ToLower().Contains(definition));
         }
+
+        [Then(@"'(.*)' cookie value is '(.*)'")]
+        public void ThenCookieValueIs(string p0, string p1)
+        {
+            Assert.AreEqual(scenarioContext.Get<RemoteWebDriver>("driver").Manage().Cookies.GetCookieNamed(p0).Value, p1);
+        }
+
+        [Then(@"'(.*)' localStorage item value is '(.*)'")]
+        public void ThenLocalStorageItemValueIs(string itemName, string expected)
+        {
+            var actual = scenarioContext.Get<RemoteWebDriver>("driver").ExecuteAsyncScript($"return window.localStorage.getItem('{itemName}');");
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
