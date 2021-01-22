@@ -6,7 +6,7 @@ Feature: wikiSearch
 
 @searchDefinitions
 @web
-Scenario: Find definitions
+Scenario Outline: Find definitions
 	Given Wiki page is open
 	When I search for a <definition>
 	Then The definition of <definition> is displayed
@@ -15,3 +15,15 @@ Scenario: Find definitions
 	| definition |
 	| apple      |
 	| pear       |
+
+@checkCookies
+@web
+Scenario: Check Cookies
+	Given Wiki page is open
+	Then 'WMF-Last-Access' cookie value is '22-Jan-2021'
+
+@checkLocalStorage
+@web
+Scenario: Check local storage
+	Given Wiki page is open
+	Then 'wmE-sS--sampleMultiplier' localStorage item value is '1'
