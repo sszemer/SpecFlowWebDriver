@@ -79,6 +79,7 @@ namespace SpecFlowWebDriver.Utils
             DriverProvider.CloseDriver(scenarioContext);
             Reporter.scenario.AssignCategory("All_tests");
             scenarioContext.ScenarioInfo.Tags.ToList().ForEach(tag => Reporter.scenario.AssignCategory(tag));
+            Reporter.report.Flush();
         }
 
         [AfterFeature]
