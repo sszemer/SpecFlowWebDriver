@@ -76,11 +76,11 @@ namespace SpecFlowWebDriver.Utils
         {
             string returnvalue;
             string fileExtension = DriverType is DriverType.Mobile ? "xml" : "html";
+            var pageSourceFileName = $"{RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text)}.{fileExtension}";
+            var path = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{pageSourceFileName}";
             try
             {
                 var pageSource = scenarioContext.Get<RemoteWebDriver>("driver")?.PageSource;
-                var pageSourceFileName = $"{scenarioContext.StepContext.StepInfo.Text}.{fileExtension}";
-                var path = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{pageSourceFileName}";
                 File.WriteAllText(path, pageSource);
                 returnvalue = $"<a href=\"{path}\">{pageSourceFileName}</a>";
             }
@@ -93,13 +93,13 @@ namespace SpecFlowWebDriver.Utils
 
         public static string GetScreenshot(ScenarioContext scenarioContext)
         {
-            string screenshotfilename;
+            string title = RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text);
+            string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
+            string filename = $"{Runname}.jpg";
+            string screenshotfilename = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{filename}";
             try
             {
                 Screenshot screenshot = ((ITakesScreenshot)scenarioContext.Get<RemoteWebDriver>("driver")).GetScreenshot();
-                string title = scenarioContext.StepContext.StepInfo.Text.Replace(" ", "");
-                string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
-                screenshotfilename = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{Runname}.jpg";
                 screenshot.SaveAsFile(screenshotfilename);
             }
             catch (Exception e)
@@ -107,6 +107,11 @@ namespace SpecFlowWebDriver.Utils
                 screenshotfilename = $"Unable to get screenshot: {e.Message}";
             }
             return screenshotfilename;
+        }
+
+        private static string RemoveCharactersUnsupportedByWindowsInFileNames(string input)
+        {
+            return input.Replace(" ", "").Replace("\"", "").Replace("\\", "").Replace("/", "").Replace(":", "").Replace("*", "").Replace("?", "").Replace("<", "").Replace(">", "").Replace("'", "");
         }
     }
 }
