@@ -1,22 +1,16 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using SpecFlowWebDriver.Utis;
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using TechTalk.SpecFlow;
 
 namespace SpecFlowWebDriver.Utils
 {
     public static class DriverProvider
     {
-        private static readonly string testHost = "127.0.0.1";
         private static RemoteWebDriver driver;
-        private static DriverOptions options;
-        private static readonly string hubURL = $"http://{testHost}:4444/wd/hub";
-        private static readonly string appiumUrl = $"http://{testHost}:4723/wd/hub";
 
         public static DriverType DriverType { get; set; }
 
@@ -33,20 +27,16 @@ namespace SpecFlowWebDriver.Utils
         //[MethodImpl(MethodImplOptions.Synchronized)]
         public static RemoteWebDriver InitDriver()
         {
+            EnvironmentHelper.EnvironmentType = EnvironmentType.LOCAL;
+
             switch (DriverType)
             {
                 case DriverType.Web:
-                    options = new ChromeOptions();
-                    options.PlatformName = "windows";
-                    driver = new RemoteWebDriver(new Uri(hubURL), options.ToCapabilities(), TimeSpan.FromSeconds(600));
+                    driver = new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.HubCapabilities, TimeSpan.FromSeconds(30));
                     driver.Manage().Window.Maximize();
                     break;
                 case DriverType.Mobile:
-                    options = new AppiumOptions();
-                    options.PlatformName = "Android";
-                    options.AddAdditionalCapability("appPackage", "com.android.chrome");
-                    options.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
-                    driver = new AndroidDriver<AppiumWebElement>(new Uri(appiumUrl), options, TimeSpan.FromSeconds(600));
+                    driver = new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.AppiumCapabilities, TimeSpan.FromSeconds(30));
                     break;
                 case DriverType.Desktop:
                     break;

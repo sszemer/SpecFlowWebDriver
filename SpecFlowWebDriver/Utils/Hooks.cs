@@ -32,8 +32,15 @@ namespace SpecFlowWebDriver.Utils
             if (scenarioContext.ScenarioInfo.Tags.Contains("mobile")) DriverProvider.DriverType = DriverType.Mobile;
             if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) DriverProvider.DriverType = DriverType.Desktop;
             if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) DriverProvider.DriverType = DriverType.None;
-            Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
-            scenarioContext.Set<RemoteWebDriver>(DriverProvider.InitDriver(), "driver");
+            try
+            {
+                scenarioContext.Set<RemoteWebDriver>(DriverProvider.InitDriver(), "driver");
+                Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
+            }
+            catch (Exception e)
+            {
+                Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title).Fail(e);
+            }
         }
 
         [BeforeStep]
@@ -69,8 +76,8 @@ namespace SpecFlowWebDriver.Utils
                 };
                 Reporter.step.Fail(MarkupHelper.CreateTable(data));
             }
-            if(DriverProvider.DriverType is not DriverType.None)
-            Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(DriverProvider.GetScreenshot(scenarioContext)).Build());
+            if (DriverProvider.DriverType is not DriverType.None)
+                Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(DriverProvider.GetScreenshot(scenarioContext)).Build());
         }
 
         [AfterScenario]
