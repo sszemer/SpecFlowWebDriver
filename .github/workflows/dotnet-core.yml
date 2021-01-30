@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:  
+    #continue-on-error: true
     environment: LAMBDA_TEST
     runs-on: windows-latest
     name: Build on push  
@@ -27,3 +28,12 @@ jobs:
       run: dotnet build --configuration Release --no-restore --verbosity minimal
     - name: Test
       run: dotnet test --no-restore --verbosity minimal
+    - name: Push results to github.io
+      uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+      with:
+        source_file: 'D:\a\SpecFlowWebDriver\SpecFlowWebDriver\Report\'
+        destination_repo: 'sszemer.github.io'
+        user_email: 'sszemer@gmail.com'
+        user_name: 'sszemer'
