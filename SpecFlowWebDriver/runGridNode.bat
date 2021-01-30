@@ -1,0 +1,1 @@
+java -Dwebdriver.chrome.driver="C:\Users\sszem\Downloads\chromedriver_win32\chromedriver.exe" -jar C:\Users\sszem\Downloads\selenium-server-standalone-3.141.59.jar -role node -nodeConfig DefaultNodeWebDriver.json
