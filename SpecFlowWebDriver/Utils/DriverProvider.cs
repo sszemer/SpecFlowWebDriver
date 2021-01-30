@@ -1,5 +1,4 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using SpecFlowWebDriver.Utis;
 using System;
@@ -27,8 +26,6 @@ namespace SpecFlowWebDriver.Utils
         //[MethodImpl(MethodImplOptions.Synchronized)]
         public static RemoteWebDriver InitDriver()
         {
-            EnvironmentHelper.EnvironmentType = EnvironmentType.LOCAL;
-
             switch (DriverType)
             {
                 case DriverType.Web:

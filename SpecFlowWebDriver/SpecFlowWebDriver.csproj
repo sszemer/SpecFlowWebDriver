@@ -22,20 +22,6 @@
     <SpecFlowObsoleteCodeBehindFiles Remove="Report\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Remove="C:\Users\sszem\.nuget\packages\microsoft.testplatform.testhost\16.8.3\build\netcoreapp2.1\x64\Microsoft.TestPlatform.PlatformAbstractions.dll" />
-    <Content Remove="C:\Users\sszem\.nuget\packages\microsoft.testplatform.testhost\16.8.3\build\netcoreapp2.1\x64\testhost.dll" />
-    <Content Remove="C:\Users\sszem\.nuget\packages\microsoft.testplatform.testhost\16.8.3\build\netcoreapp2.1\x64\testhost.exe" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="C:\Users\sszem\.nuget\packages\nunit3testadapter\3.17.0\build\netcoreapp2.1\nunit.engine.api.dll" />
-    <None Remove="C:\Users\sszem\.nuget\packages\nunit3testadapter\3.17.0\build\netcoreapp2.1\nunit.engine.core.dll" />
-    <None Remove="C:\Users\sszem\.nuget\packages\nunit3testadapter\3.17.0\build\netcoreapp2.1\nunit.engine.dll" />
-    <None Remove="C:\Users\sszem\.nuget\packages\nunit3testadapter\3.17.0\build\netcoreapp2.1\NUnit3.TestAdapter.dll" />
-    <None Remove="C:\Users\sszem\.nuget\packages\nunit3testadapter\3.17.0\build\netcoreapp2.1\NUnit3.TestAdapter.pdb" />
-    <None Remove="C:\Users\sszem\.nuget\packages\specflow.nunit\3.6.23\build\\..\lib\netstandard2.0\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="4.3.1" />
@@ -50,7 +36,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
     <PackageReference Include="Refit" Version="5.2.4" />
-    <PackageReference Include="ReportUnit" Version="1.2.1" />
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="88.0.4324.9600" />

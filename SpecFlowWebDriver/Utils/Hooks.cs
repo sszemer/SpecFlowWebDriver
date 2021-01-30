@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.MarkupUtils;
 using OpenQA.Selenium.Remote;
+using SpecFlowWebDriver.Utis;
 using System;
 using System.Linq;
 using TechTalk.SpecFlow;
@@ -16,6 +17,7 @@ namespace SpecFlowWebDriver.Utils
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
+            EnvironmentHelper.EnvironmentType = EnvironmentType.LAMBDA_TEST;
             Reporter.SetupExtentReports();
         }
 

@@ -1,5 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
+using SpecFlowWebDriver.Utis;
 using System;
 using System.IO;
 
@@ -24,7 +25,7 @@ namespace SpecFlowWebDriver.Utils
         public static void SetupExtentReports()
         {
             InitHtmlReporter(new ExtentHtmlReporter($"{reportDir}\\index.html"));
-            InitKlovReporter(new ExtentKlovReporter());
+            if(EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) InitKlovReporter(new ExtentKlovReporter());
             InitExtentReport(new AventStack.ExtentReports.ExtentReports());
             CleanReportDir(new DirectoryInfo(reportDir));
         }
