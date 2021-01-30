@@ -35,4 +35,4 @@ jobs:
         source-directory: 'D:\a\SpecFlowWebDriver\SpecFlowWebDriver\Report\'
         destination-github-username: 'sszemer'
         destination-repository-name: 'sszemer.github.io'
-        user-email: sszemer@gmail.com
+        user-email: 'sszemer@gmail.com'
