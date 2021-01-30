@@ -1,1 +1,1 @@
-appium  --nodeconfig c:\Users\sszem\OneDrive\Desktop\appiumNodeConfig.json
+appium  --nodeconfig appiumNodeConfig.json
