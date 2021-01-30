@@ -81,8 +81,6 @@ namespace SpecFlowWebDriver.Utis
                     result.SetCapability("console", true);
                     result.SetCapability("network", true);
                     result.SetCapability("visual", true);
-                    result.SetCapability("appPackage", "com.android.chrome");
-                    result.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
                     break;
             }
             return result;

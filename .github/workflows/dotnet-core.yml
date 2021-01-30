@@ -1,16 +1,13 @@
 name: .NET Core
-
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   build:  
-    #continue-on-error: true
     environment: LAMBDA_TEST
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: Build on push  
     env: 
       LAMBDA_TEST_USERNAME: ${{secrets.LAMBDA_TEST_USERNAME}}
@@ -26,14 +23,15 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore --verbosity minimal
-    - name: Test
+    - name: Test      
+      continue-on-error: true
       run: dotnet test --no-restore --verbosity minimal
-    - name: Push results to github.io
-      uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+    - name: check if report files are generated
+      run: ls /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        source_file: 'D:\a\SpecFlowWebDriver\SpecFlowWebDriver\Report\'
-        destination_repo: 'sszemer.github.io'
-        user_email: 'sszemer@gmail.com'
-        user_name: 'sszemer'
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: SpecFlowWebDriver/Report
+        user_name: sszemer
+        user_email: sszemer@gmail.com
