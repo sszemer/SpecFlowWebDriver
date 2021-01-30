@@ -17,9 +17,10 @@ namespace SpecFlowWebDriver.Utils
 
         public static void CloseDriver(ScenarioContext scenarioContext)
         {
-            if (scenarioContext.Get<RemoteWebDriver>("driver") != null)
+            scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver);
+            if (driver != null)
             {
-                scenarioContext.Get<RemoteWebDriver>("driver").Quit();
+                driver.Quit();
                 scenarioContext.Set<RemoteWebDriver>(null, "driver");
             }
         }
@@ -47,33 +48,39 @@ namespace SpecFlowWebDriver.Utils
 
         public static string GetUrl(ScenarioContext scenarioContext)
         {
-            string url;
-            try
+            string url = string.Empty;
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
             {
-                url = scenarioContext.Get<RemoteWebDriver>("driver")?.Url;
-            }
-            catch (Exception e)
-            {
-                url = $"Unable to get URL: {e.Message}";
+                try
+                {
+                    url = driver?.Url;
+                }
+                catch (Exception e)
+                {
+                    url = $"Unable to get URL: {e.Message}";
+                }
             }
             return url;
         }
 
         public static string GetPageSource(ScenarioContext scenarioContext)
         {
-            string returnvalue;
+            string returnvalue = string.Empty;
             string fileExtension = DriverType is DriverType.Mobile ? "xml" : "html";
             var pageSourceFileName = $"{RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text)}.{fileExtension}";
             var path = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{pageSourceFileName}";
-            try
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
             {
-                var pageSource = scenarioContext.Get<RemoteWebDriver>("driver")?.PageSource;
-                File.WriteAllText(path, pageSource);
-                returnvalue = $"<a href=\"{path}\">{pageSourceFileName}</a>";
-            }
-            catch (Exception e)
-            {
-                returnvalue = $"Unable to get page source: {e.Message}";
+                try
+                {
+                    var pageSource = driver?.PageSource;
+                    File.WriteAllText(path, pageSource);
+                    returnvalue = $"<a href=\"{path}\">{pageSourceFileName}</a>";
+                }
+                catch (Exception e)
+                {
+                    returnvalue = $"Unable to get page source: {e.Message}";
+                }
             }
             return returnvalue;
         }
@@ -84,14 +91,17 @@ namespace SpecFlowWebDriver.Utils
             string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
             string filename = $"{Runname}.jpg";
             string screenshotfilename = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{filename}";
-            try
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
             {
-                Screenshot screenshot = ((ITakesScreenshot)scenarioContext.Get<RemoteWebDriver>("driver")).GetScreenshot();
-                screenshot.SaveAsFile(screenshotfilename);
-            }
-            catch (Exception e)
-            {
-                screenshotfilename = $"Unable to get screenshot: {e.Message}";
+                try
+                {
+                    Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
+                    screenshot.SaveAsFile(screenshotfilename);
+                }
+                catch (Exception e)
+                {
+                    screenshotfilename = $"Unable to get screenshot: {e.Message}";
+                }
             }
             return screenshotfilename;
         }

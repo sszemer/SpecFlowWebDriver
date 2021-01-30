@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.MarkupUtils;
+using NUnit.Framework;
 using OpenQA.Selenium.Remote;
 using SpecFlowWebDriver.Utis;
 using System;
@@ -34,14 +35,17 @@ namespace SpecFlowWebDriver.Utils
             if (scenarioContext.ScenarioInfo.Tags.Contains("mobile")) DriverProvider.DriverType = DriverType.Mobile;
             if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) DriverProvider.DriverType = DriverType.Desktop;
             if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) DriverProvider.DriverType = DriverType.None;
+            Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
             try
             {
                 scenarioContext.Set<RemoteWebDriver>(DriverProvider.InitDriver(), "driver");
-                Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
             }
             catch (Exception e)
             {
-                Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title).Fail(e);
+                Console.WriteLine($"scenario failed: {e.Message}");
+                Console.WriteLine($"scenario failed: {e.StackTrace}");
+                Reporter.scenario.CreateNode<Given>($"scenario failed: {e.Message}").Fail("").Log(Status.Error, e);
+                Assert.Ignore($"scenario failed: {e.Message}");
             }
         }
 
