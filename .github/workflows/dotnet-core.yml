@@ -31,7 +31,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
-        source-directory: '/home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver'
+        source-directory: '/home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Report'
         destination-repository-name: 'sszemer.github.io'
         user-email: 'sszemer@gmail.com'
         destination-github-username: 'sszemer'
