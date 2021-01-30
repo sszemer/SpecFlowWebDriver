@@ -2,18 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-
     <IsPackable>false</IsPackable>
-
     <ApplicationIcon />
-
     <OutputType>Exe</OutputType>
-
     <StartupObject />
-
     <LangVersion>preview</LangVersion>
-</PropertyGroup>
-
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Appium.WebDriver" Version="4.3.1" />
@@ -35,7 +29,6 @@
     <PackageReference Include="SpecFlow.NUnit" Version="3.6.23" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.6.23" />
   </ItemGroup>
-
 
   <ItemGroup>
     <Folder Include="Report\" />
