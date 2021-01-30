@@ -29,7 +29,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity minimal
     - name: Push results to github.io
-      uses: dmnemec/copy_file_to_another_repo_action@v1.0.4
+      uses: cpina/github-action-push-to-another-repository@master
       env:
         API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
       with:
