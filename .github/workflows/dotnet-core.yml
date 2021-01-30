@@ -15,7 +15,6 @@ jobs:
       LAMBDA_TEST_ACCESS_KEY: ${{ secrets.LAMBDA_TEST.LAMBDA_TEST_ACCESS_KEY }}  
       DOTNET_CLI_TELEMETRY_OPTOUT : "true"
     steps:
-    - shell: pwsh
     - run: echo("$env.LAMBDA_TEST_USERNAME")
     - run: echo("$env.LAMBDA_TEST_ACCESS_KEY")
     - run: echo("$env.DOTNET_CLI_TELEMETRY_OPTOUT")
