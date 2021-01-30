@@ -26,12 +26,8 @@ jobs:
     - name: Test      
       continue-on-error: true
       run: dotnet test --no-restore --verbosity minimal
-    - name: Push results to github.io
-      uses: cpina/github-action-push-to-another-repository@master
-      env:
-        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        source-directory: './readme.md'
-        destination-repository-name: 'sszemer.github.io'
-        user-email: 'sszemer@gmail.com'
-        destination-github-username: 'sszemer'
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        external_repository: sszemer/sszemer.github.io
