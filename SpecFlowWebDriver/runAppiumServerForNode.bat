@@ -1,1 +1,0 @@
-appium  --nodeconfig appiumNodeConfig.json
