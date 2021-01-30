@@ -7,11 +7,12 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:  
     runs-on: windows-latest
-    environment: LAMBDA_TEST
+    name: Build on push    
+    env: ${{LAMBDA_TEST}}
     steps:
+    - run:  echo "${{ env.LAMBDA_TEST_USERNAME }}" 
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
@@ -20,6 +21,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore --verbosity minimal
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity minimal
