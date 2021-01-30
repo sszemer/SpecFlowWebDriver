@@ -7,10 +7,14 @@ on:
     branches: [ master ]
 
 jobs:
-
   build:  
-    runs-on: windows-latest
     environment: LAMBDA_TEST
+    runs-on: windows-latest
+    name: Build on push  
+    env: 
+      LAMBDA_TEST_USERNAME: ${{secrets.LAMBDA_TEST_USERNAME}}
+      LAMBDA_TEST_ACCESS_KEY: ${{secrets.LAMBDA_TEST_ACCESS_KEY}}
+      DOTNET_CLI_TELEMETRY_OPTOUT : ${{secrets.DOTNET_CLI_TELEMETRY_OPTOUT}}
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -20,6 +24,6 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore --verbosity minimal
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --no-restore --verbosity minimal
