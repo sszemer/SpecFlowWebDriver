@@ -339,5 +339,7 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-#report
-Report
+#report files
+SpecFlowWebDriver/Report/*.jpg
+SpecFlowWebDriver/Report/*.html
+SpecFlowWebDriver/Report/*.xml
