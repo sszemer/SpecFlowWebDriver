@@ -27,7 +27,7 @@ jobs:
       continue-on-error: true
       run: dotnet test --no-restore --verbosity minimal
     - name: check if report files are generated
-      run: ls /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/
+      run: ls /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Report
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
