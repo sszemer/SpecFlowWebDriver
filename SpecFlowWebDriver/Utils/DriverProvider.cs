@@ -13,7 +13,7 @@ namespace SpecFlowWebDriver.Utils
 
         public static DriverType DriverType { get; set; }
 
-        public static RemoteWebDriver GetDriver() => driver ?? InitDriver();
+        public static RemoteWebDriver Driver => driver ?? InitDriver();
 
         public static void CloseDriver(ScenarioContext scenarioContext)
         {
@@ -68,7 +68,7 @@ namespace SpecFlowWebDriver.Utils
             string returnvalue = string.Empty;
             string fileExtension = DriverType is DriverType.Mobile ? "xml" : "html";
             var pageSourceFileName = $"{RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text)}.{fileExtension}";
-            var path = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{pageSourceFileName}";
+            var path = $"{Path.Combine(Reporter.ReportDir, pageSourceFileName)}";
             if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
             {
                 try
@@ -90,7 +90,7 @@ namespace SpecFlowWebDriver.Utils
             string title = RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text);
             string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
             string filename = $"{Runname}.jpg";
-            string screenshotfilename = $"{AppDomain.CurrentDomain.BaseDirectory}..\\..\\..\\Report\\{filename}";
+            string screenshotfilename = $"{Path.Combine(Reporter.ReportDir, filename)}";
             if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
             {
                 try

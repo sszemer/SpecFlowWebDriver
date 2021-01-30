@@ -25,7 +25,7 @@ namespace SpecFlowWebDriver.Utils
         [BeforeFeature]
         public static void BeforeFeature(FeatureContext featureContext)
         {
-            Reporter.feature = Reporter.report.CreateTest<Feature>(featureContext.FeatureInfo.Title, featureContext.FeatureInfo.Description);
+            Reporter.Feature = Reporter.Report.CreateTest<Feature>(featureContext.FeatureInfo.Title, featureContext.FeatureInfo.Description);
         }
 
         [BeforeScenario]
@@ -35,7 +35,7 @@ namespace SpecFlowWebDriver.Utils
             if (scenarioContext.ScenarioInfo.Tags.Contains("mobile")) DriverProvider.DriverType = DriverType.Mobile;
             if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) DriverProvider.DriverType = DriverType.Desktop;
             if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) DriverProvider.DriverType = DriverType.None;
-            Reporter.scenario = Reporter.feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
+            Reporter.Scenario = Reporter.Feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
             try
             {
                 scenarioContext.Set<RemoteWebDriver>(DriverProvider.InitDriver(), "driver");
@@ -44,7 +44,7 @@ namespace SpecFlowWebDriver.Utils
             {
                 Console.WriteLine($"scenario failed: {e.Message}");
                 Console.WriteLine($"scenario failed: {e.StackTrace}");
-                Reporter.scenario.CreateNode<Given>($"scenario failed: {e.Message}").Fail("").Log(Status.Error, e);
+                Reporter.Scenario.CreateNode<Given>($"scenario failed: {e.Message}").Fail("").Log(Status.Error, e);
                 Assert.Ignore($"scenario failed: {e.Message}");
             }
         }
@@ -55,13 +55,13 @@ namespace SpecFlowWebDriver.Utils
             switch (scenarioContext.StepContext.StepInfo.StepDefinitionType)
             {
                 case StepDefinitionType.Given:
-                    Reporter.step = Reporter.scenario.CreateNode<Given>(scenarioContext.StepContext.StepInfo.Text);
+                    Reporter.Step = Reporter.Scenario.CreateNode<Given>(scenarioContext.StepContext.StepInfo.Text);
                     break;
                 case StepDefinitionType.When:
-                    Reporter.step = Reporter.scenario.CreateNode<When>(scenarioContext.StepContext.StepInfo.Text);
+                    Reporter.Step = Reporter.Scenario.CreateNode<When>(scenarioContext.StepContext.StepInfo.Text);
                     break;
                 case StepDefinitionType.Then:
-                    Reporter.step = Reporter.scenario.CreateNode<Then>(scenarioContext.StepContext.StepInfo.Text);
+                    Reporter.Step = Reporter.Scenario.CreateNode<Then>(scenarioContext.StepContext.StepInfo.Text);
                     break;
             }
         }
@@ -80,19 +80,19 @@ namespace SpecFlowWebDriver.Utils
                     { "URL", $"<a href=\"{url}\">{url}</a>"},
                     { "PageSource", pageSource}
                 };
-                Reporter.step.Fail(MarkupHelper.CreateTable(data));
+                Reporter.Step.Fail(MarkupHelper.CreateTable(data));
             }
             if (DriverProvider.DriverType is not DriverType.None)
-                Reporter.step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(DriverProvider.GetScreenshot(scenarioContext)).Build());
+                Reporter.Step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(DriverProvider.GetScreenshot(scenarioContext)).Build());
         }
 
         [AfterScenario]
         public static void AfterScenario(ScenarioContext scenarioContext)
         {
             DriverProvider.CloseDriver(scenarioContext);
-            Reporter.scenario.AssignCategory("All_tests");
-            scenarioContext.ScenarioInfo.Tags.ToList().ForEach(tag => Reporter.scenario.AssignCategory(tag));
-            Reporter.report.Flush();
+            Reporter.Scenario.AssignCategory("All_tests");
+            scenarioContext.ScenarioInfo.Tags.ToList().ForEach(tag => Reporter.Scenario.AssignCategory(tag));
+            Reporter.Report.Flush();
         }
 
         [AfterFeature]
@@ -103,7 +103,7 @@ namespace SpecFlowWebDriver.Utils
         [AfterTestRun]
         public static void AfterTestRun()
         {
-            Reporter.report.Flush();
+            Reporter.Report.Flush();
         }
     }
 }
