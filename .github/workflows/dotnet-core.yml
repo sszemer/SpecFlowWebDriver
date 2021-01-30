@@ -7,7 +7,7 @@ on:
 jobs:
   build:  
     environment: LAMBDA_TEST
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: Build on push  
     env: 
       LAMBDA_TEST_USERNAME: ${{secrets.LAMBDA_TEST_USERNAME}}
