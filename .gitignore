@@ -340,3 +340,6 @@ ASALocalRun/
 healthchecksdb
 
 #report files
+SpecFlowWebDriver/Report/*.jpg
+SpecFlowWebDriver/Report/*.html
+SpecFlowWebDriver/Report/*.xml
