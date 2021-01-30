@@ -10,7 +10,6 @@ jobs:
   build:  
     runs-on: windows-latest
     name: Build on push    
-    env: ${{LAMBDA_TEST}}
     steps:
     - run:  echo "${{ env.LAMBDA_TEST_USERNAME }}" 
     - uses: actions/checkout@v2
