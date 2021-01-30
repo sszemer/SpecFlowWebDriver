@@ -30,6 +30,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.PERSONAL_TOKEN }}
-        publish_dir: .SpecFlowWebDriver/Report
-        user_name: 'sszemer'
-        user_email: 'sszemer@gmail.com'
+        publish_dir: SpecFlowWebDriver/Report
+        user_name: sszemer
+        user_email: sszemer@gmail.com
