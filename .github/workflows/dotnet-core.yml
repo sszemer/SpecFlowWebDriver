@@ -15,9 +15,9 @@ jobs:
       LAMBDA_TEST_ACCESS_KEY: ${{ secrets.LAMBDA_TEST_ACCESS_KEY }}  
       DOTNET_CLI_TELEMETRY_OPTOUT : "true"
     steps:
-    - run: echo("$env.LAMBDA_TEST_USERNAME")
-    - run: echo("$env.LAMBDA_TEST_ACCESS_KEY")
-    - run: echo("$env.DOTNET_CLI_TELEMETRY_OPTOUT")
+    - run: echo("$secrets.LAMBDA_TEST_USERNAME")
+    - run: echo("$secrets.LAMBDA_TEST_ACCESS_KEY")
+    - run: echo("$secrets.DOTNET_CLI_TELEMETRY_OPTOUT")
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
