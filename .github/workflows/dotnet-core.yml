@@ -11,14 +11,7 @@ jobs:
     environment: LAMBDA_TEST
     runs-on: windows-latest
     name: Build on push  
-    env: 
-      LAMBDA_TEST_USERNAME: ${{secrets.LAMBDA_TEST_USERNAME}}
-      LAMBDA_TEST_ACCESS_KEY: ${{secrets.LAMBDA_TEST_ACCESS_KEY}}
-      DOTNET_CLI_TELEMETRY_OPTOUT : ${{secrets.DOTNET_CLI_TELEMETRY_OPTOUT}}
     steps:
-    - run: echo("$env.LAMBDA_TEST_USERNAME")
-    - run: echo("$env.LAMBDA_TEST_ACCESS_KEY")
-    - run: echo("$env.DOTNET_CLI_TELEMETRY_OPTOUT")
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
