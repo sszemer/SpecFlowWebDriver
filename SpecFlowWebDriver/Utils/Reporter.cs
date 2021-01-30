@@ -60,7 +60,7 @@ namespace SpecFlowWebDriver.Utils
             if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) Report.AttachReporter(klov);
             Report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
             Report.AddSystemInfo("ENV", EnvironmentHelper.EnvironmentType.ToString());
-            //report.AddSystemInfo("Browser", $"{DriverProvider.GetDriver()?.Capabilities["browserName"]} {DriverProvider.GetDriver()?.Capabilities["browserVersion"]}");
+            //if(DriverProvider.DriverType is DriverType.Web)report.AddSystemInfo("Browser", $"{DriverProvider.Driver?.Capabilities["browserName"]} {DriverProvider.Driver?.Capabilities["browserVersion"]}");
             Report.AnalysisStrategy = AnalysisStrategy.BDD;
         }
     }

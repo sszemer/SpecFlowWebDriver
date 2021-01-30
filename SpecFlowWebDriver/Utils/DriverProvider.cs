@@ -65,7 +65,7 @@ namespace SpecFlowWebDriver.Utils
 
         public static string GetPageSource(ScenarioContext scenarioContext)
         {
-            string returnvalue = string.Empty;
+            string returnValue = string.Empty;
             string fileExtension = DriverType is DriverType.Mobile ? "xml" : "html";
             var pageSourceFileName = $"{RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text)}.{fileExtension}";
             var path = $"{Path.Combine(Reporter.ReportDir, pageSourceFileName)}";
@@ -75,14 +75,14 @@ namespace SpecFlowWebDriver.Utils
                 {
                     var pageSource = driver?.PageSource;
                     File.WriteAllText(path, pageSource);
-                    returnvalue = $"<a href=\"{path}\">{pageSourceFileName}</a>";
+                    returnValue = $"<a href=\"{pageSourceFileName}\">{pageSourceFileName}</a>";
                 }
                 catch (Exception e)
                 {
-                    returnvalue = $"Unable to get page source: {e.Message}";
+                    returnValue = $"Unable to get page source: {e.Message}";
                 }
             }
-            return returnvalue;
+            return returnValue;
         }
 
         public static string GetScreenshot(ScenarioContext scenarioContext)
@@ -103,7 +103,7 @@ namespace SpecFlowWebDriver.Utils
                     screenshotfilename = $"Unable to get screenshot: {e.Message}";
                 }
             }
-            return screenshotfilename;
+            return filename;
         }
 
         private static string RemoveCharactersUnsupportedByWindowsInFileNames(string input)
