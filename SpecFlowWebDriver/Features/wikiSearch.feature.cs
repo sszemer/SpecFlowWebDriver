@@ -131,16 +131,18 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check Cookies")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("checkCookies")]
         [NUnit.Framework.CategoryAttribute("web")]
         public virtual void CheckCookies()
         {
             string[] tagsOfScenario = new string[] {
+                    "ignore",
                     "checkCookies",
                     "web"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check Cookies", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 21
+#line 22
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -160,10 +162,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 22
+#line 23
  testRunner.Given("Wiki page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 23
+#line 24
  testRunner.Then("\'WMF-Last-Access\' cookie value is \'22-Jan-2021\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -172,16 +174,18 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Check local storage")]
+        [NUnit.Framework.CategoryAttribute("ignore")]
         [NUnit.Framework.CategoryAttribute("checkLocalStorage")]
         [NUnit.Framework.CategoryAttribute("web")]
         public virtual void CheckLocalStorage()
         {
             string[] tagsOfScenario = new string[] {
+                    "ignore",
                     "checkLocalStorage",
                     "web"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Check local storage", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 27
+#line 29
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -201,10 +205,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 28
+#line 30
  testRunner.Given("Wiki page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 29
+#line 31
  testRunner.Then("\'wmE-sS--sampleMultiplier\' localStorage item value is \'1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
