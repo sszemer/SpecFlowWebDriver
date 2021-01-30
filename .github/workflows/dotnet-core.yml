@@ -27,3 +27,12 @@ jobs:
       run: dotnet build --configuration Release --no-restore --verbosity minimal
     - name: Test
       run: dotnet test --no-restore --verbosity minimal
+    - name: Pushes to another repository
+      uses: cpina/github-action-push-to-another-repository@master
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.PERSONAL_TOKEN }}
+      with:
+        source-directory: 'output'
+        destination-github-username: 'sszemer'
+        destination-repository-name: 'sszemer.github.io'
+        user-email: sszemer@gmail.com
