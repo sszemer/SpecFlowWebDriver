@@ -53,8 +53,9 @@ namespace SpecFlowWebDriver.Utils
         {
             report = extentReports;
             report.AttachReporter(htmlReporter);
-            report.AttachReporter(klov);
-            report.AddSystemInfo("OS", System.Environment.OSVersion.ToString()); 
+            if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) report.AttachReporter(klov);
+            report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
+            report.AddSystemInfo("ENV", EnvironmentHelper.EnvironmentType.ToString());
             //report.AddSystemInfo("Browser", $"{DriverProvider.GetDriver()?.Capabilities["browserName"]} {DriverProvider.GetDriver()?.Capabilities["browserVersion"]}");
             report.AnalysisStrategy = AnalysisStrategy.BDD;
         }
