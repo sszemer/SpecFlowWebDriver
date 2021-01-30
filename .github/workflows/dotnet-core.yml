@@ -9,9 +9,11 @@ on:
 jobs:
   build:  
     runs-on: windows-latest
-    name: Build on push    
+    name: Build on push  
+    env: 
+      LAMBDA_TEST_USERNAME: ${{ secrets.LAMBDA_TEST_USERNAME }}  
+      LAMBDA_TEST_ACCESS_KEY: ${{ secrets.LAMBDA_TEST_ACCESS_KEY }}  
     steps:
-    - run:  echo "${{ env.LAMBDA_TEST_USERNAME }}" 
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
