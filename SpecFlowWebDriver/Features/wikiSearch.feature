@@ -16,12 +16,14 @@ Scenario Outline: Find definitions
 	| apple      |
 	| pear       |
 
+@ignore
 @checkCookies
 @web
 Scenario: Check Cookies
 	Given Wiki page is open
 	Then 'WMF-Last-Access' cookie value is '22-Jan-2021'
 
+@ignore
 @checkLocalStorage
 @web
 Scenario: Check local storage
