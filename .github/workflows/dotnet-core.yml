@@ -32,7 +32,7 @@ jobs:
     name: run tests
     steps:
     - run: dotnet test --no-restore --verbosity minimal
-  Publish results:    
+  Publish:    
     runs-on: ubuntu-latest
     name: Publish results to github.io 
     steps:
