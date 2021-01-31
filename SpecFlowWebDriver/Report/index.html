@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">31.01.2021 16:40:58</span>
+                    <span class="badge badge-primary">31.01.2021 16:55:32</span>
                 </a>
             </li>
         </ul>
@@ -76,15 +76,7 @@
           <span class="title">Tags</span>
         </a>
       </li>
-            <li class="nav-item dropdown" onclick="toggleView('exception-view')">
-        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
-          <span class="icon-holder">
-            <i class="fa fa-bug"></i>
-          </span>
-          <span class="title">Exception</span>
-        </a>
-      </li> 
-      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
         <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
           <span class="icon-holder">
             <i class="fa fa-bar-chart"></i>
@@ -132,15 +124,8 @@
 					</a>
 					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
 							<a class="dropdown-item" href="#">All_tests</a>
-							<a class="dropdown-item" href="#">android</a>
-							<a class="dropdown-item" href="#">chrome</a>
-							<a class="dropdown-item" href="#">mobile</a>
-							<a class="dropdown-item" href="#">currencyLookup</a>
-							<a class="dropdown-item" href="#">nodriver</a>
-							<a class="dropdown-item" href="#">checkCookies</a>
-							<a class="dropdown-item" href="#">web</a>
 							<a class="dropdown-item" href="#">checkLocalStorage</a>
-							<a class="dropdown-item" href="#">searchDefinitions</a>
+							<a class="dropdown-item" href="#">web</a>
 					</ul>
                 </li>
 				            </ul>
@@ -153,164 +138,9 @@
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
-								<p class="name">Android Chrome</p> 
-								<p class="duration text-sm">0h:0m:0s+066ms</p> 
-								<span class="datetime">16:40:58 PM</span>
-							</div>
-						</div>
-						<div class="test-contents d-none">
-							<div class="detail-head">
-								<div class="p-v-10 d-inline-block">	
-									<div class="info">
-										<h5 class="test-status text-fail">Android Chrome</h5>
-										<span class='badge badge-success'>31.01.2021 16:40:58</span>
-										<span class='badge badge-danger'>31.01.2021 16:40:58</span>
-										<span class='badge badge-default'>0h:0m:0s+066ms</span>
-									</div>
-																		<div class="m-t-10 m-l-5">
-											In order to know what things are
-	As an idiot
-	I want to google for the definitions
-									</div>
-								</div>
-							</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: google things</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
-                                </span>
-                                <span>Given scenario failed: Object reference not set to an instance of an object.</span>
-                            </div>
-			<div class="details"></div>
-			<textarea disabled class="code-block">   at OpenQA.Selenium.Remote.RemoteWebDriver.GetLegacyCapabilitiesDictionary(ICapabilities legacyCapabilities)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
-   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
-   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(Uri remoteAddress, ICapabilities desiredCapabilities, TimeSpan commandTimeout)
-   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Utils\DriverProvider.cs:line 28
-   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Utils\Hooks.cs:line 40</textarea>
-                    </div>
-				</div>
-	</div>
-</div>
-						</div>
-					</li>
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="4"> 
-						<div class="status-avatar pass-bg">
-							<i class="fa fa-check text-white"></i>
-						</div>
-						<div class="open-test">
-							<div class="test-detail"> 
-								<p class="name">NBPlookup</p> 
-								<p class="duration text-sm">0h:0m:0s+229ms</p> 
-								<span class="datetime">16:41:03 PM</span>
-							</div>
-						</div>
-						<div class="test-contents d-none">
-							<div class="detail-head">
-								<div class="p-v-10 d-inline-block">	
-									<div class="info">
-										<h5 class="test-status text-pass">NBPlookup</h5>
-										<span class='badge badge-success'>31.01.2021 16:41:03</span>
-										<span class='badge badge-danger'>31.01.2021 16:41:03</span>
-										<span class='badge badge-default'>0h:0m:0s+229ms</span>
-									</div>
-																		<div class="m-t-10 m-l-5">
-											In order to go on vacation
-	As a tourist
-	I want to check if i can afford to buy local currency
-									</div>
-								</div>
-							</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: Lookup a currency rate</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Given NBP rest api is online</span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>When I lookup the currency for THB</span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then I want to know if the rate is below 0.13</span>
-                            </div>
-                    </div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: Lookup a currency rate</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Given NBP rest api is online</span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>When I lookup the currency for USD</span>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then I want to know if the rate is below 4</span>
-                            </div>
-                    </div>
-				</div>
-	</div>
-</div>
-						</div>
-					</li>
-					<li class="test-item" status="fail" author="" device="" tag="" test-id="13"> 
-						<div class="status-avatar fail-bg">
-							<i class="fa fa-times text-white"></i>
-						</div>
-						<div class="open-test">
-							<div class="test-detail"> 
 								<p class="name">wikiSearch</p> 
-								<p class="duration text-sm">0h:0m:46s+360ms</p> 
-								<span class="datetime">16:41:03 PM</span>
+								<p class="duration text-sm">0h:0m:10s+502ms</p> 
+								<span class="datetime">16:55:32 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -318,9 +148,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-fail">wikiSearch</h5>
-										<span class='badge badge-success'>31.01.2021 16:41:03</span>
-										<span class='badge badge-danger'>31.01.2021 16:41:49</span>
-										<span class='badge badge-default'>0h:0m:46s+360ms</span>
+										<span class='badge badge-success'>31.01.2021 16:55:32</span>
+										<span class='badge badge-danger'>31.01.2021 16:55:43</span>
+										<span class='badge badge-default'>0h:0m:10s+502ms</span>
 									</div>
 																		<div class="m-t-10 m-l-5">
 											In order to know what things are
@@ -331,48 +161,6 @@
 							</div>
 
 <div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: Check Cookies</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Given Wiki page is open</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-01-31-16_41_10.jpg' src='Wikipageisopen_2021-01-31-16_41_10.jpg' data-src='Wikipageisopen_2021-01-31-16_41_10.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
-                                </span>
-                                <span>Then 'WMF-Last-Access' cookie value is '22-Jan-2021'</span>
-                            </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>  String lengths are both 11. Strings differ at index 0.
-  Expected: "31-Jan-2021"
-  But was:  "22-Jan-2021"
-  -----------^
-</td></tr><tr><td>StackTrace</td><td>   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 395
-   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 383
-   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 229
-   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual) in D:\a\1\s\src\NUnitFramework\framework\Assert.Equality.cs:line 117
-   at SpecFlowWebDriver.WikiSearchSteps.ThenCookieValueIs(String cookieName, String expectedValue) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Steps\WikiSearchSteps.cs:line 42
-   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan& duration)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)</td></tr><tr><td>URL</td><td><a href="https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna">https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna</a></td></tr><tr><td>PageSource</td><td><a href="WMF-Last-Accesscookievalueis22-Jan-2021.html">WMF-Last-Accesscookievalueis22-Jan-2021.html</a></td></tr></table></div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='WMF-Last-Accesscookievalueis22-Jan-2021_2021-01-31-16_41_12.jpg' src='WMF-Last-Accesscookievalueis22-Jan-2021_2021-01-31-16_41_12.jpg' data-src='WMF-Last-Accesscookievalueis22-Jan-2021_2021-01-31-16_41_12.jpg'></span>
-                    </div>
-				</div>
-	</div>
 	<div class="card">
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
@@ -391,95 +179,25 @@
                                 <span>Given Wiki page is open</span>
                             </div>
 			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-01-31-16_41_21.jpg' src='Wikipageisopen_2021-01-31-16_41_21.jpg' data-src='Wikipageisopen_2021-01-31-16_41_21.jpg'></span>
+			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-01-31-16_55_39.jpg' src='Wikipageisopen_2021-01-31-16_55_39.jpg' data-src='Wikipageisopen_2021-01-31-16_55_39.jpg'></span>
                             <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
                                 <span>Then 'wmE-sS--sampleMultiplier' localStorage item value is '1'</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>Object reference not set to an instance of an object.</td></tr><tr><td>StackTrace</td><td>   at SpecFlowWebDriver.WikiSearchSteps.ThenLocalStorageItemValueIs(String itemName, String expected) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Steps\WikiSearchSteps.cs:line 48
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>  Expected: "1"
+  But was:  null
+</td></tr><tr><td>StackTrace</td><td>   at NUnit.Framework.Assert.ReportFailure(String message) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 395
+   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.cs:line 383
+   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args) in D:\a\1\s\src\NUnitFramework\framework\Assert.That.cs:line 229
+   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual) in D:\a\1\s\src\NUnitFramework\framework\Assert.Equality.cs:line 117
+   at SpecFlowWebDriver.WikiSearchSteps.ThenLocalStorageItemValueIs(String itemName, String expected) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Steps\WikiSearchSteps.cs:line 49
    at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)
    at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan& duration)
    at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)</td></tr><tr><td>URL</td><td><a href="https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna">https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna</a></td></tr><tr><td>PageSource</td><td><a href="wmE-sS--sampleMultiplierlocalStorageitemvalueis1.html">wmE-sS--sampleMultiplierlocalStorageitemvalueis1.html</a></td></tr></table></div>
 			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-01-31-16_41_24.jpg' src='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-01-31-16_41_24.jpg' data-src='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-01-31-16_41_24.jpg'></span>
-                    </div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: Find definitions</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Given Wiki page is open</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-01-31-16_41_32.jpg' src='Wikipageisopen_2021-01-31-16_41_32.jpg' data-src='Wikipageisopen_2021-01-31-16_41_32.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>When I search for a apple</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Isearchforaapple_2021-01-31-16_41_35.jpg' src='Isearchforaapple_2021-01-31-16_41_35.jpg' data-src='Isearchforaapple_2021-01-31-16_41_35.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then The definition of apple is displayed</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Thedefinitionofappleisdisplayed_2021-01-31-16_41_36.jpg' src='Thedefinitionofappleisdisplayed_2021-01-31-16_41_36.jpg' data-src='Thedefinitionofappleisdisplayed_2021-01-31-16_41_36.jpg'></span>
-                    </div>
-				</div>
-	</div>
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: Find definitions</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Given Wiki page is open</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-01-31-16_41_44.jpg' src='Wikipageisopen_2021-01-31-16_41_44.jpg' data-src='Wikipageisopen_2021-01-31-16_41_44.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>When I search for a pear</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Isearchforapear_2021-01-31-16_41_48.jpg' src='Isearchforapear_2021-01-31-16_41_48.jpg' data-src='Isearchforapear_2021-01-31-16_41_48.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then The definition of pear is displayed</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Thedefinitionofpearisdisplayed_2021-01-31-16_41_49.jpg' src='Thedefinitionofpearisdisplayed_2021-01-31-16_41_49.jpg' data-src='Thedefinitionofpearisdisplayed_2021-01-31-16_41_49.jpg'></span>
+			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-01-31-16_55_42.jpg' src='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-01-31-16_55_42.jpg' data-src='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-01-31-16_55_42.jpg'></span>
                     </div>
 				</div>
 	</div>
@@ -517,7 +235,7 @@
             <ul class="tools text-right">
                 <li>
                     <a href="#">
-                        <span class="badge badge-primary">10</span>
+                        <span class="badge badge-primary">3</span>
                     </a>
                 </li>
             </ul>
@@ -529,15 +247,15 @@
   <div class="open-test">
     <div class="test-detail">
       <p class="name">All_tests</p>
-      <p class="duration text-sm">7 tests</p>
+      <p class="duration text-sm">1 tests</p>
       <span class="datetime">
- <span class='badge badge-success'>4</span>          <span class='badge badge-danger'>3</span>                       </span>
+         <span class='badge badge-danger'>1</span>                       </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>All_tests</h4>
- <span class='badge badge-success'>4 passed</span>        <span class='badge badge-danger'>3 failed</span>                 </div>
+       <span class='badge badge-danger'>1 failed</span>                 </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -553,389 +271,9 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:40:58</td>
+          <td>16:55:32</td>
           <td class='linked' test-id='2' root-id="1">
-            <a href="#">Android Chrome.google things</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='5' root-id="4">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='9' root-id="4">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='14' root-id="13">
-            <a href="#">wikiSearch.Check Cookies</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:41:14</td>
-          <td class='linked' test-id='17' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:25</td>
-          <td class='linked' test-id='20' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:37</td>
-          <td class='linked' test-id='24' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">android</p>
-      <p class="duration text-sm">1 tests</p>
-      <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>android</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:40:58</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">Android Chrome.google things</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">chrome</p>
-      <p class="duration text-sm">1 tests</p>
-      <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>chrome</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:40:58</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">Android Chrome.google things</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">mobile</p>
-      <p class="duration text-sm">1 tests</p>
-      <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>mobile</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:40:58</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">Android Chrome.google things</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">currencyLookup</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>currencyLookup</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='5' root-id="4">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='9' root-id="4">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">nodriver</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>nodriver</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='5' root-id="4">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='9' root-id="4">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">checkCookies</p>
-      <p class="duration text-sm">1 tests</p>
-      <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>checkCookies</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='14' root-id="13">
-            <a href="#">wikiSearch.Check Cookies</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">web</p>
-      <p class="duration text-sm">4 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>          <span class='badge badge-danger'>2</span>                       </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>web</h4>
- <span class='badge badge-success'>2 passed</span>        <span class='badge badge-danger'>2 failed</span>                 </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:41:03</td>
-          <td class='linked' test-id='14' root-id="13">
-            <a href="#">wikiSearch.Check Cookies</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
-            </div>
-          </td>
-          <td>16:41:14</td>
-          <td class='linked' test-id='17' root-id="13">
-            <a href="#">wikiSearch.Check local storage</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:25</td>
-          <td class='linked' test-id='20' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:37</td>
-          <td class='linked' test-id='24' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
           </td>
         </tr>
       </tbody>
@@ -970,8 +308,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:41:14</td>
-          <td class='linked' test-id='17' root-id="13">
+          <td>16:55:32</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
         </tr>
@@ -982,92 +320,7 @@
 <li class="test-item">
   <div class="open-test">
     <div class="test-detail">
-      <p class="name">searchDefinitions</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>searchDefinitions</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:25</td>
-          <td class='linked' test-id='20' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:41:37</td>
-          <td class='linked' test-id='24' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>            </ul>    
-        </div>
-    </div>
-    <div class="test-content scrollable">
-        <div class="test-content-tools">
-            <ul>
-                <li>
-                    <a class="back-to-test" href="javascript:void(0)">
-                        <i class="fa fa-arrow-left"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="test-content-detail">
-            <div class="detail-body"></div>
-        </div>
-    </div>
-</div>					<div class="test-wrapper row exception-view attributes-view">
-    <div class="test-list">
-        <div class="test-list-tools">
-            <ul class="tools pull-left">
-                <li>
-                    <a href="">
-                        <span class="font-size-14">Exception</span>
-                    </a>
-                </li> 
-            </ul>
-            <ul class="tools text-right">
-                <li>
-                    <a href="#">
-                        <span class="badge badge-primary">1</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="test-list-wrapper scrollable">
-            <ul class="test-list-item">
-
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">System.NullReferenceException</p>
+      <p class="name">web</p>
       <p class="duration text-sm">1 tests</p>
       <span class="datetime">
          <span class='badge badge-danger'>1</span>                       </span>
@@ -1075,7 +328,7 @@
   </div>
   <div class="test-contents d-none">
     <div class="info">
-      <h4>System.NullReferenceException</h4>
+      <h4>web</h4>
        <span class='badge badge-danger'>1 failed</span>                 </div>
     <table class='table table-sm mt-4'>
       <thead>
@@ -1092,9 +345,9 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:40:58</td>
-          <td class='linked' test-id='3' root-id="1">
-            <a href="#">Android Chrome.google things.scenario failed: Object reference not set to an instance of an object.</a>
+          <td>16:55:32</td>
+          <td class='linked' test-id='2' root-id="1">
+            <a href="#">wikiSearch.Check local storage</a>
           </td>
         </tr>
       </tbody>
@@ -1117,7 +370,7 @@
             <div class="detail-body"></div>
         </div>
     </div>
-</div>					<div class="container-fluid p-4 dashboard-view">
+</div>										<div class="container-fluid p-4 dashboard-view">
 	<div class="row">
 		<div class="col-sm-12 col-md-4">
 			<div class="card">
@@ -1130,11 +383,11 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='33,33333333333333%'>
-	                    <b>1</b> features passed
+	                <div><small data-tooltip='0%'>
+	                    <b>0</b> features passed
                     </small></div>
 	                <div>
-	                    <small data-tooltip='66,66666666666666%'><b>2</b> features failed, 
+	                    <small data-tooltip='100%'><b>1</b> features failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1152,9 +405,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='57,14285714285714%'><b>4</b> scenarios passed</small></div>
+	                <div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
 	                <div>
-	                    <small data-tooltip='42,857142857142854%'><b>3</b> scenarios failed, 
+	                    <small data-tooltip='100%'><b>1</b> scenarios failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1172,9 +425,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='82,35294117647058%'><b>14</b> steps passed</small></div>
+	                <div><small data-tooltip='50%'><b>1</b> steps passed</small></div>
 	                <div>
-	                    <small data-tooltip='17,647058823529413%'><b>3</b> steps failed, 
+	                    <small data-tooltip='50%'><b>1</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1189,10 +442,10 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Features</h6>
-							<h2 class="font-size-28 font-weight-light">3</h2>
+							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>33,33%</span>
+								<span>0%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1208,10 +461,10 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Scenarios</h6>
-							<h2 class="font-size-28 font-weight-light">7</h2>
+							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>57,14%</span>
+								<span>0%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1227,7 +480,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">31.01.2021 16:40:58</h6>
+							<h6 class="font-weight-light">31.01.2021 16:55:32</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1243,7 +496,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:51.9268429</h6>
+							<h6 class="font-weight-light">00:00:15.4871589</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1288,59 +541,10 @@
 						<tbody>
 							<tr>
 								<td>All_tests</td>
-								<td>4</td>
-								<td>3</td>
-								<td>0</td>
-								<td>57,14%</td>
-							</tr>
-							<tr>
-								<td>android</td>
 								<td>0</td>
 								<td>1</td>
 								<td>0</td>
 								<td>0%</td>
-							</tr>
-							<tr>
-								<td>chrome</td>
-								<td>0</td>
-								<td>1</td>
-								<td>0</td>
-								<td>0%</td>
-							</tr>
-							<tr>
-								<td>mobile</td>
-								<td>0</td>
-								<td>1</td>
-								<td>0</td>
-								<td>0%</td>
-							</tr>
-							<tr>
-								<td>currencyLookup</td>
-								<td>2</td>
-								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
-							</tr>
-							<tr>
-								<td>nodriver</td>
-								<td>2</td>
-								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
-							</tr>
-							<tr>
-								<td>checkCookies</td>
-								<td>0</td>
-								<td>1</td>
-								<td>0</td>
-								<td>0%</td>
-							</tr>
-							<tr>
-								<td>web</td>
-								<td>2</td>
-								<td>2</td>
-								<td>0</td>
-								<td>50%</td>
 							</tr>
 							<tr>
 								<td>checkLocalStorage</td>
@@ -1350,11 +554,11 @@
 								<td>0%</td>
 							</tr>
 							<tr>
-								<td>searchDefinitions</td>
-								<td>2</td>
+								<td>web</td>
 								<td>0</td>
+								<td>1</td>
 								<td>0</td>
-								<td>100%</td>
+								<td>0%</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1392,38 +596,38 @@
 </div>
 <script>
 	var statusGroup = {
-    parentCount: 3,
-		passParent: 1,
-		failParent: 2,
+    parentCount: 1,
+		passParent: 0,
+		failParent: 1,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 2,
-		childCount: 7,
-		passChild: 4,
-		failChild: 3,
+		exceptionsParent: 1,
+		childCount: 1,
+		passChild: 0,
+		failChild: 1,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 3,
-		grandChildCount: 17,
-		passGrandChild: 14,
-		failGrandChild: 3,
+		exceptionsChild: 1,
+		grandChildCount: 2,
+		passGrandChild: 1,
+		failGrandChild: 1,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 3,
+		exceptionsGrandChild: 1,
 	};
 </script>
 	<script>
-		var timeline = { "Android Chrome":0,0661419,"NBPlookup":0,2297002,"wikiSearch":46,3608627 };
+		var timeline = { "wikiSearch":10,5026806 };
 	</script>
 
                 </div>
