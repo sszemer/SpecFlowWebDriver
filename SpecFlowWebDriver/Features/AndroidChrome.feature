@@ -1,5 +1,4 @@
-﻿@ignore
-Feature: Android Chrome
+﻿Feature: Android Chrome
 	In order to know what things are
 	As an idiot
 	I want to google for the definitions

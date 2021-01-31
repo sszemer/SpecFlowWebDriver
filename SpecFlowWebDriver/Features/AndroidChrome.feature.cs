@@ -21,14 +21,12 @@ namespace SpecFlowWebDriver.Features
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Android Chrome")]
-    [NUnit.Framework.CategoryAttribute("ignore")]
     public partial class AndroidChromeFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-        private string[] _featureTags = new string[] {
-                "ignore"};
+        private string[] _featureTags = ((string[])(null));
         
 #line 1 "AndroidChrome.feature"
 #line hidden
@@ -38,8 +36,7 @@ namespace SpecFlowWebDriver.Features
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Android Chrome", "\tIn order to know what things are\r\n\tAs an idiot\r\n\tI want to google for the defini" +
-                    "tions", ProgrammingLanguage.CSharp, new string[] {
-                        "ignore"});
+                    "tions", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -97,7 +94,7 @@ namespace SpecFlowWebDriver.Features
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("val", val);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("google things", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 10
+#line 9
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -117,10 +114,10 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 11
+#line 10
  testRunner.When(string.Format("I google for a {0}", val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 12
+#line 11
  testRunner.Then(string.Format("The google of {0} is displayed", val), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

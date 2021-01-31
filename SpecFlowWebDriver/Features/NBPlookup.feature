@@ -13,5 +13,5 @@ Scenario: Lookup a currency rate
 
 	Examples: 
 	| currencyCode | expectedRate |
-	| THB          | 4            |
+	| THB          | 0.13         |
 	| USD          | 4            |
