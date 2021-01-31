@@ -9,47 +9,38 @@ namespace SpecFlowWebDriver.Utils
 {
     public static class DriverProvider
     {
-        private static RemoteWebDriver driver;
-
-        public static DriverType DriverType { get; set; }
-
-        public static RemoteWebDriver Driver => driver ?? InitDriver();
-
         public static void CloseDriver(ScenarioContext scenarioContext)
         {
-            scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver);
-            if (driver != null)
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out RemoteWebDriver driver))
             {
                 driver.Quit();
-                scenarioContext.Set<RemoteWebDriver>(null, "driver");
             }
         }
-        //[MethodImpl(MethodImplOptions.Synchronized)]
-        public static RemoteWebDriver InitDriver()
+        public static void InitDriver(ScenarioContext scenarioContext)
         {
-            switch (DriverType)
+            switch (scenarioContext.Get<DriverType>())
             {
                 case DriverType.Web:
-                    driver = new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.HubCapabilities, TimeSpan.FromSeconds(30));
-                    driver.Manage().Window.Maximize();
+                    scenarioContext.Set<RemoteWebDriver>(new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.HubCapabilities, TimeSpan.FromSeconds(30)), "driver");
+                    scenarioContext.Get<RemoteWebDriver>("driver").Manage().Window.Maximize();
                     break;
                 case DriverType.Mobile:
-                    driver = new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.AppiumCapabilities, TimeSpan.FromSeconds(30));
+                    scenarioContext.Set<RemoteWebDriver>(new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.AppiumCapabilities, TimeSpan.FromSeconds(30)), "driver");
                     break;
                 case DriverType.Desktop:
+                    //todo implement winium?
                     break;
                 case DriverType.None:
                     break;
                 default:
                     break;
             }
-            return driver;
         }
 
         public static string GetUrl(ScenarioContext scenarioContext)
         {
             string url = string.Empty;
-            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out RemoteWebDriver driver))
             {
                 try
                 {
@@ -65,24 +56,22 @@ namespace SpecFlowWebDriver.Utils
 
         public static string GetPageSource(ScenarioContext scenarioContext)
         {
-            string returnValue = string.Empty;
-            string fileExtension = DriverType is DriverType.Mobile ? "xml" : "html";
+            string fileExtension = scenarioContext.Get<DriverType>() is DriverType.Mobile ? "xml" : "html";
             var pageSourceFileName = $"{RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text)}.{fileExtension}";
             var path = $"{Path.Combine(Reporter.ReportDir, pageSourceFileName)}";
-            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out RemoteWebDriver driver))
             {
                 try
                 {
                     var pageSource = driver?.PageSource;
                     File.WriteAllText(path, pageSource);
-                    returnValue = $"<a href=\"{pageSourceFileName}\">{pageSourceFileName}</a>";
                 }
                 catch (Exception e)
                 {
-                    returnValue = $"Unable to get page source: {e.Message}";
+                    Console.WriteLine($"Unable to get page source: {e.Message}");
                 }
             }
-            return returnValue;
+            return pageSourceFileName;
         }
 
         public static string GetScreenshot(ScenarioContext scenarioContext)
@@ -90,17 +79,17 @@ namespace SpecFlowWebDriver.Utils
             string title = RemoveCharactersUnsupportedByWindowsInFileNames(scenarioContext.StepContext.StepInfo.Text);
             string Runname = $"{title}_{DateTime.Now:yyyy-MM-dd-HH_mm_ss}";
             string filename = $"{Runname}.jpg";
-            string screenshotfilename = $"{Path.Combine(Reporter.ReportDir, filename)}";
-            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out driver))
+            string path = $"{Path.Combine(Reporter.ReportDir, filename)}";
+            if (scenarioContext.TryGetValue<RemoteWebDriver>("driver", out RemoteWebDriver driver))
             {
                 try
                 {
                     Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                    screenshot.SaveAsFile(screenshotfilename);
+                    screenshot.SaveAsFile(path);
                 }
                 catch (Exception e)
                 {
-                    screenshotfilename = $"Unable to get screenshot: {e.Message}";
+                    Console.WriteLine($"Unable to get screenshot: {e.Message}");
                 }
             }
             return filename;

@@ -2,7 +2,6 @@
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.MarkupUtils;
 using NUnit.Framework;
-using OpenQA.Selenium.Remote;
 using SpecFlowWebDriver.Utis;
 using System;
 using System.Linq;
@@ -31,19 +30,17 @@ namespace SpecFlowWebDriver.Utils
         [BeforeScenario]
         public static void BeforeScenario(ScenarioContext scenarioContext)
         {
-            if (scenarioContext.ScenarioInfo.Tags.Contains("web")) DriverProvider.DriverType = DriverType.Web;
-            if (scenarioContext.ScenarioInfo.Tags.Contains("mobile")) DriverProvider.DriverType = DriverType.Mobile;
-            if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) DriverProvider.DriverType = DriverType.Desktop;
-            if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) DriverProvider.DriverType = DriverType.None;
+            if (scenarioContext.ScenarioInfo.Tags.Contains("web")) scenarioContext.Set<DriverType>(DriverType.Web);
+            if (scenarioContext.ScenarioInfo.Tags.Contains("mobile")) scenarioContext.Set<DriverType>(DriverType.Mobile);
+            if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) scenarioContext.Set<DriverType>(DriverType.Desktop);
+            if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) scenarioContext.Set<DriverType>(DriverType.None);
             Reporter.Scenario = Reporter.Feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
             try
             {
-                scenarioContext.Set<RemoteWebDriver>(DriverProvider.Driver, "driver");
+                DriverProvider.InitDriver(scenarioContext);
             }
             catch (Exception e)
             {
-                Console.WriteLine($"scenario failed: {e.Message}");
-                Console.WriteLine($"scenario failed: {e.StackTrace}");
                 Reporter.Scenario.CreateNode<Given>($"scenario failed: {e.Message}").Fail("").Log(Status.Error, e);
                 Assert.Ignore($"scenario failed: {e.Message}");
             }
@@ -78,11 +75,11 @@ namespace SpecFlowWebDriver.Utils
                     { "Exception", $"{scenarioContext.TestError.Message}"},
                     { "StackTrace", $"{scenarioContext.TestError.StackTrace}"},
                     { "URL", $"<a href=\"{url}\">{url}</a>"},
-                    { "PageSource", pageSource}
+                    { "PageSource", $"<a href=\"{pageSource}\">{pageSource}</a>"}
                 };
                 Reporter.Step.Fail(MarkupHelper.CreateTable(data));
             }
-            if (DriverProvider.DriverType is not DriverType.None)
+            if (scenarioContext.Get<DriverType>() is not DriverType.None)
                 Reporter.Step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(DriverProvider.GetScreenshot(scenarioContext)).Build());
         }
 

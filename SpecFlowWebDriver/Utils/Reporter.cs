@@ -29,7 +29,7 @@ namespace SpecFlowWebDriver.Utils
         public static void SetupExtentReports()
         {
             InitHtmlReporter(new ExtentHtmlReporter($"{Path.Combine(ReportDir, "index.html")}"));
-            if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) InitKlovReporter(new ExtentKlovReporter());
+            //if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) InitKlovReporter(new ExtentKlovReporter());
             InitExtentReport(new ExtentReports());
             CleanReportDir(new DirectoryInfo(ReportDir));
         }
@@ -57,7 +57,7 @@ namespace SpecFlowWebDriver.Utils
         {
             Report = extentReports;
             Report.AttachReporter(htmlReporter);
-            if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) Report.AttachReporter(klov);
+            //if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) Report.AttachReporter(klov);
             Report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
             Report.AddSystemInfo("ENV", EnvironmentHelper.EnvironmentType.ToString());
             //if(DriverProvider.DriverType is DriverType.Web)report.AddSystemInfo("Browser", $"{DriverProvider.Driver?.Capabilities["browserName"]} {DriverProvider.Driver?.Capabilities["browserVersion"]}");
