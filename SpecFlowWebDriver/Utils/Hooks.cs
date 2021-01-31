@@ -38,7 +38,7 @@ namespace SpecFlowWebDriver.Utils
             Reporter.Scenario = Reporter.Feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
             try
             {
-                scenarioContext.Set<RemoteWebDriver>(DriverProvider.InitDriver(), "driver");
+                scenarioContext.Set<RemoteWebDriver>(DriverProvider.Driver, "driver");
             }
             catch (Exception e)
             {

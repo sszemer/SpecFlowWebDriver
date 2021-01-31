@@ -58,29 +58,32 @@ namespace SpecFlowWebDriver.Utis
             }
             return result;
         }
-        private static DesiredCapabilities SetAppiumCapabilities(EnvironmentType environmentType)
+        private static ICapabilities SetAppiumCapabilities(EnvironmentType environmentType)
         {
-            DesiredCapabilities result = null;
+            ICapabilities result = null;
             switch (environmentType)
             {
                 case EnvironmentType.LOCAL:
-                    result = new DesiredCapabilities();
-                    result.SetCapability("platformName", "Android");
-                    result.SetCapability("appPackage", "com.android.chrome");
-                    result.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
+                    DesiredCapabilities dCapsLocal = new DesiredCapabilities();
+                    dCapsLocal.SetCapability("platformName", "Android");
+                    dCapsLocal.SetCapability("appPackage", "com.android.chrome");
+                    dCapsLocal.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
+                    result = dCapsLocal;
                     break;
                 case EnvironmentType.LAMBDA_TEST:
-                    result = new DesiredCapabilities();
-                    result.SetCapability("user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
-                    result.SetCapability("accessKey", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
-                    result.SetCapability("build", DateTime.Now.ToString());
-                    result.SetCapability("name", "Multiplatform Selenium Grid");
-                    result.SetCapability("platformName", "Android");
-                    result.SetCapability("deviceName", "HTC 10");
-                    result.SetCapability("platformVersion", "7");
-                    result.SetCapability("console", true);
-                    result.SetCapability("network", true);
-                    result.SetCapability("visual", true);
+                    DesiredCapabilities dCapsLambdaTest = new DesiredCapabilities();
+                    dCapsLambdaTest.SetCapability("user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
+                    dCapsLambdaTest.SetCapability("accessKey", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
+                    dCapsLambdaTest.SetCapability("build", DateTime.Now.ToString());
+                    dCapsLambdaTest.SetCapability("name", "Multiplatform Selenium Grid");
+                    dCapsLambdaTest.SetCapability("platformName", "Android");
+                    dCapsLambdaTest.SetCapability("deviceName", "Galaxy S9");
+                    dCapsLambdaTest.SetCapability("platformVersion", "10");
+                    dCapsLambdaTest.SetCapability("appiumVersion", "1.8.0");
+                    dCapsLambdaTest.SetCapability("console", true);
+                    dCapsLambdaTest.SetCapability("network", true);
+                    dCapsLambdaTest.SetCapability("visual", true);
+                    result = dCapsLambdaTest;
                     break;
             }
             return result;
