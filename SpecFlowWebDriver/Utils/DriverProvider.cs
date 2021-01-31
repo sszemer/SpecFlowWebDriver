@@ -45,13 +45,14 @@ namespace SpecFlowWebDriver.Utils
                 try
                 {
                     url = driver?.Url;
+                    return url;
                 }
                 catch (Exception e)
                 {
-                    url = $"Unable to get URL: {e.Message}";
+                    Console.WriteLine($"Unable to get URL: {e.Message}");
                 }
             }
-            return url;
+            return null;
         }
 
         public static string GetPageSource(ScenarioContext scenarioContext)
@@ -65,13 +66,14 @@ namespace SpecFlowWebDriver.Utils
                 {
                     var pageSource = driver?.PageSource;
                     File.WriteAllText(path, pageSource);
+                    return pageSourceFileName;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine($"Unable to get page source: {e.Message}");
                 }
             }
-            return pageSourceFileName;
+            return null;
         }
 
         public static string GetScreenshot(ScenarioContext scenarioContext)
@@ -86,13 +88,14 @@ namespace SpecFlowWebDriver.Utils
                 {
                     Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
                     screenshot.SaveAsFile(path);
+                    return filename;
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine($"Unable to get screenshot: {e.Message}");
                 }
             }
-            return filename;
+            return null;
         }
 
         private static string RemoveCharactersUnsupportedByWindowsInFileNames(string input)

@@ -1,4 +1,5 @@
 ﻿using AventStack.ExtentReports;
+using System;
 using System.Collections.Generic;
 using TechTalk.SpecFlow.Bindings;
 
@@ -31,8 +32,10 @@ namespace SpecFlowWebDriver.Utils
         {
             Title = title;
             Steps = new List<StepPOCO>();
+            Categories = new List<string>();
         }
         public string Title { get; }
+        public List<string> Categories { get; }
         public List<StepPOCO> Steps { get; }
 
     }
@@ -55,5 +58,6 @@ namespace SpecFlowWebDriver.Utils
         public string URL { get; set; }
         public string PageSource { get; set; }
         public string Screenshot { get; set; }
+        public Exception Exception { get; set; }
     }
 }

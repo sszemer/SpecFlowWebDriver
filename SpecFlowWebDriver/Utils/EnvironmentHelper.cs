@@ -82,6 +82,8 @@ namespace SpecFlowWebDriver.Utis
                     dCapsLambdaTest.SetCapability("console", true);
                     dCapsLambdaTest.SetCapability("network", true);
                     dCapsLambdaTest.SetCapability("visual", true);
+                    dCapsLambdaTest.SetCapability("appPackage", "com.android.chrome");
+                    dCapsLambdaTest.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
                     result = dCapsLambdaTest;
                     break;
             }
