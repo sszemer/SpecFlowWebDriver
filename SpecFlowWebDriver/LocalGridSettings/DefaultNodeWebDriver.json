@@ -9,8 +9,8 @@
     },
     {
       "browserName": "chrome",
-      "platform": "windows",
-      "maxInstances": 5,
+      "platformName": "windows",
+      "maxInstances": 5
       "seleniumProtocol": "WebDriver"
     },
     {
