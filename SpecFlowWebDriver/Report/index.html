@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">01.02.2021 14:07:30</span>
+                    <span class="badge badge-primary">01.02.2021 22:18:20</span>
                 </a>
             </li>
         </ul>
@@ -114,7 +114,7 @@
 						<i class="fa fa-exclamation-circle"></i>
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-						<a status="fail" class="dropdown-item" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>																														<div class="dropdown-divider"></div>
+<a status="pass" class="dropdown-item" href="#"><span>Pass</span><span class="status success pull-right"></span></a>																																				<div class="dropdown-divider"></div>
 						<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 					</ul>
 				</li>
@@ -133,25 +133,25 @@
         </div>
         <div class="test-list-wrapper scrollable">
             <ul class="test-list-item">
-					<li class="test-item" status="fail" author="" device="" tag="" test-id="1"> 
-						<div class="status-avatar fail-bg">
-							<i class="fa fa-times text-white"></i>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar pass-bg">
+							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">Android Chrome</p> 
-								<p class="duration text-sm">0h:0m:0s+061ms</p> 
-								<span class="datetime">14:08:02 PM</span>
+								<p class="duration text-sm">0h:0m:0s+081ms</p> 
+								<span class="datetime">22:18:55 PM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
 							<div class="detail-head">
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
-										<h5 class="test-status text-fail">Android Chrome</h5>
-										<span class='badge badge-success'>01.02.2021 14:08:02</span>
-										<span class='badge badge-danger'>01.02.2021 14:08:02</span>
-										<span class='badge badge-default'>0h:0m:0s+061ms</span>
+										<h5 class="test-status text-pass">Android Chrome</h5>
+										<span class='badge badge-success'>01.02.2021 22:18:55</span>
+										<span class='badge badge-danger'>01.02.2021 22:18:55</span>
+										<span class='badge badge-default'>0h:0m:0s+081ms</span>
 									</div>
 																		<div class="m-t-10 m-l-5">
 											In order to know what things are
@@ -166,40 +166,29 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: google things</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
+				<div class="status-avatar float-left pass-bg">
+					<i class="fa fa-check text-white"></i>
 				</div>
 			</div>
 		</div>
 				<div class="collapse">
                     <div class="card-body">
                                                     <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
                                 </span>
                                 <span>When I google for a thing</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>no such element: Unable to locate element: {"method":"id","selector":"com.android.chrome:id/terms_accept"}
-  (Session info: chrome=83.0.4103.106)
-  (Driver info: chromedriver=83.0.4103.14 (be04594a2b8411758b860104bc0a1033417178be-refs/branch-heads/4103@{#119}),platform=Linux 4.15.0-52-generic x86_64)</td></tr><tr><td>StackTrace</td><td>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(String mechanism, String value)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElementById(String id)
-   at OpenQA.Selenium.By.<>c__DisplayClass16_0.<Id>b__0(ISearchContext context)
-   at OpenQA.Selenium.By.FindElement(ISearchContext context)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.FindElement(By by)
-   at SpecFlowWebDriver.Pages.ChromePage.get_AcceptTerms() in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Pages\ChromePage.cs:line 14
-   at SpecFlowWebDriver.Pages.ChromePage.GoogleThing(String thing) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Pages\ChromePage.cs:line 21
-   at SpecFlowWebDriver.Steps.ChromeSteps.WhenISearchForA(String definition) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Steps\ChromeSteps.cs:line 23
-   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan& duration)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
-   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
-   at SpecFlowWebDriver.Features.AndroidChromeFeature.ScenarioCleanup()
-   at SpecFlowWebDriver.Features.AndroidChromeFeature.GoogleThings(String val, String[] exampleTags) in C:\Users\sszem\Source\Repos\SpecFlowWebDriver\SpecFlowWebDriver\Features\AndroidChrome.feature:line 11</td></tr><tr><td>URL</td><td><a href="data:,">data:,</a></td></tr><tr><td>PageSource</td><td><a href="Igoogleforathing.xml">Igoogleforathing.xml</a></td></tr></table></div>
 			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Igoogleforathing_2021-02-01-14_07_58.jpg' src='Igoogleforathing_2021-02-01-14_07_58.jpg' data-src='Igoogleforathing_2021-02-01-14_07_58.jpg'></span>
+			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Igoogleforathing_2021-02-01-22_18_48.jpg' src='Igoogleforathing_2021-02-01-22_18_48.jpg' data-src='Igoogleforathing_2021-02-01-22_18_48.jpg'></span>
+                            <div class="d-flex align-items-center justify-content-start then" title="">
+                                <span class="alert-icon pass-bg">
+                                    <i class="fa fa-check text-white"></i>
+                                </span>
+                                <span>Then The google of thing is displayed</span>
+                            </div>
+			<div class="details"></div>
+			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Thegoogleofthingisdisplayed_2021-02-01-22_18_50.jpg' src='Thegoogleofthingisdisplayed_2021-02-01-22_18_50.jpg' data-src='Thegoogleofthingisdisplayed_2021-02-01-22_18_50.jpg'></span>
                     </div>
 				</div>
 	</div>
@@ -251,13 +240,13 @@
       <p class="name">All_tests</p>
       <p class="duration text-sm">1 tests</p>
       <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
+ <span class='badge badge-success'>1</span>                               </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>All_tests</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
+ <span class='badge badge-success'>1 passed</span>                       </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -269,11 +258,11 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
             </div>
           </td>
-          <td>14:08:02</td>
+          <td>22:18:55</td>
           <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
@@ -288,13 +277,13 @@
       <p class="name">android</p>
       <p class="duration text-sm">1 tests</p>
       <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
+ <span class='badge badge-success'>1</span>                               </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>android</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
+ <span class='badge badge-success'>1 passed</span>                       </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -306,11 +295,11 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
             </div>
           </td>
-          <td>14:08:02</td>
+          <td>22:18:55</td>
           <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
@@ -325,13 +314,13 @@
       <p class="name">chrome</p>
       <p class="duration text-sm">1 tests</p>
       <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
+ <span class='badge badge-success'>1</span>                               </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>chrome</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
+ <span class='badge badge-success'>1 passed</span>                       </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -343,11 +332,11 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
             </div>
           </td>
-          <td>14:08:02</td>
+          <td>22:18:55</td>
           <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
@@ -362,13 +351,13 @@
       <p class="name">mobile</p>
       <p class="duration text-sm">1 tests</p>
       <span class="datetime">
-         <span class='badge badge-danger'>1</span>                       </span>
+ <span class='badge badge-success'>1</span>                               </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>mobile</h4>
-       <span class='badge badge-danger'>1 failed</span>                 </div>
+ <span class='badge badge-success'>1 passed</span>                       </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -380,11 +369,11 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar fail-bg'>
-              <i class="fa fa-times text-white"></i>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
             </div>
           </td>
-          <td>14:08:02</td>
+          <td>22:18:55</td>
           <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
@@ -422,11 +411,11 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='0%'>
-	                    <b>0</b> features passed
+	                <div><small data-tooltip='100%'>
+	                    <b>1</b> features passed
                     </small></div>
 	                <div>
-	                    <small data-tooltip='100%'><b>1</b> features failed, 
+	                    <small data-tooltip='0%'><b>0</b> features failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -444,9 +433,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+	                <div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 	                <div>
-	                    <small data-tooltip='100%'><b>1</b> scenarios failed, 
+	                    <small data-tooltip='0%'><b>0</b> scenarios failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -464,9 +453,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='0%'><b>0</b> steps passed</small></div>
+	                <div><small data-tooltip='100%'><b>2</b> steps passed</small></div>
 	                <div>
-	                    <small data-tooltip='100%'><b>1</b> steps failed, 
+	                    <small data-tooltip='0%'><b>0</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -484,7 +473,7 @@
 							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>0%</span>
+								<span>100%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -503,7 +492,7 @@
 							<h2 class="font-size-28 font-weight-light">1</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>0%</span>
+								<span>100%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -519,7 +508,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">01.02.2021 14:07:30</h6>
+							<h6 class="font-weight-light">01.02.2021 22:18:20</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -535,7 +524,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:38.6408247</h6>
+							<h6 class="font-weight-light">00:00:44.1886585</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -580,31 +569,31 @@
 						<tbody>
 							<tr>
 								<td>All_tests</td>
-								<td>0</td>
 								<td>1</td>
 								<td>0</td>
-								<td>0%</td>
+								<td>0</td>
+								<td>100%</td>
 							</tr>
 							<tr>
 								<td>android</td>
-								<td>0</td>
 								<td>1</td>
 								<td>0</td>
-								<td>0%</td>
+								<td>0</td>
+								<td>100%</td>
 							</tr>
 							<tr>
 								<td>chrome</td>
-								<td>0</td>
 								<td>1</td>
 								<td>0</td>
-								<td>0%</td>
+								<td>0</td>
+								<td>100%</td>
 							</tr>
 							<tr>
 								<td>mobile</td>
-								<td>0</td>
 								<td>1</td>
 								<td>0</td>
-								<td>0%</td>
+								<td>0</td>
+								<td>100%</td>
 							</tr>
 						</tbody>
 					</table>
@@ -631,7 +620,7 @@
 								</tr>
 								<tr>
 									<td>ENV</td>
-									<td>LAMBDA_TEST</td>
+									<td>LOCAL</td>
 								</tr>
 						</tbody>
 					</table>
@@ -643,37 +632,37 @@
 <script>
 	var statusGroup = {
     parentCount: 1,
-		passParent: 0,
-		failParent: 1,
+		passParent: 1,
+		failParent: 0,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 1,
+		exceptionsParent: 0,
 		childCount: 1,
-		passChild: 0,
-		failChild: 1,
+		passChild: 1,
+		failChild: 0,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 1,
-		grandChildCount: 1,
-		passGrandChild: 0,
-		failGrandChild: 1,
+		exceptionsChild: 0,
+		grandChildCount: 2,
+		passGrandChild: 2,
+		failGrandChild: 0,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 1,
+		exceptionsGrandChild: 0,
 	};
 </script>
 	<script>
-		var timeline = { "Android Chrome":0,0613932 };
+		var timeline = { "Android Chrome":0,0814789 };
 	</script>
 
                 </div>
