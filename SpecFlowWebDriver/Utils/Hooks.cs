@@ -138,6 +138,7 @@ namespace SpecFlowWebDriver.Utils
         public static void AfterTestRun()
         {
             Reporter.Report.Flush();
+            NLog.LogManager.Shutdown();
         }
     }
 }

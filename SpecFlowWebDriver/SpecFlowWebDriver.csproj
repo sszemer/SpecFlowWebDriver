@@ -13,6 +13,7 @@
     <PackageReference Include="Appium.WebDriver" Version="4.3.1" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="ExtentReports" Version="4.1.0" />
+    <PackageReference Include="NLog" Version="4.7.7" />
     <PackageReference Include="nunit" Version="3.13.0" />
     <PackageReference Include="NUnit.Console" Version="3.12.0" />
     <PackageReference Include="NUnit.ConsoleRunner" Version="3.12.0" />
@@ -32,6 +33,12 @@
 
   <ItemGroup>
     <Folder Include="Report\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
