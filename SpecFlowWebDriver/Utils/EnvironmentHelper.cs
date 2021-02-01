@@ -9,11 +9,13 @@ namespace SpecFlowWebDriver.Utis
     {
         private static TestEnvironment testEnvironment;
         private static EnvironmentType environmentType;
+        private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         public static TestEnvironment TestEnvironment { get => SetEnvironment(environmentType); }
         public static EnvironmentType EnvironmentType { get => environmentType; set => environmentType = value; }
         private static TestEnvironment SetEnvironment(EnvironmentType environmentType)
         {
+            Logger.Info("Environment Type: " + environmentType);
             if (testEnvironment == null) testEnvironment = new TestEnvironment();
             switch (environmentType)
             {
@@ -26,12 +28,14 @@ namespace SpecFlowWebDriver.Utis
                     testEnvironment.HubURL =
                         new Uri($"https://{Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME")}:{Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY")}@hub.lambdatest.com/wd/hub");
                     testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
                     break;
             }
             return testEnvironment;
         }
         private static ICapabilities SetHubCapabilities(EnvironmentType environmentType)
         {
+            Logger.Info("Environment Type: " + environmentType);
             ICapabilities result = null;
             switch (environmentType)
             {
@@ -41,24 +45,25 @@ namespace SpecFlowWebDriver.Utis
                     result = options.ToCapabilities();
                     break;
                 case EnvironmentType.LAMBDA_TEST:
-                    DesiredCapabilities t = new DesiredCapabilities();
-                    t.SetCapability("user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
-                    t.SetCapability("accessKey", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
-                    t.SetCapability("build", DateTime.Now.ToString());
-                    t.SetCapability("name", "Multiplatform Selenium Grid");
-                    t.SetCapability("platform", "Windows 10");
-                    t.SetCapability("browserName", "Chrome");
-                    t.SetCapability("version", "88.0");
-                    t.SetCapability("console", true);
-                    t.SetCapability("network", true);
-                    t.SetCapability("video", true);
-                    result = t;
+                    DesiredCapabilities dCapsLambdaTest = new DesiredCapabilities();
+                    dCapsLambdaTest.SetCapability("user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
+                    dCapsLambdaTest.SetCapability("accessKey", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
+                    dCapsLambdaTest.SetCapability("build", DateTime.Now.ToString());
+                    dCapsLambdaTest.SetCapability("name", "Multiplatform Selenium Grid");
+                    dCapsLambdaTest.SetCapability("platform", "Windows 10");
+                    dCapsLambdaTest.SetCapability("browserName", "Chrome");
+                    dCapsLambdaTest.SetCapability("version", "88.0");
+                    dCapsLambdaTest.SetCapability("console", true);
+                    dCapsLambdaTest.SetCapability("network", true);
+                    dCapsLambdaTest.SetCapability("video", true);
+                    result = dCapsLambdaTest;
                     break;
             }
             return result;
         }
         private static ICapabilities SetAppiumCapabilities(EnvironmentType environmentType)
         {
+            Logger.Info("Environment Type: " + environmentType);
             ICapabilities result = null;
             switch (environmentType)
             {
@@ -78,12 +83,9 @@ namespace SpecFlowWebDriver.Utis
                     dCapsLambdaTest.SetCapability("platformName", "Android");
                     dCapsLambdaTest.SetCapability("deviceName", "Galaxy S9");
                     dCapsLambdaTest.SetCapability("platformVersion", "10");
-                    dCapsLambdaTest.SetCapability("appiumVersion", "1.8.0");
                     dCapsLambdaTest.SetCapability("console", true);
                     dCapsLambdaTest.SetCapability("network", true);
                     dCapsLambdaTest.SetCapability("visual", true);
-                    dCapsLambdaTest.SetCapability("appPackage", "com.android.chrome");
-                    dCapsLambdaTest.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
                     result = dCapsLambdaTest;
                     break;
             }
