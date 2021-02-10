@@ -52,23 +52,13 @@ namespace SpecFlowWebDriver.Utils
         [BeforeStep]
         public static void BeforeStep(ScenarioContext scenarioContext)
         {
-            switch (scenarioContext.StepContext.StepInfo.StepDefinitionType)
-            {
-                case StepDefinitionType.Given:
-                    scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO(scenarioContext.StepContext.StepInfo.Text, StepDefinitionType.Given));
-                    break;
-                case StepDefinitionType.When:
-                    scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO(scenarioContext.StepContext.StepInfo.Text, StepDefinitionType.When));
-                    break;
-                case StepDefinitionType.Then:
-                    scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO(scenarioContext.StepContext.StepInfo.Text, StepDefinitionType.Then));
-                    break;
-            }
+            //invoked after each bdd step
         }
 
         [AfterStep]
         public static void AfterStep(ScenarioContext scenarioContext)
         {
+            scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO(scenarioContext.StepContext.StepInfo.Text, scenarioContext.StepContext.StepInfo.StepDefinitionType));
             scenarioContext.Get<ScenarioPOCO>().Steps.Last().Screenshot = DriverProvider.GetScreenshot(scenarioContext);
             scenarioContext.Get<ScenarioPOCO>().Steps.Last().StepStatus = Status.Pass;
             if (scenarioContext.TestError != null)
