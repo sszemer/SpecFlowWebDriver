@@ -1,7 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.MarkupUtils;
-using NUnit.Framework;
 using SpecFlowWebDriver.Utis;
 using System;
 using System.Linq;
@@ -37,22 +36,13 @@ namespace SpecFlowWebDriver.Utils
             if (scenarioContext.ScenarioInfo.Tags.Contains("desktop")) scenarioContext.Set<DriverType>(DriverType.Desktop);
             if (scenarioContext.ScenarioInfo.Tags.Contains("nodriver")) scenarioContext.Set<DriverType>(DriverType.None);
             scenarioContext.Set(new ScenarioPOCO(scenarioContext.ScenarioInfo.Title));
-            try
-            {
-                DriverProvider.InitDriver(scenarioContext);
-            }
-            catch (Exception e)
-            {
-                scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO($"scenario failed: {e.Message}", StepDefinitionType.Given, Status.Error));
-                scenarioContext.Get<ScenarioPOCO>().Steps.Last().Exception = e;
-                Assert.Ignore($"scenario failed: {e.Message}");
-            }
+            DriverProvider.InitDriver(scenarioContext);
         }
 
         [BeforeStep]
         public static void BeforeStep(ScenarioContext scenarioContext)
         {
-            //invoked after each bdd step
+            //invoked before each bdd step
         }
 
         [AfterStep]
@@ -75,8 +65,13 @@ namespace SpecFlowWebDriver.Utils
         {
             scenarioContext.ScenarioInfo.Tags.ToList().ForEach(tag => scenarioContext.Get<ScenarioPOCO>().Categories.Add(tag));
             scenarioContext.Get<ScenarioPOCO>().Categories.Add("All_tests");
-            featureContext.Get<FeaturePOCO>().Scenarios.Add(scenarioContext.Get<ScenarioPOCO>());
             DriverProvider.CloseDriver(scenarioContext);
+            if (scenarioContext.TestError != null)
+            {
+                scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO($"scenario failed: {scenarioContext.TestError.Message}", StepDefinitionType.Given, Status.Error));
+                scenarioContext.Get<ScenarioPOCO>().Steps.Last().Exception = scenarioContext.TestError;
+            }
+            featureContext.Get<FeaturePOCO>().Scenarios.Add(scenarioContext.Get<ScenarioPOCO>());
         }
 
         [AfterFeature]
