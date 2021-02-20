@@ -24,6 +24,11 @@ namespace SpecFlowWebDriver.Utis
                     testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
                     break;
+                case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
+                    testEnvironment.HubURL = new Uri($"http://{Environment.GetEnvironmentVariable("MY_EXTERNAL_IP")}:4444/wd/hub");
+                    testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+                    break;
                 case EnvironmentType.LAMBDA_TEST:
                     testEnvironment.HubURL =
                         new Uri($"https://{Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME")}:{Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY")}@hub.lambdatest.com/wd/hub");
@@ -43,6 +48,11 @@ namespace SpecFlowWebDriver.Utis
                     DriverOptions options = new ChromeOptions();
                     options.PlatformName = "windows";
                     result = options.ToCapabilities();
+                    break;
+                case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
+                    DriverOptions localOptionsFromExternal = new ChromeOptions();
+                    localOptionsFromExternal.PlatformName = "windows";
+                    result = localOptionsFromExternal.ToCapabilities();
                     break;
                 case EnvironmentType.LAMBDA_TEST:
                     DesiredCapabilities dCapsLambdaTest = new DesiredCapabilities();
@@ -74,6 +84,13 @@ namespace SpecFlowWebDriver.Utis
                     dCapsLocal.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
                     result = dCapsLocal;
                     break;
+                case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
+                    DesiredCapabilities dCapsLocalFromExternal = new DesiredCapabilities();
+                    dCapsLocalFromExternal.SetCapability("platformName", "Android");
+                    dCapsLocalFromExternal.SetCapability("appPackage", "com.android.chrome");
+                    dCapsLocalFromExternal.SetCapability("appActivity", "com.google.android.apps.chrome.Main");
+                    result = dCapsLocalFromExternal;
+                    break;
                 case EnvironmentType.LAMBDA_TEST:
                     DesiredCapabilities dCapsLambdaTest = new DesiredCapabilities();
                     dCapsLambdaTest.SetCapability("user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
@@ -104,6 +121,7 @@ namespace SpecFlowWebDriver.Utis
     public enum EnvironmentType
     {
         LOCAL,
+        LOCAL_FROM_EXTERNAL_NETWORK,
         LAMBDA_TEST
     }
 }
