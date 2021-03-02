@@ -164,7 +164,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("Wiki page is open", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 23
- testRunner.Then("\'WMF-Last-Access\' cookie value is \'22-Jan-2021\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("\'WMF-Last-Access\' cookie value is today", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

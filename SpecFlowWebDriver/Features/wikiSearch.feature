@@ -20,7 +20,7 @@ Scenario Outline: Find definitions
 @web
 Scenario: Check Cookies
 	Given Wiki page is open
-	Then 'WMF-Last-Access' cookie value is '22-Jan-2021'
+	Then 'WMF-Last-Access' cookie value is today
 
 @checkLocalStorage
 @web

@@ -1,4 +1,6 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
 using SpecFlowWebDriver.Utis;
 using System;
@@ -28,7 +30,8 @@ namespace SpecFlowWebDriver.Utils
                     scenarioContext.Get<RemoteWebDriver>("driver").Manage().Window.Maximize();
                     break;
                 case DriverType.Mobile:
-                    scenarioContext.Set<RemoteWebDriver>(new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.AppiumCapabilities, TimeSpan.FromSeconds(30)), "driver");
+                    //scenarioContext.Set<RemoteWebDriver>(new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.AppiumCapabilities, TimeSpan.FromSeconds(30)), "driver");
+                    scenarioContext.Set<AppiumDriver<AppiumWebElement>>(new AndroidDriver<AppiumWebElement>(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.AppiumOptions, TimeSpan.FromSeconds(30)), "driver");
                     break;
                 case DriverType.Desktop:
                     //todo implement winium?

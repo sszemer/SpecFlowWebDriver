@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Remote;
 using SpecFlowWebDriver.Pages;
 using TechTalk.SpecFlow;
@@ -13,7 +15,7 @@ namespace SpecFlowWebDriver.Steps
 
         public ChromeSteps(ScenarioContext scenarioContext)
         {
-            chromePage = new ChromePage(scenarioContext.Get<RemoteWebDriver>("driver"));
+            chromePage = new ChromePage(scenarioContext.Get<AppiumDriver<AppiumWebElement>>("driver"));
             this.scenarioContext = scenarioContext;
         }
 

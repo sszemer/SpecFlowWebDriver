@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using SpecFlowWebDriver.Pages;
 using OpenQA.Selenium.Remote;
+using System;
 
 namespace SpecFlowWebDriver
 {
@@ -36,9 +37,10 @@ namespace SpecFlowWebDriver
             Assert.True(wikiPage.ArticleName.Text.ToLower().Contains(definition));
         }
 
-        [Then(@"'(.*)' cookie value is '(.*)'")]
-        public void ThenCookieValueIs(string cookieName, string expectedValue)
+        [Then(@"'(.*)' cookie value is today")]
+        public void ThenCookieValueIs(string cookieName)
         {
+            var expectedValue = DateTime.Now.ToString("dd-MMM-yyyy");
             Assert.AreEqual(scenarioContext.Get<RemoteWebDriver>("driver").Manage().Cookies.GetCookieNamed(cookieName).Value, expectedValue);
         }
 

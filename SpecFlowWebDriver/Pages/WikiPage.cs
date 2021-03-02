@@ -3,7 +3,7 @@ using OpenQA.Selenium.Remote;
 
 namespace SpecFlowWebDriver.Pages
 {
-    public class WikiPage : CommonPage
+    public class WikiPage : CommonWebPage
     {
         public WikiPage(RemoteWebDriver driver) : base(driver) { }
         public IWebElement SearchInput => driver.FindElement(By.Id("searchInput"));

@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
@@ -23,6 +24,7 @@ namespace SpecFlowWebDriver.Utis
                     testEnvironment.HubURL = new Uri("http://127.0.0.1:4444/wd/hub");
                     testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
                 case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
                     testEnvironment.HubURL = new Uri($"http://{Environment.GetEnvironmentVariable("MY_EXTERNAL_IP")}:4444/wd/hub");
@@ -108,6 +110,25 @@ namespace SpecFlowWebDriver.Utis
             }
             return result;
         }
+        private static AppiumOptions SetAppiumOptions(EnvironmentType environmentType)
+        {
+            Logger.Info("Environment Type: " + environmentType);
+            AppiumOptions result = null;
+            switch (environmentType)
+            {
+                case EnvironmentType.LOCAL:
+                    AppiumOptions appiumOptionsLocal = new AppiumOptions();
+                    appiumOptionsLocal.PlatformName = "Android";
+                    appiumOptionsLocal.AddAdditionalCapability("appPackage", "com.android.chrome");
+                    appiumOptionsLocal.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
+                    //appiumOptionsLocal.AddAdditionalCapability("noReset", "true");
+                    result = appiumOptionsLocal;
+                    break;
+                default:
+                    throw new Exception($"{environmentType} does not support AppiumOptions");
+            }
+            return result;
+        }
     }
 
     public class TestEnvironment
@@ -115,6 +136,7 @@ namespace SpecFlowWebDriver.Utis
         public Uri HubURL { get; set; }
         public ICapabilities HubCapabilities { get; set; }
         public ICapabilities AppiumCapabilities { get; set; }
+        public AppiumOptions AppiumOptions { get; set; }
 
     }
 
