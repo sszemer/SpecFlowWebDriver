@@ -30,6 +30,7 @@ namespace SpecFlowWebDriver.Utis
                     testEnvironment.HubURL = new Uri($"http://{Environment.GetEnvironmentVariable("MY_EXTERNAL_IP")}:4444/wd/hub");
                     testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
                 case EnvironmentType.LAMBDA_TEST:
                     testEnvironment.HubURL =
