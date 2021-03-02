@@ -124,6 +124,14 @@ namespace SpecFlowWebDriver.Utis
                     //appiumOptionsLocal.AddAdditionalCapability("noReset", "true");
                     result = appiumOptionsLocal;
                     break;
+                case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
+                    AppiumOptions appiumOptionsLocalFEN = new AppiumOptions();
+                    appiumOptionsLocalFEN.PlatformName = "Android";
+                    appiumOptionsLocalFEN.AddAdditionalCapability("appPackage", "com.android.chrome");
+                    appiumOptionsLocalFEN.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
+                    //appiumOptionsLocal.AddAdditionalCapability("noReset", "true");
+                    result = appiumOptionsLocalFEN;
+                    break;
                 default:
                     throw new Exception($"{environmentType} does not support AppiumOptions");
             }
