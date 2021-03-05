@@ -38,6 +38,12 @@ namespace SpecFlowWebDriver.Utis
                     testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
                     break;
+                case EnvironmentType.BROWSERSTACK:
+                    testEnvironment.HubURL =
+                        new Uri("https://hub-cloud.browserstack.com/wd/hub/");
+                    testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+                    break;
             }
             return testEnvironment;
         }
@@ -70,6 +76,17 @@ namespace SpecFlowWebDriver.Utis
                     dCapsLambdaTest.SetCapability("network", true);
                     dCapsLambdaTest.SetCapability("video", true);
                     result = dCapsLambdaTest;
+                    break;
+                case EnvironmentType.BROWSERSTACK:
+                    DesiredCapabilities dCapsBrowserStack = new DesiredCapabilities();
+                    dCapsBrowserStack.SetCapability("browserstack.user", Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME"));
+                    dCapsBrowserStack.SetCapability("browserstack.key", Environment.GetEnvironmentVariable("BROWSERSTACK_AUTOMATE_KEY"));
+                    dCapsBrowserStack.SetCapability("name", "sebastianszemer1's First Test");
+                    dCapsBrowserStack.SetCapability("os", "Windows");
+                    dCapsBrowserStack.SetCapability("os_version", "10");
+                    dCapsBrowserStack.SetCapability("browser", "Chrome");
+                    dCapsBrowserStack.SetCapability("browser_version", "88");
+                    result = dCapsBrowserStack;
                     break;
             }
             return result;
@@ -107,6 +124,17 @@ namespace SpecFlowWebDriver.Utis
                     dCapsLambdaTest.SetCapability("network", true);
                     dCapsLambdaTest.SetCapability("visual", true);
                     result = dCapsLambdaTest;
+                    break;
+                case EnvironmentType.BROWSERSTACK:
+                    DesiredCapabilities dCapsBrowserStack = new DesiredCapabilities();
+                    dCapsBrowserStack.SetCapability("browserstack.user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
+                    dCapsBrowserStack.SetCapability("browserstack.key", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
+                    dCapsBrowserStack.SetCapability("browserName", "android");
+                    dCapsBrowserStack.SetCapability("name", "sebastianszemer1's First Test");
+                    dCapsBrowserStack.SetCapability("device", "Samsung Samsung Galaxy S20");
+                    dCapsBrowserStack.SetCapability("realMobile", true);
+                    dCapsBrowserStack.SetCapability("os_version", "11.0");
+                    result = dCapsBrowserStack;
                     break;
             }
             return result;
@@ -153,6 +181,7 @@ namespace SpecFlowWebDriver.Utis
     {
         LOCAL,
         LOCAL_FROM_EXTERNAL_NETWORK,
-        LAMBDA_TEST
+        LAMBDA_TEST,
+        BROWSERSTACK
     }
 }
