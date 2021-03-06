@@ -66,7 +66,7 @@ namespace SpecFlowWebDriver.Utils
             scenarioContext.ScenarioInfo.Tags.ToList().ForEach(tag => scenarioContext.Get<ScenarioPOCO>().Categories.Add(tag));
             scenarioContext.Get<ScenarioPOCO>().Categories.Add("All_tests");
             DriverProvider.CloseDriver(scenarioContext);
-            if (scenarioContext.TestError != null)
+            if (scenarioContext.TestError != null && scenarioContext.Get<ScenarioPOCO>().Steps.Count==0)
             {
                 scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO($"scenario failed: {scenarioContext.TestError.Message}", StepDefinitionType.Given, Status.Error));
                 scenarioContext.Get<ScenarioPOCO>().Steps.Last().Exception = scenarioContext.TestError;

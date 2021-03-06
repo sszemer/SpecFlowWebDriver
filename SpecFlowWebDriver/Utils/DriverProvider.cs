@@ -26,7 +26,7 @@ namespace SpecFlowWebDriver.Utils
             switch (scenarioContext.Get<DriverType>())
             {
                 case DriverType.Web:
-                    scenarioContext.Set<RemoteWebDriver>(new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.HubCapabilities, TimeSpan.FromSeconds(30)), "driver");
+                    scenarioContext.Set<RemoteWebDriver>(new RemoteWebDriver(EnvironmentHelper.TestEnvironment.HubURL, EnvironmentHelper.TestEnvironment.WebCapabilities, TimeSpan.FromSeconds(30)), "driver");
                     scenarioContext.Get<RemoteWebDriver>("driver").Manage().Window.Maximize();
                     break;
                 case DriverType.Mobile:

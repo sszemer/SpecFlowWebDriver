@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System;
@@ -22,32 +23,34 @@ namespace SpecFlowWebDriver.Utis
             {
                 case EnvironmentType.LOCAL:
                     testEnvironment.HubURL = new Uri("http://127.0.0.1:4444/wd/hub");
-                    testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
                     testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
                 case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
                     testEnvironment.HubURL = new Uri($"http://{Environment.GetEnvironmentVariable("MY_EXTERNAL_IP")}:4444/wd/hub");
-                    testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
                     testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
                 case EnvironmentType.LAMBDA_TEST:
                     testEnvironment.HubURL =
                         new Uri($"https://{Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME")}:{Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY")}@hub.lambdatest.com/wd/hub");
-                    testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
                 case EnvironmentType.BROWSERSTACK:
                     testEnvironment.HubURL =
                         new Uri("https://hub-cloud.browserstack.com/wd/hub/");
-                    testEnvironment.HubCapabilities = SetHubCapabilities(environmentType);
+                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
                     testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
             }
             return testEnvironment;
         }
-        private static ICapabilities SetHubCapabilities(EnvironmentType environmentType)
+        private static ICapabilities SetWebCapabilities(EnvironmentType environmentType)
         {
             Logger.Info("Environment Type: " + environmentType);
             ICapabilities result = null;
@@ -127,11 +130,12 @@ namespace SpecFlowWebDriver.Utis
                     break;
                 case EnvironmentType.BROWSERSTACK:
                     DesiredCapabilities dCapsBrowserStack = new DesiredCapabilities();
-                    dCapsBrowserStack.SetCapability("browserstack.user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
-                    dCapsBrowserStack.SetCapability("browserstack.key", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
-                    dCapsBrowserStack.SetCapability("browserName", "android");
+                    dCapsBrowserStack.SetCapability("browserstack.user", Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME"));
+                    dCapsBrowserStack.SetCapability("browserstack.key", Environment.GetEnvironmentVariable("BROWSERSTACK_AUTOMATE_KEY"));
+                    dCapsBrowserStack.SetCapability("browserName", "Chrome");
+                    dCapsBrowserStack.SetCapability("platformName", "android");
                     dCapsBrowserStack.SetCapability("name", "sebastianszemer1's First Test");
-                    dCapsBrowserStack.SetCapability("device", "Samsung Samsung Galaxy S20");
+                    dCapsBrowserStack.SetCapability("device", "Samsung Galaxy S20");
                     dCapsBrowserStack.SetCapability("realMobile", true);
                     dCapsBrowserStack.SetCapability("os_version", "11.0");
                     result = dCapsBrowserStack;
@@ -139,14 +143,14 @@ namespace SpecFlowWebDriver.Utis
             }
             return result;
         }
-        private static AppiumOptions SetAppiumOptions(EnvironmentType environmentType)
+        private static DriverOptions SetAppiumOptions(EnvironmentType environmentType)
         {
             Logger.Info("Environment Type: " + environmentType);
-            AppiumOptions result = null;
+            DriverOptions result = null;
             switch (environmentType)
             {
                 case EnvironmentType.LOCAL:
-                    AppiumOptions appiumOptionsLocal = new AppiumOptions();
+                    DriverOptions appiumOptionsLocal = new AppiumOptions();
                     appiumOptionsLocal.PlatformName = "Android";
                     appiumOptionsLocal.AddAdditionalCapability("appPackage", "com.android.chrome");
                     appiumOptionsLocal.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
@@ -154,12 +158,38 @@ namespace SpecFlowWebDriver.Utis
                     result = appiumOptionsLocal;
                     break;
                 case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
-                    AppiumOptions appiumOptionsLocalFEN = new AppiumOptions();
+                    DriverOptions appiumOptionsLocalFEN = new AppiumOptions();
                     appiumOptionsLocalFEN.PlatformName = "Android";
                     appiumOptionsLocalFEN.AddAdditionalCapability("appPackage", "com.android.chrome");
                     appiumOptionsLocalFEN.AddAdditionalCapability("appActivity", "com.google.android.apps.chrome.Main");
                     //appiumOptionsLocal.AddAdditionalCapability("noReset", "true");
                     result = appiumOptionsLocalFEN;
+                    break;
+                case EnvironmentType.BROWSERSTACK:
+                    DriverOptions appiumOptionsBrowserStack = new AppiumOptions();
+                    appiumOptionsBrowserStack.AddAdditionalCapability("browserstack.user", Environment.GetEnvironmentVariable("BROWSERSTACK_USERNAME"));
+                    appiumOptionsBrowserStack.AddAdditionalCapability("browserstack.key", Environment.GetEnvironmentVariable("BROWSERSTACK_AUTOMATE_KEY"));
+                    appiumOptionsBrowserStack.AddAdditionalCapability("browserName", "android");
+                    appiumOptionsBrowserStack.AddAdditionalCapability("name", "sebastianszemer1's First Test");
+                    appiumOptionsBrowserStack.AddAdditionalCapability("device", "Samsung Galaxy S20");
+                    appiumOptionsBrowserStack.AddAdditionalCapability("realMobile", true);
+                    appiumOptionsBrowserStack.AddAdditionalCapability("os_version", "11.0");
+                    appiumOptionsBrowserStack.AddAdditionalCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
+                    result = appiumOptionsBrowserStack;
+                    break;
+                case EnvironmentType.LAMBDA_TEST:
+                    DriverOptions optionsLambdaTest = new AppiumOptions();
+                    optionsLambdaTest.AddAdditionalCapability("user", Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME"));
+                    optionsLambdaTest.AddAdditionalCapability("accessKey", Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY"));
+                    optionsLambdaTest.AddAdditionalCapability("build", DateTime.Now.ToString());
+                    optionsLambdaTest.AddAdditionalCapability("name", "Multiplatform Selenium Grid");
+                    optionsLambdaTest.AddAdditionalCapability("platformName", "Android");
+                    optionsLambdaTest.AddAdditionalCapability("deviceName", "Galaxy S9");
+                    optionsLambdaTest.AddAdditionalCapability("platformVersion", "10");
+                    optionsLambdaTest.AddAdditionalCapability("console", true);
+                    optionsLambdaTest.AddAdditionalCapability("network", true);
+                    optionsLambdaTest.AddAdditionalCapability("visual", true);
+                    result = optionsLambdaTest;
                     break;
                 default:
                     throw new Exception($"{environmentType} does not support AppiumOptions");
@@ -171,9 +201,9 @@ namespace SpecFlowWebDriver.Utis
     public class TestEnvironment
     {
         public Uri HubURL { get; set; }
-        public ICapabilities HubCapabilities { get; set; }
+        public ICapabilities WebCapabilities { get; set; }
         public ICapabilities AppiumCapabilities { get; set; }
-        public AppiumOptions AppiumOptions { get; set; }
+        public DriverOptions AppiumOptions { get; set; }
 
     }
 
