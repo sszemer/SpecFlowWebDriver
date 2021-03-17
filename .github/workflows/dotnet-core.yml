@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Build on push  
     env:
-      MY_EXTERNAL_IP: ${{secrets.MY_EXTERNAL_IP}}
+      BROWSERSTACK_AUTOMATE_KEY: ${{secrets.BROWSERSTACK_AUTOMATE_KEY}}
+      BROWSERSTACK_USERNAME: ${{secrets.BROWSERSTACK_USERNAME}}
       DOTNET_CLI_TELEMETRY_OPTOUT : ${{secrets.DOTNET_CLI_TELEMETRY_OPTOUT}}
     steps:
     - uses: actions/checkout@v2
