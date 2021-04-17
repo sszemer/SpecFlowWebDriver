@@ -18,7 +18,7 @@ namespace SpecFlowWebDriver.Utils
         public static void BeforeTestRun()
         {
             reportPOCO = new ReportPOCO();
-            EnvironmentHelper.EnvironmentType = EnvironmentType.BROWSERSTACK;
+            EnvironmentHelper.EnvironmentType = EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK;
             Reporter.SetupExtentReports();
         }
 

@@ -18,41 +18,39 @@ namespace SpecFlowWebDriver.Utis
         private static TestEnvironment SetEnvironment(EnvironmentType environmentType)
         {
             Logger.Info("Environment Type: " + environmentType);
-            if (testEnvironment == null) testEnvironment = new TestEnvironment();
+            testEnvironment ??= new TestEnvironment();
+            testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
+            testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
+            testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
+            testEnvironment.HubURL = SetHubUrl(environmentType);
+            return testEnvironment;
+        }
+        private static Uri SetHubUrl(EnvironmentType environmentType)
+        {
+            Logger.Info("Setting HubUrl for Environment Type: " + environmentType);
+            Uri result = null;
             switch (environmentType)
             {
                 case EnvironmentType.LOCAL:
-                    testEnvironment.HubURL = new Uri("http://127.0.0.1:4444/wd/hub");
-                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
-                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
-                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
+                    result = new Uri("http://127.0.0.1:4444/wd/hub");
                     break;
                 case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
-                    testEnvironment.HubURL = new Uri($"http://{Environment.GetEnvironmentVariable("MY_EXTERNAL_IP")}:4444/wd/hub");
-                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
-                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
-                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
+                    result = new Uri($"http://{Environment.GetEnvironmentVariable("MY_EXTERNAL_IP")}:4444/wd/hub");
                     break;
                 case EnvironmentType.LAMBDA_TEST:
-                    testEnvironment.HubURL =
+                    result =
                         new Uri($"https://{Environment.GetEnvironmentVariable("LAMBDA_TEST_USERNAME")}:{Environment.GetEnvironmentVariable("LAMBDA_TEST_ACCESS_KEY")}@hub.lambdatest.com/wd/hub");
-                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
-                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
-                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
                 case EnvironmentType.BROWSERSTACK:
                     testEnvironment.HubURL =
                         new Uri("https://hub-cloud.browserstack.com/wd/hub/");
-                    testEnvironment.WebCapabilities = SetWebCapabilities(environmentType);
-                    testEnvironment.AppiumCapabilities = SetAppiumCapabilities(environmentType);
-                    testEnvironment.AppiumOptions = SetAppiumOptions(environmentType);
                     break;
             }
-            return testEnvironment;
+            return result;
         }
         private static ICapabilities SetWebCapabilities(EnvironmentType environmentType)
         {
-            Logger.Info("Environment Type: " + environmentType);
+            Logger.Info("Setting WebCapabilities for Environment Type: " + environmentType);
             ICapabilities result = null;
             switch (environmentType)
             {
@@ -96,7 +94,7 @@ namespace SpecFlowWebDriver.Utis
         }
         private static ICapabilities SetAppiumCapabilities(EnvironmentType environmentType)
         {
-            Logger.Info("Environment Type: " + environmentType);
+            Logger.Info("Setting Appium Capabilities for Environment Type: " + environmentType);
             ICapabilities result = null;
             switch (environmentType)
             {
@@ -145,7 +143,7 @@ namespace SpecFlowWebDriver.Utis
         }
         private static DriverOptions SetAppiumOptions(EnvironmentType environmentType)
         {
-            Logger.Info("Environment Type: " + environmentType);
+            Logger.Info("Setting AppiumOptions for Environment Type: " + environmentType);
             DriverOptions result = null;
             switch (environmentType)
             {
