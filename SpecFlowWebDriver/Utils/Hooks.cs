@@ -66,7 +66,7 @@ namespace SpecFlowWebDriver.Utils
             scenarioContext.ScenarioInfo.Tags.ToList().ForEach(tag => scenarioContext.Get<ScenarioPOCO>().Categories.Add(tag));
             scenarioContext.Get<ScenarioPOCO>().Categories.Add("All_tests");
             DriverProvider.CloseDriver(scenarioContext);
-            if (scenarioContext.TestError != null && scenarioContext.Get<ScenarioPOCO>().Steps.Count==0)
+            if (scenarioContext.TestError != null && scenarioContext.Get<ScenarioPOCO>().Steps.Count == 0)
             {
                 scenarioContext.Get<ScenarioPOCO>().Steps.Add(new StepPOCO($"scenario failed: {scenarioContext.TestError.Message}", StepDefinitionType.Given, Status.Error));
                 scenarioContext.Get<ScenarioPOCO>().Steps.Last().Exception = scenarioContext.TestError;
@@ -104,14 +104,19 @@ namespace SpecFlowWebDriver.Utils
                         {
                             string[,] data = new string[4, 2]
                             {
-                                { "Exception", $"{step.Exception.Message}"},
-                                { "StackTrace", $"{step.Exception.StackTrace}"},
+                                { "Exception", $"<textarea class='code-block'>{step.Exception.Message}</textarea>"},
+                                { "StackTrace", $"<textarea class='code-block'>{step.Exception.StackTrace}</textarea>"},
                                 { "URL", $"<a href=\"{step.URL}\">{step.URL}</a>"},
                                 { "PageSource", $"<a href=\"{step.PageSource}\">{step.PageSource}</a>"}
                             };
                             Reporter.Step.Fail(MarkupHelper.CreateTable(data));
                         }
                         if (step.Screenshot != null) Reporter.Step.Log(Status.Info, MediaEntityBuilder.CreateScreenCaptureFromPath(step.Screenshot).Build());
+                    
+                    
+                    
+                    
+                    
                     }
                 }
             }
