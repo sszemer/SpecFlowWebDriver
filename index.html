@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">03/17/2021 21:15:18</span>
+                    <span class="badge badge-primary">04/17/2021 10:25:24</span>
                 </a>
             </li>
         </ul>
@@ -124,11 +124,11 @@
 					</a>
 					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
 							<a class="dropdown-item" href="#">All_tests</a>
-							<a class="dropdown-item" href="#">currencyLookup</a>
-							<a class="dropdown-item" href="#">nodriver</a>
 							<a class="dropdown-item" href="#">android</a>
 							<a class="dropdown-item" href="#">chrome</a>
 							<a class="dropdown-item" href="#">mobile</a>
+							<a class="dropdown-item" href="#">currencyLookup</a>
+							<a class="dropdown-item" href="#">nodriver</a>
 							<a class="dropdown-item" href="#">checkCookies</a>
 							<a class="dropdown-item" href="#">web</a>
 							<a class="dropdown-item" href="#">checkLocalStorage</a>
@@ -139,15 +139,81 @@
         </div>
         <div class="test-list-wrapper scrollable">
             <ul class="test-list-item">
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+					<li class="test-item" status="fail" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar fail-bg">
+							<i class="fa fa-times text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">Android Chrome</p> 
+								<p class="duration text-sm">0h:0m:0s+004ms</p> 
+								<span class="datetime">10:25:24 AM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-fail">Android Chrome</h5>
+										<span class='badge badge-success'>04/17/2021 10:25:24</span>
+										<span class='badge badge-danger'>04/17/2021 10:25:24</span>
+										<span class='badge badge-default'>0h:0m:0s+004ms</span>
+									</div>
+																		<div class="m-t-10 m-l-5">
+											In order to know what things are
+	As an idiot
+	I want to google for the definitions
+									</div>
+								</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: google things</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
+                                </span>
+                                <span>Given scenario failed: Invalid URI: The hostname could not be parsed.</span>
+                            </div>
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>Invalid URI: The hostname could not be parsed.</td></tr><tr><td>StackTrace</td><td>   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetHubUrl(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 38
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetEnvironment(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 25
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.get_TestEnvironment() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 16
+   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 34
+   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlowWebDriver.Features.AndroidChromeFeature.ScenarioCleanup()
+   at SpecFlowWebDriver.Features.AndroidChromeFeature.GoogleThings(String val, String[] exampleTags) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/AndroidChrome.feature:line 11</td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="4"> 
 						<div class="status-avatar pass-bg">
 							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">NBPlookup</p> 
-								<p class="duration text-sm">0h:0m:0s+002ms</p> 
-								<span class="datetime">21:15:20 PM</span>
+								<p class="duration text-sm">0h:0m:1s+218ms</p> 
+								<span class="datetime">10:25:27 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -155,9 +221,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">NBPlookup</h5>
-										<span class='badge badge-success'>03/17/2021 21:15:20</span>
-										<span class='badge badge-danger'>03/17/2021 21:15:20</span>
-										<span class='badge badge-default'>0h:0m:0s+002ms</span>
+										<span class='badge badge-success'>04/17/2021 10:25:27</span>
+										<span class='badge badge-danger'>04/17/2021 10:25:28</span>
+										<span class='badge badge-default'>0h:0m:1s+218ms</span>
 									</div>
 																		<div class="m-t-10 m-l-5">
 											In order to go on vacation
@@ -235,75 +301,6 @@
 </div>
 						</div>
 					</li>
-					<li class="test-item" status="fail" author="" device="" tag="" test-id="10"> 
-						<div class="status-avatar fail-bg">
-							<i class="fa fa-times text-white"></i>
-						</div>
-						<div class="open-test">
-							<div class="test-detail"> 
-								<p class="name">Android Chrome</p> 
-								<p class="duration text-sm">0h:0m:0s+002ms</p> 
-								<span class="datetime">21:15:48 PM</span>
-							</div>
-						</div>
-						<div class="test-contents d-none">
-							<div class="detail-head">
-								<div class="p-v-10 d-inline-block">	
-									<div class="info">
-										<h5 class="test-status text-fail">Android Chrome</h5>
-										<span class='badge badge-success'>03/17/2021 21:15:48</span>
-										<span class='badge badge-danger'>03/17/2021 21:15:48</span>
-										<span class='badge badge-default'>0h:0m:0s+002ms</span>
-									</div>
-																		<div class="m-t-10 m-l-5">
-											In order to know what things are
-	As an idiot
-	I want to google for the definitions
-									</div>
-								</div>
-							</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: google things</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
-                                </span>
-                                <span>Given scenario failed: The HTTP request to the remote WebDriver server for URL https://hub-cloud.browserstack.com/wd/hub/session timed out after 30 seconds.</span>
-                            </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>The HTTP request to the remote WebDriver server for URL https://hub-cloud.browserstack.com/wd/hub/session timed out after 30 seconds.</td></tr><tr><td>StackTrace</td><td>   at OpenQA.Selenium.Appium.Service.AppiumCommandExecutor.Execute(Command commandToExecute)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Appium.AppiumDriver`1.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
-   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
-   at OpenQA.Selenium.Appium.AppiumDriver`1..ctor(ICommandExecutor commandExecutor, ICapabilities appiumOptions)
-   at OpenQA.Selenium.Appium.AppiumDriver`1..ctor(Uri remoteAddress, ICapabilities appiumOptions, TimeSpan commandTimeout)
-   at OpenQA.Selenium.Appium.Android.AndroidDriver`1..ctor(Uri remoteAddress, DriverOptions driverOptions, TimeSpan commandTimeout)
-   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 34
-   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
-   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
-   at SpecFlowWebDriver.Features.AndroidChromeFeature.ScenarioCleanup()
-   at SpecFlowWebDriver.Features.AndroidChromeFeature.GoogleThings(String val, String[] exampleTags) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/AndroidChrome.feature:line 11</td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
-                    </div>
-				</div>
-	</div>
-</div>
-						</div>
-					</li>
 					<li class="test-item" status="fail" author="" device="" tag="" test-id="13"> 
 						<div class="status-avatar fail-bg">
 							<i class="fa fa-times text-white"></i>
@@ -311,8 +308,8 @@
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">wikiSearch</p> 
-								<p class="duration text-sm">0h:0m:0s+006ms</p> 
-								<span class="datetime">21:16:15 PM</span>
+								<p class="duration text-sm">0h:0m:0s+000ms</p> 
+								<span class="datetime">10:25:28 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -320,9 +317,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-fail">wikiSearch</h5>
-										<span class='badge badge-success'>03/17/2021 21:16:15</span>
-										<span class='badge badge-danger'>03/17/2021 21:16:15</span>
-										<span class='badge badge-default'>0h:0m:0s+006ms</span>
+										<span class='badge badge-success'>04/17/2021 10:25:28</span>
+										<span class='badge badge-danger'>04/17/2021 10:25:28</span>
+										<span class='badge badge-default'>0h:0m:0s+000ms</span>
 									</div>
 																		<div class="m-t-10 m-l-5">
 											In order to know what things are
@@ -337,29 +334,33 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: Check Cookies</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
 				<div class="collapse">
                     <div class="card-body">
                                                     <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given Wiki page is open</span>
+                                <span>Given scenario failed: Invalid URI: The hostname could not be parsed.</span>
                             </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-03-17-21_15_29.jpg' src='Wikipageisopen_2021-03-17-21_15_29.jpg' data-src='Wikipageisopen_2021-03-17-21_15_29.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then 'WMF-Last-Access' cookie value is today</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='WMF-Last-Accesscookievalueistoday_2021-03-17-21_15_30.jpg' src='WMF-Last-Accesscookievalueistoday_2021-03-17-21_15_30.jpg' data-src='WMF-Last-Accesscookievalueistoday_2021-03-17-21_15_30.jpg'></span>
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>Invalid URI: The hostname could not be parsed.</td></tr><tr><td>StackTrace</td><td>   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetHubUrl(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 38
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetEnvironment(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 25
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.get_TestEnvironment() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 16
+   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 29
+   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlowWebDriver.Features.WikiSearchFeature.ScenarioCleanup()
+   at SpecFlowWebDriver.Features.WikiSearchFeature.CheckCookies() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/wikiSearch.feature:line 23</td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
                     </div>
 				</div>
 	</div>
@@ -375,35 +376,25 @@
 				<div class="collapse">
                     <div class="card-body">
                                                     <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Given Wiki page is open</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-03-17-21_15_37.jpg' src='Wikipageisopen_2021-03-17-21_15_37.jpg' data-src='Wikipageisopen_2021-03-17-21_15_37.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Then 'wmE-sS--sampleMultiplier' localStorage item value is '1'</span>
+                                <span>Given scenario failed: Invalid URI: The hostname could not be parsed.</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>  Expected: "1"
-  But was:  null
-</td></tr><tr><td>StackTrace</td><td>   at NUnit.Framework.Assert.ReportFailure(String message)
-   at NUnit.Framework.Assert.ReportFailure(ConstraintResult result, String message, Object[] args)
-   at NUnit.Framework.Assert.That[TActual](TActual actual, IResolveConstraint expression, String message, Object[] args)
-   at NUnit.Framework.Assert.AreEqual(Object expected, Object actual)
-   at SpecFlowWebDriver.WikiSearchSteps.ThenLocalStorageItemValueIs(String itemName, String expected) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Steps/WikiSearchSteps.cs:line 51
-   at TechTalk.SpecFlow.Bindings.BindingInvoker.InvokeBinding(IBinding binding, IContextManager contextManager, Object[] arguments, ITestTracer testTracer, TimeSpan& duration)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStepMatch(BindingMatch match, Object[] arguments, TimeSpan& duration)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.ExecuteStep(IContextManager contextManager, StepInstance stepInstance)
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>Invalid URI: The hostname could not be parsed.</td></tr><tr><td>StackTrace</td><td>   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetHubUrl(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 38
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetEnvironment(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 25
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.get_TestEnvironment() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 16
+   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 29
+   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
    at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
    at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
    at SpecFlowWebDriver.Features.WikiSearchFeature.ScenarioCleanup()
-   at SpecFlowWebDriver.Features.WikiSearchFeature.CheckLocalStorage() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/wikiSearch.feature:line 29</td></tr><tr><td>URL</td><td><a href="https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna">https://pl.wikipedia.org/wiki/Wikipedia:Strona_g%C5%82%C3%B3wna</a></td></tr><tr><td>PageSource</td><td><a href="wmE-sS--sampleMultiplierlocalStorageitemvalueis1.html">wmE-sS--sampleMultiplierlocalStorageitemvalueis1.html</a></td></tr></table></div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-03-17-21_15_38.jpg' src='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-03-17-21_15_38.jpg' data-src='wmE-sS--sampleMultiplierlocalStorageitemvalueis1_2021-03-17-21_15_38.jpg'></span>
+   at SpecFlowWebDriver.Features.WikiSearchFeature.CheckLocalStorage() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/wikiSearch.feature:line 29</td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
                     </div>
 				</div>
 	</div>
@@ -411,37 +402,33 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: Find definitions</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
 				<div class="collapse">
                     <div class="card-body">
                                                     <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given Wiki page is open</span>
+                                <span>Given scenario failed: Invalid URI: The hostname could not be parsed.</span>
                             </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-03-17-21_15_54.jpg' src='Wikipageisopen_2021-03-17-21_15_54.jpg' data-src='Wikipageisopen_2021-03-17-21_15_54.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>When I search for a apple</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Isearchforaapple_2021-03-17-21_15_58.jpg' src='Isearchforaapple_2021-03-17-21_15_58.jpg' data-src='Isearchforaapple_2021-03-17-21_15_58.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then The definition of apple is displayed</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Thedefinitionofappleisdisplayed_2021-03-17-21_16_00.jpg' src='Thedefinitionofappleisdisplayed_2021-03-17-21_16_00.jpg' data-src='Thedefinitionofappleisdisplayed_2021-03-17-21_16_00.jpg'></span>
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>Invalid URI: The hostname could not be parsed.</td></tr><tr><td>StackTrace</td><td>   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetHubUrl(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 38
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetEnvironment(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 25
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.get_TestEnvironment() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 16
+   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 29
+   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlowWebDriver.Features.WikiSearchFeature.ScenarioCleanup()
+   at SpecFlowWebDriver.Features.WikiSearchFeature.FindDefinitions(String definition, String[] exampleTags) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/wikiSearch.feature:line 12</td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
                     </div>
 				</div>
 	</div>
@@ -449,37 +436,33 @@
 		<div class="card-header" role="tab">
 			<div class="card-title pl-3">
 				<div class="node">Scenario: Find definitions</div>
-				<div class="status-avatar float-left pass-bg">
-					<i class="fa fa-check text-white"></i>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
 				</div>
 			</div>
 		</div>
 				<div class="collapse">
                     <div class="card-body">
                                                     <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given Wiki page is open</span>
+                                <span>Given scenario failed: Invalid URI: The hostname could not be parsed.</span>
                             </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Wikipageisopen_2021-03-17-21_16_10.jpg' src='Wikipageisopen_2021-03-17-21_16_10.jpg' data-src='Wikipageisopen_2021-03-17-21_16_10.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start when" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>When I search for a pear</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Isearchforapear_2021-03-17-21_16_12.jpg' src='Isearchforapear_2021-03-17-21_16_12.jpg' data-src='Isearchforapear_2021-03-17-21_16_12.jpg'></span>
-                            <div class="d-flex align-items-center justify-content-start then" title="">
-                                <span class="alert-icon pass-bg">
-                                    <i class="fa fa-check text-white"></i>
-                                </span>
-                                <span>Then The definition of pear is displayed</span>
-                            </div>
-			<div class="details"></div>
-			<span class="badge badge-primary"><img class='r-img' title='' onerror='this.style.display="none"' data-featherlight='Thedefinitionofpearisdisplayed_2021-03-17-21_16_13.jpg' src='Thedefinitionofpearisdisplayed_2021-03-17-21_16_13.jpg' data-src='Thedefinitionofpearisdisplayed_2021-03-17-21_16_13.jpg'></span>
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td>Invalid URI: The hostname could not be parsed.</td></tr><tr><td>StackTrace</td><td>   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetHubUrl(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 38
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.SetEnvironment(EnvironmentType environmentType) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 25
+   at SpecFlowWebDriver.Utis.EnvironmentHelper.get_TestEnvironment() in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/EnvironmentHelper.cs:line 16
+   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 29
+   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlowWebDriver.Features.WikiSearchFeature.ScenarioCleanup()
+   at SpecFlowWebDriver.Features.WikiSearchFeature.FindDefinitions(String definition, String[] exampleTags) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/wikiSearch.feature:line 12</td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
                     </div>
 				</div>
 	</div>
@@ -531,13 +514,13 @@
       <p class="name">All_tests</p>
       <p class="duration text-sm">7 tests</p>
       <span class="datetime">
- <span class='badge badge-success'>5</span>          <span class='badge badge-danger'>2</span>                       </span>
+ <span class='badge badge-success'>2</span>          <span class='badge badge-danger'>5</span>                       </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>All_tests</h4>
- <span class='badge badge-success'>5 passed</span>        <span class='badge badge-danger'>2 failed</span>                 </div>
+ <span class='badge badge-success'>2 passed</span>        <span class='badge badge-danger'>5 failed</span>                 </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -549,34 +532,12 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:15:20</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:15:20</td>
-          <td class='linked' test-id='6' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <div class='status-avatar fail-bg'>
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:15:48</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>10:25:24</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
@@ -586,7 +547,29 @@
               <i class="fa fa-check text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='5' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='9' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
           <td class='linked' test-id='14' root-id="13">
             <a href="#">wikiSearch.Check Cookies</a>
           </td>
@@ -597,127 +580,31 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='17' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='16' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
         </tr>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='18' root-id="13">
+            <a href="#">wikiSearch.Find definitions</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
           <td class='linked' test-id='20' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='24' root-id="13">
-            <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">currencyLookup</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>currencyLookup</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:15:20</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:15:20</td>
-          <td class='linked' test-id='6' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">nodriver</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>nodriver</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:15:20</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>21:15:20</td>
-          <td class='linked' test-id='6' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
           </td>
         </tr>
       </tbody>
@@ -752,8 +639,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:15:48</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>10:25:24</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
@@ -789,8 +676,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:15:48</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>10:25:24</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
@@ -826,8 +713,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:15:48</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>10:25:24</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
@@ -838,16 +725,16 @@
 <li class="test-item">
   <div class="open-test">
     <div class="test-detail">
-      <p class="name">checkCookies</p>
-      <p class="duration text-sm">1 tests</p>
+      <p class="name">currencyLookup</p>
+      <p class="duration text-sm">2 tests</p>
       <span class="datetime">
- <span class='badge badge-success'>1</span>                               </span>
+ <span class='badge badge-success'>2</span>                               </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
-      <h4>checkCookies</h4>
- <span class='badge badge-success'>1 passed</span>                       </div>
+      <h4>currencyLookup</h4>
+ <span class='badge badge-success'>2 passed</span>                       </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -863,7 +750,103 @@
               <i class="fa fa-check text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='5' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='9' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>
+<li class="test-item">
+  <div class="open-test">
+    <div class="test-detail">
+      <p class="name">nodriver</p>
+      <p class="duration text-sm">2 tests</p>
+      <span class="datetime">
+ <span class='badge badge-success'>2</span>                               </span>
+    </div>
+  </div>
+  <div class="test-contents d-none">
+    <div class="info">
+      <h4>nodriver</h4>
+ <span class='badge badge-success'>2 passed</span>                       </div>
+    <table class='table table-sm mt-4'>
+      <thead>
+        <tr>
+          <th class="status-col">Status</th>
+          <th class="timestamp-col">Timestamp</th>
+          <th>TestName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='5' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
+          <td class='linked' test-id='9' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>
+<li class="test-item">
+  <div class="open-test">
+    <div class="test-detail">
+      <p class="name">checkCookies</p>
+      <p class="duration text-sm">1 tests</p>
+      <span class="datetime">
+         <span class='badge badge-danger'>1</span>                       </span>
+    </div>
+  </div>
+  <div class="test-contents d-none">
+    <div class="info">
+      <h4>checkCookies</h4>
+       <span class='badge badge-danger'>1 failed</span>                 </div>
+    <table class='table table-sm mt-4'>
+      <thead>
+        <tr>
+          <th class="status-col">Status</th>
+          <th class="timestamp-col">Timestamp</th>
+          <th>TestName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
+            </div>
+          </td>
+          <td>10:25:28</td>
           <td class='linked' test-id='14' root-id="13">
             <a href="#">wikiSearch.Check Cookies</a>
           </td>
@@ -878,13 +861,13 @@
       <p class="name">web</p>
       <p class="duration text-sm">4 tests</p>
       <span class="datetime">
- <span class='badge badge-success'>3</span>          <span class='badge badge-danger'>1</span>                       </span>
+         <span class='badge badge-danger'>4</span>                       </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>web</h4>
- <span class='badge badge-success'>3 passed</span>        <span class='badge badge-danger'>1 failed</span>                 </div>
+       <span class='badge badge-danger'>4 failed</span>                 </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -896,11 +879,11 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
+          <td>10:25:28</td>
           <td class='linked' test-id='14' root-id="13">
             <a href="#">wikiSearch.Check Cookies</a>
           </td>
@@ -911,30 +894,30 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='17' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='16' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
         </tr>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='20' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='18' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
         </tr>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='24' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='20' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
         </tr>
@@ -970,8 +953,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='17' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='16' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
         </tr>
@@ -985,13 +968,13 @@
       <p class="name">searchDefinitions</p>
       <p class="duration text-sm">2 tests</p>
       <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
+         <span class='badge badge-danger'>2</span>                       </span>
     </div>
   </div>
   <div class="test-contents d-none">
     <div class="info">
       <h4>searchDefinitions</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
+       <span class='badge badge-danger'>2 failed</span>                 </div>
     <table class='table table-sm mt-4'>
       <thead>
         <tr>
@@ -1003,23 +986,23 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='20' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='18' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
         </tr>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
+            <div class='status-avatar fail-bg'>
+              <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>21:16:15</td>
-          <td class='linked' test-id='24' root-id="13">
+          <td>10:25:28</td>
+          <td class='linked' test-id='20' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
         </tr>
@@ -1078,9 +1061,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='71.42857142857143%'><b>5</b> scenarios passed</small></div>
+	                <div><small data-tooltip='28.57142857142857%'><b>2</b> scenarios passed</small></div>
 	                <div>
-	                    <small data-tooltip='28.57142857142857%'><b>2</b> scenarios failed, 
+	                    <small data-tooltip='71.42857142857143%'><b>5</b> scenarios failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1098,9 +1081,9 @@
 	                </div>
 	            </div>
 	            <div class="card-footer">
-	                <div><small data-tooltip='88.23529411764706%'><b>15</b> steps passed</small></div>
+	                <div><small data-tooltip='54.54545454545454%'><b>6</b> steps passed</small></div>
 	                <div>
-	                    <small data-tooltip='11.76470588235294%'><b>2</b> steps failed, 
+	                    <small data-tooltip='45.45454545454545%'><b>5</b> steps failed, 
 	                    <b data-tooltip='0%'>0</b> others
 	                    </small>
                     </div>
@@ -1137,7 +1120,7 @@
 							<h2 class="font-size-28 font-weight-light">7</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-								<span>71.43%</span>
+								<span>28.57%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -1153,7 +1136,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">03/17/2021 21:15:18</h6>
+							<h6 class="font-weight-light">04/17/2021 10:25:24</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1169,7 +1152,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:00:57.2207707</h6>
+							<h6 class="font-weight-light">00:00:04.4907449</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1214,24 +1197,10 @@
 						<tbody>
 							<tr>
 								<td>All_tests</td>
+								<td>2</td>
 								<td>5</td>
-								<td>2</td>
 								<td>0</td>
-								<td>71.43%</td>
-							</tr>
-							<tr>
-								<td>currencyLookup</td>
-								<td>2</td>
-								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
-							</tr>
-							<tr>
-								<td>nodriver</td>
-								<td>2</td>
-								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
+								<td>28.57%</td>
 							</tr>
 							<tr>
 								<td>android</td>
@@ -1255,18 +1224,32 @@
 								<td>0%</td>
 							</tr>
 							<tr>
-								<td>checkCookies</td>
-								<td>1</td>
+								<td>currencyLookup</td>
+								<td>2</td>
 								<td>0</td>
 								<td>0</td>
 								<td>100%</td>
 							</tr>
 							<tr>
-								<td>web</td>
-								<td>3</td>
+								<td>nodriver</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+							<tr>
+								<td>checkCookies</td>
+								<td>0</td>
 								<td>1</td>
 								<td>0</td>
-								<td>75%</td>
+								<td>0%</td>
+							</tr>
+							<tr>
+								<td>web</td>
+								<td>0</td>
+								<td>4</td>
+								<td>0</td>
+								<td>0%</td>
 							</tr>
 							<tr>
 								<td>checkLocalStorage</td>
@@ -1277,10 +1260,10 @@
 							</tr>
 							<tr>
 								<td>searchDefinitions</td>
+								<td>0</td>
 								<td>2</td>
 								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
+								<td>0%</td>
 							</tr>
 						</tbody>
 					</table>
@@ -1303,11 +1286,11 @@
 						<tbody>
 								<tr>
 									<td>OS</td>
-									<td>Unix 5.4.0.1040</td>
+									<td>Unix 5.4.0.1043</td>
 								</tr>
 								<tr>
 									<td>ENV</td>
-									<td>BROWSERSTACK</td>
+									<td>LOCAL_FROM_EXTERNAL_NETWORK</td>
 								</tr>
 						</tbody>
 					</table>
@@ -1327,29 +1310,29 @@
 		skipParent: 0,
 		exceptionsParent: 2,
 		childCount: 7,
-		passChild: 5,
-		failChild: 2,
+		passChild: 2,
+		failChild: 5,
 		fatalChild: 0,
 		errorChild: 0,
 		warningChild: 0,
 		skipChild: 0,
 		infoChild: 0,
 		debugChild: 0,
-		exceptionsChild: 2,
-		grandChildCount: 17,
-		passGrandChild: 15,
-		failGrandChild: 2,
+		exceptionsChild: 5,
+		grandChildCount: 11,
+		passGrandChild: 6,
+		failGrandChild: 5,
 		fatalGrandChild: 0,
 		errorGrandChild: 0,
 		warningGrandChild: 0,
 		skipGrandChild: 0,
 		infoGrandChild: 0,
 		debugGrandChild: 0,
-		exceptionsGrandChild: 2,
+		exceptionsGrandChild: 5,
 	};
 </script>
 	<script>
-		var timeline = { "NBPlookup":0.0025228,"Android Chrome":0.0021421,"wikiSearch":0.0069534 };
+		var timeline = { "Android Chrome":0.0047109,"NBPlookup":1.2186945,"wikiSearch":0.0004633 };
 	</script>
 
                 </div>
