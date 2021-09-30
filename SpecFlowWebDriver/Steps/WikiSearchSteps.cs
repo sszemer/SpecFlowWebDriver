@@ -47,7 +47,7 @@ namespace SpecFlowWebDriver
         [Then(@"'(.*)' localStorage item value is '(.*)'")]
         public void ThenLocalStorageItemValueIs(string itemName, string expected)
         {
-            var actual = scenarioContext.Get<RemoteWebDriver>("driver").ExecuteScript($"return localStorage.getItem('{itemName}');")?.ToString();
+            var actual = scenarioContext.Get<RemoteWebDriver>("driver").ExecuteScript($"return window.localStorage.getItem('{itemName}');")?.ToString();
             Assert.AreEqual(expected, actual);
         }
 
