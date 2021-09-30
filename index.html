@@ -51,7 +51,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">05/20/2021 16:56:47</span>
+                    <span class="badge badge-primary">09/30/2021 09:20:45</span>
                 </a>
             </li>
         </ul>
@@ -124,11 +124,11 @@
 					</a>
 					<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
 							<a class="dropdown-item" href="#">All_tests</a>
-							<a class="dropdown-item" href="#">currencyLookup</a>
-							<a class="dropdown-item" href="#">nodriver</a>
 							<a class="dropdown-item" href="#">android</a>
 							<a class="dropdown-item" href="#">chrome</a>
 							<a class="dropdown-item" href="#">mobile</a>
+							<a class="dropdown-item" href="#">currencyLookup</a>
+							<a class="dropdown-item" href="#">nodriver</a>
 							<a class="dropdown-item" href="#">checkCookies</a>
 							<a class="dropdown-item" href="#">web</a>
 							<a class="dropdown-item" href="#">checkLocalStorage</a>
@@ -139,15 +139,84 @@
         </div>
         <div class="test-list-wrapper scrollable">
             <ul class="test-list-item">
-					<li class="test-item" status="pass" author="" device="" tag="" test-id="1"> 
+					<li class="test-item" status="fail" author="" device="" tag="" test-id="1"> 
+						<div class="status-avatar fail-bg">
+							<i class="fa fa-times text-white"></i>
+						</div>
+						<div class="open-test">
+							<div class="test-detail"> 
+								<p class="name">Android Chrome</p> 
+								<p class="duration text-sm">0h:0m:0s+007ms</p> 
+								<span class="datetime">09:20:45 AM</span>
+							</div>
+						</div>
+						<div class="test-contents d-none">
+							<div class="detail-head">
+								<div class="p-v-10 d-inline-block">	
+									<div class="info">
+										<h5 class="test-status text-fail">Android Chrome</h5>
+										<span class='badge badge-success'>09/30/2021 09:20:45</span>
+										<span class='badge badge-danger'>09/30/2021 09:20:45</span>
+										<span class='badge badge-default'>0h:0m:0s+007ms</span>
+									</div>
+																		<div class="m-t-10 m-l-5">
+											In order to know what things are
+	As an idiot
+	I want to google for the definitions
+									</div>
+								</div>
+							</div>
+
+<div class="accordion mt-4">
+	<div class="card">
+		<div class="card-header" role="tab">
+			<div class="card-title pl-3">
+				<div class="node">Scenario: google things</div>
+				<div class="status-avatar float-left fail-bg">
+					<i class="fa fa-times text-white"></i>
+				</div>
+			</div>
+		</div>
+				<div class="collapse">
+                    <div class="card-body">
+                                                    <div class="d-flex align-items-center justify-content-start given" title="">
+                                <span class="alert-icon fail-bg">
+                                    <i class="fa fa-times text-white"></i>
+                                </span>
+                                <span>Given scenario failed: Requested environment is not available</span>
+                            </div>
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>Requested environment is not available</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Appium.AppiumDriver`1.Execute(String driverCommandToExecute, Dictionary`2 parameters)
+   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
+   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
+   at OpenQA.Selenium.Appium.AppiumDriver`1..ctor(ICommandExecutor commandExecutor, ICapabilities appiumOptions)
+   at OpenQA.Selenium.Appium.AppiumDriver`1..ctor(Uri remoteAddress, ICapabilities appiumOptions, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Appium.Android.AndroidDriver`1..ctor(Uri remoteAddress, DriverOptions driverOptions, TimeSpan commandTimeout)
+   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 34
+   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
+   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
+   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
+   at SpecFlowWebDriver.Features.AndroidChromeFeature.ScenarioCleanup()
+   at SpecFlowWebDriver.Features.AndroidChromeFeature.GoogleThings(String val, String[] exampleTags) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/AndroidChrome.feature:line 11</textarea></td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
+                    </div>
+				</div>
+	</div>
+</div>
+						</div>
+					</li>
+					<li class="test-item" status="pass" author="" device="" tag="" test-id="4"> 
 						<div class="status-avatar pass-bg">
 							<i class="fa fa-check text-white"></i>
 						</div>
 						<div class="open-test">
 							<div class="test-detail"> 
 								<p class="name">NBPlookup</p> 
-								<p class="duration text-sm">0h:0m:0s+003ms</p> 
-								<span class="datetime">16:56:48 PM</span>
+								<p class="duration text-sm">0h:0m:2s+306ms</p> 
+								<span class="datetime">09:20:46 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -155,9 +224,9 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-pass">NBPlookup</h5>
-										<span class='badge badge-success'>05/20/2021 16:56:48</span>
-										<span class='badge badge-danger'>05/20/2021 16:56:48</span>
-										<span class='badge badge-default'>0h:0m:0s+003ms</span>
+										<span class='badge badge-success'>09/30/2021 09:20:46</span>
+										<span class='badge badge-danger'>09/30/2021 09:20:49</span>
+										<span class='badge badge-default'>0h:0m:2s+306ms</span>
 									</div>
 																		<div class="m-t-10 m-l-5">
 											In order to go on vacation
@@ -235,75 +304,6 @@
 </div>
 						</div>
 					</li>
-					<li class="test-item" status="fail" author="" device="" tag="" test-id="10"> 
-						<div class="status-avatar fail-bg">
-							<i class="fa fa-times text-white"></i>
-						</div>
-						<div class="open-test">
-							<div class="test-detail"> 
-								<p class="name">Android Chrome</p> 
-								<p class="duration text-sm">0h:0m:0s+001ms</p> 
-								<span class="datetime">16:57:17 PM</span>
-							</div>
-						</div>
-						<div class="test-contents d-none">
-							<div class="detail-head">
-								<div class="p-v-10 d-inline-block">	
-									<div class="info">
-										<h5 class="test-status text-fail">Android Chrome</h5>
-										<span class='badge badge-success'>05/20/2021 16:57:17</span>
-										<span class='badge badge-danger'>05/20/2021 16:57:17</span>
-										<span class='badge badge-default'>0h:0m:0s+001ms</span>
-									</div>
-																		<div class="m-t-10 m-l-5">
-											In order to know what things are
-	As an idiot
-	I want to google for the definitions
-									</div>
-								</div>
-							</div>
-
-<div class="accordion mt-4">
-	<div class="card">
-		<div class="card-header" role="tab">
-			<div class="card-title pl-3">
-				<div class="node">Scenario: google things</div>
-				<div class="status-avatar float-left fail-bg">
-					<i class="fa fa-times text-white"></i>
-				</div>
-			</div>
-		</div>
-				<div class="collapse">
-                    <div class="card-body">
-                                                    <div class="d-flex align-items-center justify-content-start given" title="">
-                                <span class="alert-icon fail-bg">
-                                    <i class="fa fa-times text-white"></i>
-                                </span>
-                                <span>Given scenario failed: The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</span>
-                            </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Appium.Service.AppiumCommandExecutor.Execute(Command commandToExecute)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Appium.AppiumDriver`1.Execute(String driverCommandToExecute, Dictionary`2 parameters)
-   at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
-   at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
-   at OpenQA.Selenium.Appium.AppiumDriver`1..ctor(ICommandExecutor commandExecutor, ICapabilities appiumOptions)
-   at OpenQA.Selenium.Appium.AppiumDriver`1..ctor(Uri remoteAddress, ICapabilities appiumOptions, TimeSpan commandTimeout)
-   at OpenQA.Selenium.Appium.Android.AndroidDriver`1..ctor(Uri remoteAddress, DriverOptions driverOptions, TimeSpan commandTimeout)
-   at SpecFlowWebDriver.Utils.DriverProvider.InitDriver(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/DriverProvider.cs:line 34
-   at SpecFlowWebDriver.Utils.Hooks.BeforeScenario(ScenarioContext scenarioContext) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Utils/Hooks.cs:line 39
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireEvents(HookType hookType)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.FireScenarioEvents(HookType bindingEvent)
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnScenarioStart()
-   at TechTalk.SpecFlow.Infrastructure.TestExecutionEngine.OnAfterLastStep()
-   at TechTalk.SpecFlow.TestRunner.CollectScenarioErrors()
-   at SpecFlowWebDriver.Features.AndroidChromeFeature.ScenarioCleanup()
-   at SpecFlowWebDriver.Features.AndroidChromeFeature.GoogleThings(String val, String[] exampleTags) in /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Features/AndroidChrome.feature:line 11</textarea></td></tr><tr><td>URL</td><td><a href=""></a></td></tr><tr><td>PageSource</td><td><a href=""></a></td></tr></table></div>
-                    </div>
-				</div>
-	</div>
-</div>
-						</div>
-					</li>
 					<li class="test-item" status="fail" author="" device="" tag="" test-id="13"> 
 						<div class="status-avatar fail-bg">
 							<i class="fa fa-times text-white"></i>
@@ -312,7 +312,7 @@
 							<div class="test-detail"> 
 								<p class="name">wikiSearch</p> 
 								<p class="duration text-sm">0h:0m:0s+000ms</p> 
-								<span class="datetime">16:58:52 PM</span>
+								<span class="datetime">09:20:54 AM</span>
 							</div>
 						</div>
 						<div class="test-contents d-none">
@@ -320,8 +320,8 @@
 								<div class="p-v-10 d-inline-block">	
 									<div class="info">
 										<h5 class="test-status text-fail">wikiSearch</h5>
-										<span class='badge badge-success'>05/20/2021 16:58:52</span>
-										<span class='badge badge-danger'>05/20/2021 16:58:52</span>
+										<span class='badge badge-success'>09/30/2021 09:20:54</span>
+										<span class='badge badge-danger'>09/30/2021 09:20:54</span>
 										<span class='badge badge-default'>0h:0m:0s+000ms</span>
 									</div>
 																		<div class="m-t-10 m-l-5">
@@ -348,10 +348,9 @@
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given scenario failed: The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</span>
+                                <span>Given scenario failed: session not created: No matching capabilities found (SessionNotCreated)</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
-   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>session not created: No matching capabilities found (SessionNotCreated)</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
    at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
    at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
    at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
@@ -383,10 +382,9 @@
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given scenario failed: The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</span>
+                                <span>Given scenario failed: session not created: No matching capabilities found (SessionNotCreated)</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
-   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>session not created: No matching capabilities found (SessionNotCreated)</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
    at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
    at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
    at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
@@ -418,10 +416,9 @@
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given scenario failed: The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</span>
+                                <span>Given scenario failed: session not created: No matching capabilities found (SessionNotCreated)</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
-   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>session not created: No matching capabilities found (SessionNotCreated)</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
    at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
    at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
    at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
@@ -453,10 +450,9 @@
                                 <span class="alert-icon fail-bg">
                                     <i class="fa fa-times text-white"></i>
                                 </span>
-                                <span>Given scenario failed: The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</span>
+                                <span>Given scenario failed: session not created: No matching capabilities found (SessionNotCreated)</span>
                             </div>
-			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>The HTTP request to the remote WebDriver server for URL http://194.61.68.110:4444/wd/hub/session timed out after 30 seconds.</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.HttpCommandExecutor.MakeHttpRequest(HttpRequestInfo requestInfo)
-   at OpenQA.Selenium.Remote.HttpCommandExecutor.Execute(Command commandToExecute)
+			<div class="details"><table class='runtime-table table-striped table'><tr><td>Exception</td><td><textarea class='code-block'>session not created: No matching capabilities found (SessionNotCreated)</textarea></td></tr><tr><td>StackTrace</td><td><textarea class='code-block'>   at OpenQA.Selenium.Remote.RemoteWebDriver.UnpackAndThrowOnError(Response errorResponse)
    at OpenQA.Selenium.Remote.RemoteWebDriver.Execute(String driverCommandToExecute, Dictionary`2 parameters)
    at OpenQA.Selenium.Remote.RemoteWebDriver.StartSession(ICapabilities desiredCapabilities)
    at OpenQA.Selenium.Remote.RemoteWebDriver..ctor(ICommandExecutor commandExecutor, ICapabilities desiredCapabilities)
@@ -539,44 +535,44 @@
       <tbody>
         <tr>
           <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:56:48</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:56:48</td>
-          <td class='linked' test-id='6' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <div class='status-avatar fail-bg'>
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:57:17</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>09:20:45</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
         <tr>
           <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>09:20:49</td>
+          <td class='linked' test-id='5' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>09:20:49</td>
+          <td class='linked' test-id='9' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <div class='status-avatar fail-bg'>
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='14' root-id="13">
             <a href="#">wikiSearch.Check Cookies</a>
           </td>
@@ -587,7 +583,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='16' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
@@ -598,7 +594,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='18' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
@@ -609,105 +605,9 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='20' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">currencyLookup</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>currencyLookup</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:56:48</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:56:48</td>
-          <td class='linked' test-id='6' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</li>
-<li class="test-item">
-  <div class="open-test">
-    <div class="test-detail">
-      <p class="name">nodriver</p>
-      <p class="duration text-sm">2 tests</p>
-      <span class="datetime">
- <span class='badge badge-success'>2</span>                               </span>
-    </div>
-  </div>
-  <div class="test-contents d-none">
-    <div class="info">
-      <h4>nodriver</h4>
- <span class='badge badge-success'>2 passed</span>                       </div>
-    <table class='table table-sm mt-4'>
-      <thead>
-        <tr>
-          <th class="status-col">Status</th>
-          <th class="timestamp-col">Timestamp</th>
-          <th>TestName</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:56:48</td>
-          <td class='linked' test-id='2' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class='status-avatar pass-bg'>
-              <i class="fa fa-check text-white"></i>
-            </div>
-          </td>
-          <td>16:56:48</td>
-          <td class='linked' test-id='6' root-id="1">
-            <a href="#">NBPlookup.Lookup a currency rate</a>
           </td>
         </tr>
       </tbody>
@@ -742,8 +642,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:57:17</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>09:20:45</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
@@ -779,8 +679,8 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:57:17</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>09:20:45</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
           </td>
         </tr>
@@ -816,9 +716,105 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:57:17</td>
-          <td class='linked' test-id='11' root-id="10">
+          <td>09:20:45</td>
+          <td class='linked' test-id='2' root-id="1">
             <a href="#">Android Chrome.google things</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>
+<li class="test-item">
+  <div class="open-test">
+    <div class="test-detail">
+      <p class="name">currencyLookup</p>
+      <p class="duration text-sm">2 tests</p>
+      <span class="datetime">
+ <span class='badge badge-success'>2</span>                               </span>
+    </div>
+  </div>
+  <div class="test-contents d-none">
+    <div class="info">
+      <h4>currencyLookup</h4>
+ <span class='badge badge-success'>2 passed</span>                       </div>
+    <table class='table table-sm mt-4'>
+      <thead>
+        <tr>
+          <th class="status-col">Status</th>
+          <th class="timestamp-col">Timestamp</th>
+          <th>TestName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>09:20:49</td>
+          <td class='linked' test-id='5' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>09:20:49</td>
+          <td class='linked' test-id='9' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</li>
+<li class="test-item">
+  <div class="open-test">
+    <div class="test-detail">
+      <p class="name">nodriver</p>
+      <p class="duration text-sm">2 tests</p>
+      <span class="datetime">
+ <span class='badge badge-success'>2</span>                               </span>
+    </div>
+  </div>
+  <div class="test-contents d-none">
+    <div class="info">
+      <h4>nodriver</h4>
+ <span class='badge badge-success'>2 passed</span>                       </div>
+    <table class='table table-sm mt-4'>
+      <thead>
+        <tr>
+          <th class="status-col">Status</th>
+          <th class="timestamp-col">Timestamp</th>
+          <th>TestName</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>09:20:49</td>
+          <td class='linked' test-id='5' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class='status-avatar pass-bg'>
+              <i class="fa fa-check text-white"></i>
+            </div>
+          </td>
+          <td>09:20:49</td>
+          <td class='linked' test-id='9' root-id="4">
+            <a href="#">NBPlookup.Lookup a currency rate</a>
           </td>
         </tr>
       </tbody>
@@ -853,7 +849,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='14' root-id="13">
             <a href="#">wikiSearch.Check Cookies</a>
           </td>
@@ -890,7 +886,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='14' root-id="13">
             <a href="#">wikiSearch.Check Cookies</a>
           </td>
@@ -901,7 +897,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='16' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
@@ -912,7 +908,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='18' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
@@ -923,7 +919,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='20' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
@@ -960,7 +956,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='16' root-id="13">
             <a href="#">wikiSearch.Check local storage</a>
           </td>
@@ -997,7 +993,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='18' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
@@ -1008,7 +1004,7 @@
               <i class="fa fa-times text-white"></i>
             </div>
           </td>
-          <td>16:58:52</td>
+          <td>09:20:54</td>
           <td class='linked' test-id='20' root-id="13">
             <a href="#">wikiSearch.Find definitions</a>
           </td>
@@ -1143,7 +1139,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Start</h6>
-							<h6 class="font-weight-light">05/20/2021 16:56:47</h6>
+							<h6 class="font-weight-light">09/30/2021 09:20:45</h6>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1159,7 +1155,7 @@
 	                <div class="media justify-content-between">
 						<div>
 							<h6 class="card-title">Duration</h6>
-							<h6 class="font-weight-light">00:02:04.6334148</h6>
+							<h6 class="font-weight-light">00:00:08.8027124</h6>
 							<span class="text-semibold text-danger font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -1210,20 +1206,6 @@
 								<td>28.57%</td>
 							</tr>
 							<tr>
-								<td>currencyLookup</td>
-								<td>2</td>
-								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
-							</tr>
-							<tr>
-								<td>nodriver</td>
-								<td>2</td>
-								<td>0</td>
-								<td>0</td>
-								<td>100%</td>
-							</tr>
-							<tr>
 								<td>android</td>
 								<td>0</td>
 								<td>1</td>
@@ -1243,6 +1225,20 @@
 								<td>1</td>
 								<td>0</td>
 								<td>0%</td>
+							</tr>
+							<tr>
+								<td>currencyLookup</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
+							</tr>
+							<tr>
+								<td>nodriver</td>
+								<td>2</td>
+								<td>0</td>
+								<td>0</td>
+								<td>100%</td>
 							</tr>
 							<tr>
 								<td>checkCookies</td>
@@ -1293,11 +1289,11 @@
 						<tbody>
 								<tr>
 									<td>OS</td>
-									<td>Unix 5.4.0.1047</td>
+									<td>Unix 5.8.0.1041</td>
 								</tr>
 								<tr>
 									<td>ENV</td>
-									<td>LOCAL_FROM_EXTERNAL_NETWORK</td>
+									<td>LOCAL</td>
 								</tr>
 						</tbody>
 					</table>
@@ -1339,7 +1335,7 @@
 	};
 </script>
 	<script>
-		var timeline = { "NBPlookup":0.0033364,"Android Chrome":0.0017563,"wikiSearch":0.0005432 };
+		var timeline = { "Android Chrome":0.0077967,"NBPlookup":2.3069365,"wikiSearch":0.0007438 };
 	</script>
 
                 </div>
