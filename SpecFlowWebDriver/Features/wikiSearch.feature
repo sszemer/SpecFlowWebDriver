@@ -26,4 +26,4 @@ Scenario: Check Cookies
 @web
 Scenario: Check local storage
 	Given Wiki page is open
-	Then 'wmE-sS--sampleMultiplier' localStorage item value is '1'
+	Then 've-beta-welcome-dialog' localStorage item value is '1'

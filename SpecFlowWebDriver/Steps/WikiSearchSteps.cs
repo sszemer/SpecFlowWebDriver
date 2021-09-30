@@ -50,5 +50,12 @@ namespace SpecFlowWebDriver
             var actual = scenarioContext.Get<RemoteWebDriver>("driver").ExecuteScript($"return localStorage.getItem('{itemName}');")?.ToString();
             Assert.AreEqual(expected, actual);
         }
+
+        [Then(@"'(.*)' sessionStorage item value is '(.*)'")]
+        public void ThenSessionStorageItemValueIs(string itemName, string expected)
+        {
+            var actual = scenarioContext.Get<RemoteWebDriver>("driver").ExecuteScript($"return window.sessionStorage.getItem('{itemName}');")?.ToString();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
