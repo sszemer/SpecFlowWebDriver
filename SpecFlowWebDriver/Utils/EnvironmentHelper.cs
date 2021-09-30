@@ -56,7 +56,7 @@ namespace SpecFlowWebDriver.Utis
             {
                 case EnvironmentType.LOCAL:
                     DriverOptions options = new ChromeOptions();
-                    options.PlatformName = "windows";
+                    //options.PlatformName = "windows";
                     result = options.ToCapabilities();
                     break;
                 case EnvironmentType.LOCAL_FROM_EXTERNAL_NETWORK:
