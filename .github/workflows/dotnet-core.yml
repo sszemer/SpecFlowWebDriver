@@ -9,6 +9,8 @@ on:
 jobs:
   build:  
     environment: LOCAL_FROM_EXTERNAL_NETWORK
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     name: Build on push  
     env:
@@ -34,9 +36,7 @@ jobs:
     - name: check if report files are generated
       run: ls /home/runner/work/SpecFlowWebDriver/SpecFlowWebDriver/SpecFlowWebDriver/Report
     - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
-        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: SpecFlowWebDriver/Report
-        user_name: sszemer
-        user_email: sszemer@gmail.com
+        github_token: ${{ secrets.GITHUB_TOKEN }}
