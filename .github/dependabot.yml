@@ -1,18 +1,42 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
   - package-ecosystem: "github-actions"
-    directory: "/.github/workflows"
+    directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 1
 
   - package-ecosystem: "nuget"
-    directory: "/SpecFlowWebDriver"
+    directory: "/"
     schedule:
       interval: "weekly"
-    open-pull-requests-limit: 1
+    groups:
+      appium-webdriver:
+        patterns:
+          - "Appium.WebDriver"
+      selenium-webdriver:
+        patterns:
+          - "Selenium.WebDriver"
+      extentreports:
+        patterns:
+          - "ExtentReports"
+      microsoft-net-test-sdk:
+        patterns:
+          - "Microsoft.NET.Test.Sdk"
+      nlog:
+        patterns:
+          - "NLog"
+      nunit:
+        patterns:
+          - "NUnit"
+      nunit3testadapter:
+        patterns:
+          - "NUnit3TestAdapter"
+      refit:
+        patterns:
+          - "Refit"
+      selenium-support:
+        patterns:
+          - "Selenium.Support"
+      selenium-webdriver-chromedriver:
+        patterns:
+          - "Selenium.WebDriver.ChromeDriver"
