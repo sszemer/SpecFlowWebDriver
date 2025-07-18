@@ -1,1 +1,0 @@
-java -jar C:\Users\sszem\Downloads\klov-server-master\0.2.9\klov-0.2.9.jar
