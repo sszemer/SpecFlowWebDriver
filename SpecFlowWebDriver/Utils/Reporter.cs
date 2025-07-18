@@ -13,8 +13,8 @@ namespace SpecFlowWebDriver.Utils
         private const string mongoURL = "127.0.0.1";
         private const int mongoPort = 27017;
         private static readonly string configFileName = $"{Path.Combine(Path.GetFullPath(Directory.GetCurrentDirectory()), "..", "..", "..", "Config", "extentReportConfig.xml")}";
-        private static ExtentHtmlReporter htmlReporter;
-        private static ExtentKlovReporter klov;
+        private static ExtentSparkReporter htmlReporter;
+        // private static ExtentKlovReporter klov;
         private static ExtentReports report;
         private static ExtentTest feature;
         private static ExtentTest scenario;
@@ -28,7 +28,7 @@ namespace SpecFlowWebDriver.Utils
 
         public static void SetupExtentReports()
         {
-            InitHtmlReporter(new ExtentHtmlReporter($"{Path.Combine(ReportDir, "index.html")}"));
+            InitHtmlReporter(new ExtentSparkReporter($"{Path.Combine(ReportDir, "index.html")}"));
             //if (EnvironmentHelper.EnvironmentType is EnvironmentType.LOCAL) InitKlovReporter(new ExtentKlovReporter());
             InitExtentReport(new ExtentReports());
             CleanReportDir(new DirectoryInfo(ReportDir));
@@ -39,19 +39,19 @@ namespace SpecFlowWebDriver.Utils
             foreach (FileInfo file in directoryInfo.GetFiles()) file.Delete();
         }
 
-        private static void InitHtmlReporter(ExtentHtmlReporter extentHtmlReporter)
+        private static void InitHtmlReporter(ExtentSparkReporter extentSparkReporter)
         {
-            htmlReporter = extentHtmlReporter;
+            htmlReporter = extentSparkReporter;
             htmlReporter.LoadConfig(configFileName);
         }
-        private static void InitKlovReporter(ExtentKlovReporter extentKlovReporter)
-        {
-            klov = extentKlovReporter;
-            klov.InitMongoDbConnection(mongoURL, mongoPort);
-            klov.InitKlovServerConnection(klovURL);
-            klov.ProjectName = reportTitle;
-            klov.ReportName = reportName;
-        }
+        // private static void InitKlovReporter(ExtentKlovReporter extentKlovReporter)
+        // {
+        //     klov = extentKlovReporter;
+        //     klov.InitMongoDbConnection(mongoURL, mongoPort);
+        //     klov.InitKlovServerConnection(klovURL);
+        //     klov.ProjectName = reportTitle;
+        //     klov.ReportName = reportName;
+        // }
 
         private static void InitExtentReport(ExtentReports extentReports)
         {
@@ -61,7 +61,7 @@ namespace SpecFlowWebDriver.Utils
             Report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
             Report.AddSystemInfo("ENV", EnvironmentHelper.EnvironmentType.ToString());
             //if(DriverProvider.DriverType is DriverType.Web)report.AddSystemInfo("Browser", $"{DriverProvider.Driver?.Capabilities["browserName"]} {DriverProvider.Driver?.Capabilities["browserVersion"]}");
-            Report.AnalysisStrategy = AnalysisStrategy.BDD;
+            //Report.AnalysisStrategy = AnalysisStrategy.BDD;
         }
     }
 }
