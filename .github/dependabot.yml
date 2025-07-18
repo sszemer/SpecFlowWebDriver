@@ -4,18 +4,21 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 1
 
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
       interval: "weekly"
+    open-pull-requests-limit: 20
     groups:
       appium-webdriver:
         patterns:
           - "Appium.WebDriver"
-      selenium-webdriver:
+      selenium-webdriver-support:
         patterns:
           - "Selenium.WebDriver"
+          - "Selenium.Support"
       extentreports:
         patterns:
           - "ExtentReports"
@@ -28,15 +31,22 @@ updates:
       nunit:
         patterns:
           - "NUnit"
+      nunit-console-runner:
+        patterns:
+          - "NUnit.Console"
+          - "NUnit.ConsoleRunner"
       nunit3testadapter:
         patterns:
           - "NUnit3TestAdapter"
       refit:
         patterns:
           - "Refit"
-      selenium-support:
-        patterns:
-          - "Selenium.Support"
       selenium-webdriver-chromedriver:
         patterns:
           - "Selenium.WebDriver.ChromeDriver"
+      dotnet-selenium-extras:
+        patterns:
+          - "DotNetSeleniumExtras.WaitHelpers"
+      specflow:
+        patterns:
+          - "SpecFlow"
