@@ -5,12 +5,14 @@
 
 version: 2
 updates:
-  - package-ecosystem: "github-actions" # See documentation for possible values https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#package-ecosystem-
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "weekly"
+    pull-request-limit: 0
 
-  - package-ecosystem: "nuget" # See documentation for possible values https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#package-ecosystem-
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "nuget"
+    directory: "/"
     schedule:
       interval: "weekly"
+    pull-request-limit: 0
