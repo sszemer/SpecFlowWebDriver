@@ -8,7 +8,7 @@ namespace SpecFlowWebDriver.Utils
     public static class Reporter
     {
         private static readonly string configFileName = $"{Path.Combine(Path.GetFullPath(Directory.GetCurrentDirectory()), "..", "..", "..", "Config", "extentReportConfig.xml")}";
-        private static ExtentSparkReporter htmlReporter;
+        private static ExtentSparkReporter sparkReporter;
         private static ExtentReports report;
         private static ExtentTest feature;
         private static ExtentTest scenario;
@@ -34,14 +34,14 @@ namespace SpecFlowWebDriver.Utils
 
         private static void InitHtmlReporter(ExtentSparkReporter extentSparkReporter)
         {
-            htmlReporter = extentSparkReporter;
-            htmlReporter.LoadConfig(configFileName);
+            sparkReporter = extentSparkReporter;
+            sparkReporter.LoadXMLConfig(configFileName);
         }
 
         private static void InitExtentReport(ExtentReports extentReports)
         {
             Report = extentReports;
-            Report.AttachReporter(htmlReporter);
+            Report.AttachReporter(sparkReporter);
             Report.AddSystemInfo("OS", System.Environment.OSVersion.ToString());
             Report.AddSystemInfo("ENV", EnvironmentHelper.EnvironmentType.ToString());
             //if(DriverProvider.DriverType is DriverType.Web)report.AddSystemInfo("Browser", $"{DriverProvider.Driver?.Capabilities["browserName"]} {DriverProvider.Driver?.Capabilities["browserVersion"]}");
