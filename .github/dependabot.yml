@@ -9,10 +9,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    pull-request-limit: 0
 
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
       interval: "weekly"
-    pull-request-limit: 0
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
