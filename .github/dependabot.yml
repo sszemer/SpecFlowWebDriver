@@ -5,11 +5,6 @@
 
 version: 2
 updates:
-  - package-ecosystem: "dotnet-sdk" # See documentation for possible values https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#package-ecosystem-
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "weekly"
-
   - package-ecosystem: "github-actions" # See documentation for possible values https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#package-ecosystem-
     directory: "/" # Location of package manifests
     schedule:
