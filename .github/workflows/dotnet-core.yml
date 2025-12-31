@@ -19,7 +19,7 @@ jobs:
       BROWSERSTACK_USERNAME: ${{secrets.BROWSERSTACK_USERNAME}}
       DOTNET_CLI_TELEMETRY_OPTOUT : ${{secrets.DOTNET_CLI_TELEMETRY_OPTOUT}}
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Start Selenium Grid    
       uses: Xotabu4/selenoid-github-action@v2
     - name: Setup .NET Core
